@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyForm</string>
+    <string name="warn_message">Something went wrong, please check if all the fields are filled!</string>
+    <string name="success_message">Thank you for your answer</string>
+</resources>
