@@ -20,4 +20,6 @@ Amit eddig nem sikerült megcsinálnom, hogy ne külön repoban legyen a projekt
 
 A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam részletesebben. Tanulás közben folyamatosan ki is próbáltam az új dolgokat.
 
+#### Zakariás Anna
 
+Én is az előző héten elkészített MyForm alkalmazásomat fejeztem be, kijavítottam a hibákat, így mostmár ha adatokat írunk be, azok megjelennek a valósidejű alkalmazásban.
