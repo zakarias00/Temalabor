@@ -32,17 +32,21 @@ class MainActivity : AppCompatActivity() {
             val user = User(firstName, secondName, emailAddress)
             val u1 = User("rumini", "bumini", "brumini@hotmail.com")
             database.child(firstName).setValue(u1)
-            database.child(firstName).setValue(user).addOnSuccessListener {
+            if (binding.firstName.text.toString().isEmpty(), binding.secondName.text.toString().isEmpty(), binding.emailAddress.text.toString().isEmpty())
+                 Toast.makeText(this, R.string.warn_message, Toast.LENGTH_SHORT).show()
+            else{
+                database.child(firstName).setValue(u1)
+                database.child(firstName).setValue(user).addOnSuccessListener {
+                    binding.firstName.text.clear()
+                    binding.secondName.text.clear()
+                    binding.emailAddress.text.clear()
 
-                binding.firstName.text.clear()
-                binding.secondName.text.clear()
-                binding.emailAddress.text.clear()
+                    Toast.makeText(this, R.string.success_message, Toast.LENGTH_SHORT).show()
+                }
+                 .addOnFailureListener {
 
-                Toast.makeText(this, R.string.success_message, Toast.LENGTH_SHORT).show()
-
-            }.addOnFailureListener{
-                Toast.makeText(this, R.string.warn_message, Toast.LENGTH_SHORT).show()
+                    }
             }
-        }
+        }           
     }
 }
