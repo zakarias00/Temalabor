@@ -18,6 +18,6 @@ Amit eddig nem sikerült megcsinálnom, hogy ne külön repoban legyen a projekt
 
 #### Valaska Nóra
 
-A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam részletesebben.
+A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam részletesebben. Tanulás közben folyamatosan ki is próbáltam az új dolgokat.
 
 
