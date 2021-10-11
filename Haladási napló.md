@@ -14,4 +14,8 @@ IOSen viszont szépen fut a program és a megadott first name,last name és emai
 
 Amit eddig nem sikerült megcsinálnom, hogy ne külön repoban legyen a projektem, hanem a közös repo mappájába rakjam fel direktbe, így egy fájlba írt link vezet a repohoz.
 
+#### Valaska Nóra
+
+A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam részletesebben.
+
 
