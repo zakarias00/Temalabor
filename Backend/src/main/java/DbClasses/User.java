@@ -13,4 +13,9 @@ public class User {
     private DateTimeFormat Birthdate;   //szuletesi ido
     private int Height;             //magasssag
     private int Weight;             //suly
+    private boolean Gender;         //nem true=No; false=Ferfi
+
+    public double GetWeight() {
+        return Weight;
+    }
 }
