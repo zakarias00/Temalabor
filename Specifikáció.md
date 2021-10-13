@@ -16,7 +16,7 @@ A program egy sportevékenységek és egészséges életmód követésérére ad
   A felhasználó nyomon tudja követni, hogy mikor, milyen sporttevékenységeket végzett. Az edzéseket egyesével lehet rögzíteni, ahol meg kell adni, hogy mikor (dátum), mit sporotolt és mennyi ideig, valamint egyes sportoknál azt is, hogy hány kilométert tett meg. (futás, úszás, biciklizés, stb...) A felhasználóknak lehetőségük van több, előre meghatározott sport közül választani, így a program azt is meg tudja mondani, hogy hány kcal-t égettek el a mozgás során. Ha olyan sportot űztek, ami nem szerepel a felsoroltak közül, akkor az egyéb kategóriát tudják választani, ahol a mozgásforma nevét, illetve az elégetett kcal-ák számát tudják megadni.
   
 * ### Más felhasználók:
-  Más felhasználókra is rá lehet keresni, felhasználói név. Itt az ő sporttevékenységüket, szintjüket, és pontjaikat lehet látni.
+  Más felhasználókra is rá lehet keresni, felhasználói név. Itt az ő szintjüket, és pontjaikat lehet látni.
   Egy összesített ranglistát is meg lehet nézni, ahol a megszerzett pontjaik alapján vannak rangsorolva a felhasználók.
 
 ## Webes felület
@@ -37,6 +37,8 @@ A képernyők alján 4 kis ikon látszik, melyek segítségével navigálhatunk 
 A weekly céloknál egy legördülő listából választhatjuk ki, hogy melyik hét céljait szeretnénk látni. Alapból az aktuális hét céljait látjuk, a felső progres bar a kilóméter célokat, az alsó a heti edzések számát jeleníti meg. A set goal gombokra kattintva a feljövő ablakban beállíthatóak a célok.
 
 A sport fülnél fel vannak sorolva a sportok és ezekre kattintva, sportokra bontva a felhasználó  már elvégzett sporttevékenységei láthatóak egy listában. A plusz gombra kattintva beírhatunk új sporttevékenységet, ahol megadhatjuk a sportolás idejét és kilóméterben mért távolságát. Az alkalmazás ezekből és a személyes adatokból kiszámolja, hogy hány kalóriát égettünk. Ha az egyéb kategóriát választjuk, akkor megadhatjuk, hogy hány kalóriát égettünk el. 
+
+A barátok fülnél minden másik felhasználó neve és szintje megjelenik egy rangsorban. Itt rá lehet keresni konkrét emberekre felhasználónév alapján, és akkor csak az a név jelenik meg a képernyőn.
 
 
 
