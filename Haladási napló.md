@@ -23,3 +23,9 @@ A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam ré
 #### Zakariás Anna
 
 Én is az előző héten elkészített MyForm alkalmazásomat fejeztem be, kijavítottam a hibákat, így mostmár ha adatokat írunk be, azok megjelennek a valósidejű alkalmazásban.
+
+## 6.Hét
+#### Orova Dorina
+Sikerült az adatbázist IntelliJ-ben hozzákapcsolnom a projekthez, viszont a kódból még mindig nem tudok connectiont létrehozni, a következő hibát kapom: java.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433;databasename=GetFitDB;.
+
+Az adatokat reprezentáló osztáylok függvényeit írtam (pl.: getterek, setterek, új adat felvétele...stb), valamint a controlelr osztáylok vázát.
