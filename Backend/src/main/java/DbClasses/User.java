@@ -1,6 +1,6 @@
 package DbClasses;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import java.util.Date;
 
 public class User {
     private int Id;                 //azonosito
@@ -10,12 +10,26 @@ public class User {
     private String Password;        //jelszo
     private int Points;             //pontok
     private int Level;              //szint
-    private DateTimeFormat Birthdate;   //szuletesi ido
+    private Date Birthdate;         //szuletesi ido
     private int Height;             //magasssag
     private int Weight;             //suly
     private boolean Gender;         //nem true=No; false=Ferfi
 
+    public User() {
+    }
+
     public double GetWeight() {
         return Weight;
+    }
+    public double GetHeight() {
+        return Height;
+    }
+
+    public double BMI(){
+        return Height/Weight;
+    }
+
+    public int GetId() {
+        return  Id;
     }
 }
