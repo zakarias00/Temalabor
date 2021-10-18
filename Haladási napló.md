@@ -33,3 +33,10 @@ Az adatokat reprezentáló osztáylok függvényeit írtam (pl.: getterek, sette
 #### Sipos Noémi
 
 Annával megírtuk a mobilos alkalmazás specifikációt, valamint megterveztük az alkalmazás kinézetét.
+
+#### Zakariás Anna
+Noémivel együtt megterveztük az alkalmazás egyes képernyőit a Justinmind segítségével.
+Én ezek alapján elkészítettem a bejelentkező illetve a regisztraciós képernyőket, amik egyelőre még nem vesznek be adatokat, csak a Sign up gomb működik, azzal lehet a Login képernyőről a Sign up képérnyőre váltani.
+Ezen kívűl elolvastam a Swagger specifikációját, az egyes parancsokat értelmeztem, viszont ki még nem probáltam, hogy élesben hogyan is működik.
+
+Valamint most én is belefutottam abba a problémába, amibe a mólt héten Noémi, hogy a Github nem engedett feltölteni egy második projektet a mappába, ezért az új projektet becsomagolva töltöttem fel ide.
