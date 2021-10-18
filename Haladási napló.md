@@ -29,3 +29,7 @@ A megbeszéltek szerint a HTML5 megismerésével, tanulásával foglalkoztam ré
 Sikerült az adatbázist IntelliJ-ben hozzákapcsolnom a projekthez, viszont a kódból még mindig nem tudok connectiont létrehozni, a következő hibát kapom: java.sql.SQLException: No suitable driver found for jdbc:sqlserver://localhost:1433;databasename=GetFitDB;.
 
 Az adatokat reprezentáló osztáylok függvényeit írtam (pl.: getterek, setterek, új adat felvétele...stb), valamint a controlelr osztáylok vázát.
+
+#### Sipos Noémi
+
+Annával megírtuk a mobilos alkalmazás specifikációt, valamint megterveztük az alkalmazás kinézetét.
