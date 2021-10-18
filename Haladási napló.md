@@ -40,3 +40,6 @@ Noémivel együtt megterveztük az alkalmazás egyes képernyőit a Justinmind s
 Ezen kívűl elolvastam a Swagger specifikációját, az egyes parancsokat értelmeztem, viszont ki még nem probáltam, hogy élesben hogyan is működik.
 
 Valamint most én is belefutottam abba a problémába, amibe a mólt héten Noémi, hogy a Github nem engedett feltölteni egy második projektet a mappába, ezért az új projektet becsomagolva töltöttem fel ide.
+
+#### Valaska Nóra
+Megterveztem a webes felület kinézetét a Justinmind programmal.
