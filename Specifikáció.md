@@ -23,7 +23,7 @@ A program egy sportevékenységek és egészséges életmód követésérére ad
 
 ## Mobilos applikáció
 
-Az alkalmazás kétnyelvű lesz, a login képernyőn két kis zászló ikon lesz látható,egy angol meg egy magyar, ezekre kattintva kiválaszthatjuk, hogy milyen nyelven szeretnénk használni az alkalmazást.
+Az alkalmazás (kétnyelvű lesz), a login képernyőn két kis zászló ikon lesz látható,egy angol meg egy magyar, ezekre kattintva kiválaszthatjuk, hogy milyen nyelven szeretnénk használni az alkalmazást.
 
 A bejelentkező képernyőn a felhasználó megadhatja az email címét és a jelszavát a bejelentkezéshez. Ha még nincs fiókja, akkor létrehozhat egyet, a Sign up gombra kattintva. Ezután mejelenik a regisztrációs képernyő, itt meg kell adni a nevet, e-mail címet, a felhasználó nevet, a jelszót, utána a submitra kattintva a következő képen a születési időt kell kiválasztani, majd a magasságot és a súlyt megadni. Ha ez kész akkor a submitra kattintva a felhasználó sikeresen beregisztrált és rögtön belép a fiókja főképernyőjére.
 Alapvetően az alkalmazás bezárása után, majd újramegnyitás után a felhasználó bejelentkezve marad. A főképernyő jobb felső sarkában lévő gombbal lehet kijelentkezni.
@@ -39,6 +39,13 @@ A weekly céloknál egy legördülő listából választhatjuk ki, hogy melyik h
 A sport fülnél fel vannak sorolva a sportok és ezekre kattintva, sportokra bontva a felhasználó  már elvégzett sporttevékenységei láthatóak egy listában. A plusz gombra kattintva beírhatunk új sporttevékenységet, ahol megadhatjuk a sportolás idejét és kilóméterben mért távolságát. Az alkalmazás ezekből és a személyes adatokból kiszámolja, hogy hány kalóriát égettünk. Ha az egyéb kategóriát választjuk, akkor megadhatjuk, hogy hány kalóriát égettünk el. 
 
 A barátok fülnél minden másik felhasználó neve és szintje megjelenik egy rangsorban. Itt rá lehet keresni konkrét emberekre felhasználónév alapján, és akkor csak az a név jelenik meg a képernyőn.
+
+
+//
+mindig beallithatod a sulyt
+elozo heti meg mostani heti aktiv napok szama megjelenites ( datum is lehet )
+historyban minden latszik aztan szurok
+
 
 
 
