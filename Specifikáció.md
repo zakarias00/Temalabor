@@ -23,30 +23,24 @@ A program egy sportevékenységek és egészséges életmód követésérére ad
 
 ## Mobilos applikáció
 
-Az alkalmazás (kétnyelvű lesz), a login képernyőn két kis zászló ikon lesz látható,egy angol meg egy magyar, ezekre kattintva kiválaszthatjuk, hogy milyen nyelven szeretnénk használni az alkalmazást.
 
-A bejelentkező képernyőn a felhasználó megadhatja az email címét és a jelszavát a bejelentkezéshez. Ha még nincs fiókja, akkor létrehozhat egyet, a Sign up gombra kattintva. Ezután mejelenik a regisztrációs képernyő, itt meg kell adni a nevet, e-mail címet, a felhasználó nevet, a jelszót, utána a submitra kattintva a következő képen a születési időt kell kiválasztani, majd a magasságot és a súlyt megadni. Ha ez kész akkor a submitra kattintva a felhasználó sikeresen beregisztrált és rögtön belép a fiókja főképernyőjére.
+A bejelentkező képernyőn a felhasználó megadhatja az email címét és a jelszavát a bejelentkezéshez. Ha még nincs fiókja, akkor létrehozhat egyet, a Sign up gombra kattintva. Ezután mejelenik a regisztrációs képernyő, itt meg kell adni a nevet, e-mail címet, a felhasználó nevet, a jelszót, utána a submitra kattintva a következő képen a születési időt kell kiválasztani, a nemet, majd a magasságot és a súlyt megadni. Ha ez kész akkor a submitra kattintva a felhasználó sikeresen beregisztrált és rögtön belép a fiókja főképernyőjére. A felhasználó a súlyát bármikor megváltoztathatja.
 Alapvetően az alkalmazás bezárása után, majd újramegnyitás után a felhasználó bejelentkezve marad. A főképernyő jobb felső sarkában lévő gombbal lehet kijelentkezni.
 
 A főképernyőn látszik a felhasználó név, a felhasználó szintje és alatta egy progress bar, mely azt jelzi, hogy mennyi pont kell még a következő szint eléréséhez.
-A képernyő közepén egy szöveg lesz megjelenítve azok alapján, hogy mennyit telejsített/ mennyire van még a weekly céljaitól.
-Minden héten hétfőn a célok eltűnnek és felugrik egy ablak, hogy szeretné-e a felhasználó megváltoztatni a súlyát, ha igen akkor beírhatja az új súlyt, ha nem akkor rákattint a cancelre.
+A képernyő közepén egy szöveg lesz megjelenítve azok alapján, hogy mennyit telejsített/ mennyire van még a weekly céljától.
 
 A képernyők alján 4 kis ikon látszik, melyek segítségével navigálhatunk a képernyők között. A házikó ikon a főképernyőre visz, a kupa a weekly célokhoz, a sportoló ember a sporttevékenységekhez, az ember ikon pedig a többi felhasználóhoz.
 
-A weekly céloknál egy legördülő listából választhatjuk ki, hogy melyik hét céljait szeretnénk látni. Alapból az aktuális hét céljait látjuk, a felső progres bar a kilóméter célokat, az alsó a heti edzések számát jeleníti meg. A set goal gombokra kattintva a feljövő ablakban beállíthatóak a célok.
+A weekly célnál látunk egy progress bart, mely mutatja, hogy mennyire van a felhasználó a beállított céljától. Látjuk az előző heti célt és az éppen aktuális célt.  A set goal gombra kattintva változtatható a cél. Célnak a heti aktív napok számát lehet megadni.
 
-A sport fülnél fel vannak sorolva a sportok és ezekre kattintva, sportokra bontva a felhasználó  már elvégzett sporttevékenységei láthatóak egy listában. A plusz gombra kattintva beírhatunk új sporttevékenységet, ahol megadhatjuk a sportolás idejét és kilóméterben mért távolságát. Az alkalmazás ezekből és a személyes adatokból kiszámolja, hogy hány kalóriát égettünk. Ha az egyéb kategóriát választjuk, akkor megadhatjuk, hogy hány kalóriát égettünk el. 
+A history fülnél a korábbi tevékenységeket lehet látni. A plusz gombra kattintva beírhatunk új sporttevékenységet, ahol megadhatjuk a sportolás idejét és kilóméterben mért távolságát. Az alkalmazás ezekből és a személyes adatokból kiszámolja, hogy hány kalóriát égettünk. Ha az egyéb kategóriát választjuk, akkor megadhatjuk, hogy hány kalóriát égettünk el. 
 
 A barátok fülnél minden másik felhasználó neve és szintje megjelenik egy rangsorban. Itt rá lehet keresni konkrét emberekre felhasználónév alapján, és akkor csak az a név jelenik meg a képernyőn.
 
 
-//
-mindig beallithatod a sulyt
-elozo heti meg mostani heti aktiv napok szama megjelenites ( datum is lehet )
-historyban minden latszik aztan szurok
-
-
+###Egyéb ha kész a többi:
+Az alkalmazás (kétnyelvű lesz), a login képernyőn két kis zászló ikon lesz látható,egy angol meg egy magyar, ezekre kattintva kiválaszthatjuk, hogy milyen nyelven szeretnénk használni az alkalmazást.
 
 
 
