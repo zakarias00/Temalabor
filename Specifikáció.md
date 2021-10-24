@@ -28,9 +28,9 @@ Alapvetően az alkalmazás bezárása után, majd újramegnyitás után a felhas
 A főképernyőn látszik a felhasználó név, a felhasználó szintje és alatta egy progress bar, mely azt jelzi, hogy mennyi pont kell még a következő szint eléréséhez.
 A képernyő közepén egy szöveg lesz megjelenítve azok alapján, hogy mennyit telejsített/ mennyire van még a weekly céljától.
 
-A képernyők alján 4 kis ikon látszik, melyek segítségével navigálhatunk a képernyők között. A házikó ikon a főképernyőre visz, a kupa a weekly célokhoz, a sportoló ember a sporttevékenységekhez, az ember ikon pedig a többi felhasználóhoz.
+A képernyők alján 4 kis ikon látszik, melyek segítségével navigálhatunk a képernyők között. A házikó ikon a főképernyőre visz, a kupa a weekly activitykhez, a sportoló ember a sporttevékenységekhez, az ember ikon pedig a többi felhasználóhoz.
 
-A weekly célnál látunk egy progress bart, mely mutatja, hogy mennyire van a felhasználó a beállított céljától. Látjuk az előző heti célt és az éppen aktuális célt.  A set goal gombra kattintva változtatható a cél. Célnak a heti aktív napok számát lehet megadni.
+A weekly célnál látunk egy progress bart, mely mutatja, hogy mennyire van a felhasználó a beállított céljától. Látjuk az előző heti célt és az éppen aktuális célt.  A set goal gombra kattintva változtatható a cél. Célnak a heti aktív napok számát lehet megadni. A célok alatt megjelnik a héten lefutott kilóméterek száma és az edzéssel töltött idő mennyisége.
 
 A history fülnél a korábbi tevékenységeket lehet látni. A plusz gombra kattintva beírhatunk új sporttevékenységet, ahol megadhatjuk a sportolás idejét és kilóméterben mért távolságát. Az alkalmazás ezekből és a személyes adatokból kiszámolja, hogy hány kalóriát égettünk. Ha az egyéb kategóriát választjuk, akkor megadhatjuk, hogy hány kalóriát égettünk el. 
 
