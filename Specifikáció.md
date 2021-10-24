@@ -7,9 +7,7 @@ A program egy sportevékenységek és egészséges életmód követésérére ad
   
 * ### Személyes adatok:
   A felhasználónak lehetősége van személyes adatait eltárolni, így a születési időt, magasságot, súlyt. Ezeket az adatokat később is meg tudja változtatni. Minden felhasználónak van egy szintje, amik között céljai teljesítésével tud átlépni.  Ahányszor a felhasználó eléri a kitűzött célját pontokat kap érte. Egy adott pont összegyüjtése során szintet léphet.\
-  A következő célok beállítására van lehetősége:
-    * Hány napot szeretne edzeni egy héten
-    * Hány km-t szeretne megtenni egy héten  
+A felhasználónak lehetősége van beállítani célnak, hogy hány napot szeretne edzeni a héten.
 
   
 * ### Sporttevékenység követése:
