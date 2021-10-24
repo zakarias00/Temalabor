@@ -43,3 +43,9 @@ Valamint most én is belefutottam abba a problémába, amibe a mólt héten Noé
 
 #### Valaska Nóra
 Megterveztem a webes felület kinézetét a Justinmind programmal.
+
+## 7.Hét
+
+####Sipos Noémi
+
+Létrehoztam az alkalmazásunk Flutter projektjét. Elkészítettem a főbb oldalakat, melyekre szükség lesz az alkalmazásban. A projekt úgy néz ki, hogy a main pageről lehet navigálni a különböző nézetekre. Néhány dolgot változtattunk a specifikáción és a kinézeten, hogy az alkalmazás logikusabb legyen. Például, hogy célnak csak az aktív napok számát lehet csak beállítani, viszont a lefutott kilóméterek és az edzéssel töltött idő is meg fog jelenni a képernyőn.( Ez mind hetekre bontva.)
