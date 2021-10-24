@@ -1,10 +1,9 @@
 package hu.temalabor.GetFit.model;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Document("Activity")
 public class Activity {
@@ -13,8 +12,17 @@ public class Activity {
     private int SportId;            //sport azonosito
     private int UserId;             //felhasznalo azonosito
     private double Time;             //sporttal tolott ido (perc)
-    private LocalDateTime Date;    //sportolas kezdete
+    private Date Date;    //sportolas kezdete
     private double Kcal;             //elegetett kaloriak
+
+    public Activity(int id, int SportId, int UserId, double Time, Date Date) {
+        super();
+        this.id = id;
+        this.SportId = SportId;
+        this.UserId = UserId;
+        this.Time = Time;
+        this.Date = Date;
+    }
 
 
     public void KcalCalulate (){

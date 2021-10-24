@@ -2,28 +2,32 @@ package hu.temalabor.GetFit.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.time.LocalDateTime;
+
+import java.util.Date;
 
 @Document("Goal")
 public class Goal {
     @Id
     private int id;
-    private String Type;
+    private int Type;
     private int Amount;
     private int UserId;
-    private LocalDateTime DateStart;
+    private Date DateStart;
     private int CurrentAmount;
     private int Status;
 
-    public Goal() {
+    public Goal(int id, int Amount, int UserId, Date DateStart) {
+        super();
+        this.id = id;
+        Type = 0;
+        this.Amount = Amount;
+        this.UserId = UserId;
+        this.DateStart = DateStart;
+        CurrentAmount = 0;
     }
 
-    public String InsertGoalDB(){
-        return "INSERT INTO GetFitDB.Goal (Type, Amount, UserId, Date, CurrentAmount, Status) VALUES ('"+Type+"',"+Amount+","+UserId+","+ DateStart.toString()+","
-        +CurrentAmount+","+Status+")";
-    }
 
-    public String GetType(){
+    public int GetType(){
         return Type;
     }
     public int Amount(){
@@ -34,11 +38,11 @@ public class Goal {
         return CurrentAmount;
     }
 
-    public void SetStatus(){
-        if (LocalDateTime.from(DateStart).plusDays(7).equals(LocalDateTime.from(DateStart))) Status =0; //lejart az egy het, nem sikerult teljesiteni
-        else if(CurrentAmount>=Amount) Status = 1;      //teljesitette
-        else Status =2; //meg folyamatban van
-    }
+//    public void SetStatus(){
+//        if (LocalDateTime.from(DateStart).plusDays(7).equals(LocalDateTime.from(DateStart))) Status =0; //lejart az egy het, nem sikerult teljesiteni
+//        else if(CurrentAmount>=Amount) Status = 1;      //teljesitette
+//        else Status =2; //meg folyamatban van
+//    }
 
     public int GetStatus(){
         return Status;

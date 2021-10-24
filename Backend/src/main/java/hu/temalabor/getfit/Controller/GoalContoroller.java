@@ -2,35 +2,54 @@ package hu.temalabor.GetFit.Controller;
 
 
 import hu.temalabor.GetFit.model.Goal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import hu.temalabor.GetFit.repository.GoalRepository;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
+@RequestMapping("/GoalController")
 public class GoalContoroller {
+    private GoalRepository goalRepository;
+
+    public GoalContoroller(GoalRepository goalRepository) {
+        this.goalRepository = goalRepository;
+    }
 
     //Osszes Goal lekerese
-    @GetMapping("/GoalController")
+    @GetMapping("/")
     @ResponseBody
-    void GetGoals(){
-
+    List<Goal> GetGoals(){
+        return goalRepository.findAll();
     }
 
     //Egy Sport kerese id alapjan
-    @GetMapping("/GoalController/{id}")
+    @GetMapping("/{id}")
     @ResponseBody
-    Goal GetGoalById(@PathVariable(value = "id") int id){
-        return new Goal();
+    Optional<Goal> GetGoalById(@PathVariable(value = "id") int id){
+        return goalRepository.findById(id);
     }
 
-    //Egy Goal kerese statusz alapjan
-    @GetMapping("/GoalController/{status}")
-    @ResponseBody
-    List<Goal> GetGoalByType(@PathVariable(value = "status") int status){
-        return null;
+
+    @DeleteMapping("/{id}")
+    void DeleteGoalById(@PathVariable(value="id") int id){
+        goalRepository.deleteById(id);
+    }
+
+    @PostMapping
+    void NewGoal(@RequestBody Goal newGoal){
+        goalRepository.save(newGoal);
+    }
+
+    @PutMapping
+    void updateGoal(@PathVariable(value="id") int id, @RequestBody Goal uGoal){
+        Optional<Goal> goalData = goalRepository.findById(id);
+        if(goalData.isPresent()){
+            Goal goal = goalData.get();
+            goal=uGoal;
+            goalRepository.save(goal);
+        }
     }
 
 

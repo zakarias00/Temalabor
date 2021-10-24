@@ -8,18 +8,18 @@ public class Sport {
 
     @Id
     private int id;
-    private static String Type;
+    private  String Type;
     private double Kcal;            //sport altal elegetheto kaloriak (1kg, 1 percre)
 
-    public Sport(int Id, String Type, double Kcal){
+    public Sport(int id, String Type, double Kcal){
         super();
-        this.id=Id;
+        this.id=id;
         this.Type =Type;
         this.Kcal=Kcal;
 
     }
 
-    public static String GetType(){
+    public  String GetType(){
         return Type;
     }
 

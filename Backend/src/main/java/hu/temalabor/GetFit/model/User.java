@@ -20,7 +20,15 @@ public class User {
     private int Weight;             //suly
     private boolean Gender;         //nem true=No; false=Ferfi
 
-    public User() {
+    public User(int id, String Username, String Name, String Email, String Password) {
+        super();
+        this.id = id;
+        this.Username = Username;
+        this.Name = Name;
+        this.Email = Email;
+        this.Password = Password;
+        Points = 0;
+        Level = 0;
     }
 
     public double GetWeight() {
