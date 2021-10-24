@@ -1,15 +1,18 @@
-package hu.temalabor.getfit.Controller;
+package hu.temalabor.GetFit.Controller;
 
-import DbClasses.User;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+
+import hu.temalabor.GetFit.model.User;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class UserController {
 private List<User> users;
+
 
 //Osszes User lekerese
     @GetMapping("/UserController")
@@ -32,8 +35,5 @@ private List<User> users;
         return new  User();
     }
 
-    @PostMapping
-    public void SaveUser(@Validated @RequestBody User user) {
-        //TODO
-    }
+
 }

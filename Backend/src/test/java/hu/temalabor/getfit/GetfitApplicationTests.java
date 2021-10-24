@@ -1,13 +1,13 @@
-package hu.temalabor.getfit;
+package hu.temalabor.GetFit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GetfitApplicationTests {
+class GetFitApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

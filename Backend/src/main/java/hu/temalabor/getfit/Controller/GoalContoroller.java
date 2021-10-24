@@ -1,11 +1,15 @@
-package hu.temalabor.getfit.Controller;
+package hu.temalabor.GetFit.Controller;
 
-import DbClasses.Goal;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+
+import hu.temalabor.GetFit.model.Goal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 public class GoalContoroller {
 
     //Osszes Goal lekerese
@@ -29,8 +33,5 @@ public class GoalContoroller {
         return null;
     }
 
-    @PostMapping
-    public void SaveGoal(@Validated @RequestBody Goal goal) {
-        //TODO
-    }
+
 }

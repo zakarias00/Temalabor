@@ -1,10 +1,13 @@
-package hu.temalabor.getfit.Controller;
+package hu.temalabor.GetFit.Controller;
 
-import DbClasses.Activity;
-import DbClasses.Goal;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
 
+import hu.temalabor.GetFit.model.Goal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class ActivityController {
 
     //Osszes Activity lekerese
@@ -22,8 +25,5 @@ public class ActivityController {
     }
 
 
-    @PostMapping
-    public void SaveActivity(@Validated @RequestBody Activity activity) {
-        //TODO
-    }
+
 }

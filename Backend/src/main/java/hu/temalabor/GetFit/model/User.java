@@ -1,9 +1,14 @@
-package DbClasses;
+package hu.temalabor.GetFit.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
 
+@Document("User")
 public class User {
-    private int Id;                 //azonosito
+    @Id
+    private int id;                 //azonosito
     private String Username;        //felhasznalonev
     private String Name;            //nev
     private String Email;           //emailcim
@@ -30,6 +35,6 @@ public class User {
     }
 
     public int GetId() {
-        return  Id;
+        return  id;
     }
 }

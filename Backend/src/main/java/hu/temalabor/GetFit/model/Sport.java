@@ -1,10 +1,23 @@
-package DbClasses;
+package hu.temalabor.GetFit.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("Sport")
 public class Sport {
-    private int Id;
+
+    @Id
+    private int id;
     private static String Type;
     private double Kcal;            //sport altal elegetheto kaloriak (1kg, 1 percre)
+
+    public Sport(int Id, String Type, double Kcal){
+        super();
+        this.id=Id;
+        this.Type =Type;
+        this.Kcal=Kcal;
+
+    }
 
     public static String GetType(){
         return Type;
@@ -40,11 +53,7 @@ public class Sport {
         return Kcal;
     }
 
-    public String InsertSportDB(){
-        return "INSERT INTO GetFitDB.Sport (Type, Kcal) VALUES ('"+Type+"',"+Kcal+")";
-    }
-
     public int GetId(){
-        return Id;
+        return id;
     }
 }
