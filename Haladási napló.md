@@ -43,3 +43,14 @@ Valamint most én is belefutottam abba a problémába, amibe a mólt héten Noé
 
 #### Valaska Nóra
 Megterveztem a webes felület kinézetét a Justinmind programmal.
+
+## 7.Hét
+
+#### Sipos Noémi
+
+Létrehoztam az alkalmazásunk Flutter projektjét. Elkészítettem a főbb oldalakat, melyekre szükség lesz az alkalmazásban. A projekt úgy néz ki, hogy a main pageről lehet navigálni a különböző nézetekre. Néhány dolgot változtattunk a specifikáción és a kinézeten, hogy az alkalmazás logikusabb legyen. Például, hogy célnak csak az aktív napok számát lehet csak beállítani, viszont a lefutott kilóméterek és az edzéssel töltött idő is meg fog jelenni a képernyőn.( Ez mind hetekre bontva.)
+
+#### Orova Dorina
+
+Hosszas próbálkozás után sem sikerült összekapcsolnom a projektet SQL serverrel (ha külön felhasználót hoztam létre, és azzal próbálkoztam kapcsolódni nem ismerte fel, és Windows autentikációval sem tudtam csatlakozni). Ezért végül az adatbázist lecseréltem MongoDB-re, amivel már futott, illetve kódból is sikerült felöltenem teszt adatokkal. Elkészítettem a repositorykat minden adat osztályhoz, valamit az ezekhez tartozó controllek függvényeit (alapvető lekérdezések) írtam. Valamiért viszont innen már nem jól kerülnek ki az adatok, lekérdezésnél semmit sem kapok vissza, csak azt, hogy pl az adott táblában hány darab felhasznló adata van.
+Swaggerel is sikerült összekapcsolnia projektet, ami szintén sok órányi debugolást igényelt, mert a UI-t nem akarta feliserni (500-as hibát dobott, internetes keresések alapján gyanítom, hogy a verziókkal lehett valami baj), így végül kódból konfiguráltam, így működik.
