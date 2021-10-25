@@ -58,3 +58,6 @@ Swaggerel is sikerült összekapcsolnia projektet, ami szintén sok órányi deb
 #### Zakariás Anna
 
 Elkészítettem az Android-os képernyőket, ami hasonlóan működik, mint a Flutter-es, csak nekem a bejelentkező oldal a kezdőképernyő, ami egyelőre még nem vár adatokat, és a login gombbal simán be lehet lépni, ekkor nekem is a Home képernyő jelenik meg, innen lehet a képernyő alján található négy gombbal elnavigálni a különböző menüopciókhoz.
+
+#### Valaska Nóra
+Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó komponenseket installáltam. Angular és Typescript használatával haladtam eddig.
