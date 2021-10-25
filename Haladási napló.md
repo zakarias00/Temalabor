@@ -54,3 +54,7 @@ Létrehoztam az alkalmazásunk Flutter projektjét. Elkészítettem a főbb olda
 
 Hosszas próbálkozás után sem sikerült összekapcsolnom a projektet SQL serverrel (ha külön felhasználót hoztam létre, és azzal próbálkoztam kapcsolódni nem ismerte fel, és Windows autentikációval sem tudtam csatlakozni). Ezért végül az adatbázist lecseréltem MongoDB-re, amivel már futott, illetve kódból is sikerült felöltenem teszt adatokkal. Elkészítettem a repositorykat minden adat osztályhoz, valamit az ezekhez tartozó controllek függvényeit (alapvető lekérdezések) írtam. Valamiért viszont innen már nem jól kerülnek ki az adatok, lekérdezésnél semmit sem kapok vissza, csak azt, hogy pl az adott táblában hány darab felhasznló adata van.
 Swaggerel is sikerült összekapcsolnia projektet, ami szintén sok órányi debugolást igényelt, mert a UI-t nem akarta feliserni (500-as hibát dobott, internetes keresések alapján gyanítom, hogy a verziókkal lehett valami baj), így végül kódból konfiguráltam, így működik.
+
+####Zakariás Anna
+
+Elkészítettem az Android-os képernyőket, ami hasonlóan működik, mint a Flutter-es, csak nekem a bejelentkező oldal a kezdőképernyő, ami egyelőre még nem vár adatokat, és a login gombbal simán be lehet lépni, ekkor nekem is a Home képernyő jelenik meg, innen lehet a képernyő alján található négy gombbal elnavigálni a különböző menüopciókhoz.
