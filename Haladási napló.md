@@ -66,4 +66,4 @@ Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó ko
 
 #### Orova Dorina
 A controllereket javítottam, mivel üres json-ket adatk vissza, mivel nem volt az osztályokban minden attribútumhoz publikus getter. Mostmár működik (: 
-Egyenlőre biszont az osztályok adatai nincsenek összekötve, az activityknál pl csak az userId-t adja vissza, nem a usert.
+Egyenlőre viszont az osztályok adatai nincsenek összekötve, az activityknál pl csak az userId-t adja vissza, nem a usert.
