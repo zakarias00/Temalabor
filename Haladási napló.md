@@ -64,5 +64,5 @@ Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó ko
 
 ## 8.hét
 
-### Orova Dorina
+#### Orova Dorina
 A controllereket javítottam, mivel üres json-ket adatk vissza, mivel nem volt az osztályokban minden attribútumhoz publikus getter. Mostmár működik (:
