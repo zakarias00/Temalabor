@@ -61,3 +61,8 @@ Elkészítettem az Android-os képernyőket, ami hasonlóan működik, mint a Fl
 
 #### Valaska Nóra
 Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó komponenseket installáltam. Angular és Typescript használatával haladtam eddig.
+
+##8.hét
+
+###Orova Dorina
+A controllereket javítottam, mivel üres json-ket adatk vissza, mivel nem volt az osztályokban minden attribútumhoz publikus getter. Mostmár működik (:
