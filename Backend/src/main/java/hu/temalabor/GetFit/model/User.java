@@ -45,4 +45,36 @@ public class User {
     public int GetId() {
         return  id;
     }
+
+    public String getUsername() {
+        return Username;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public int getPoints() {
+        return Points;
+    }
+
+    public int getLevel() {
+        return Level;
+    }
+
+    public Date getBirthdate() {
+        return Birthdate;
+    }
+
+    public boolean isGender() {
+        return Gender;
+    }
 }

@@ -37,4 +37,28 @@ public class Activity {
     public void SetUserId(){
         //UserId=user.GetId();
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getSportId() {
+        return SportId;
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public double getTime() {
+        return Time;
+    }
+
+    public java.util.Date getDate() {
+        return Date;
+    }
+
+    public double getKcal() {
+        return Kcal;
+    }
 }

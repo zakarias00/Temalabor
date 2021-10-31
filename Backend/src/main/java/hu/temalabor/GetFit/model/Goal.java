@@ -47,4 +47,16 @@ public class Goal {
     public int GetStatus(){
         return Status;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getUserId() {
+        return UserId;
+    }
+
+    public Date getDateStart() {
+        return DateStart;
+    }
 }

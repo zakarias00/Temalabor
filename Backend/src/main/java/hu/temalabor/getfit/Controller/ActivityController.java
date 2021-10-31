@@ -12,6 +12,7 @@ import java.util.Optional;
 @RequestMapping("/ActivityController")
 public class ActivityController {
 
+
     ActivityRepository activityRepository;
     public ActivityController(ActivityRepository activityRepository){
         this.activityRepository=activityRepository;
@@ -25,7 +26,7 @@ public class ActivityController {
 
     //Egy Activity kerese id alapjan
     @GetMapping("/{id}")
-    Optional<Activity> GetActivityById(@PathVariable(value = "id") int id){
+    public Optional<Activity> GetActivityById(@PathVariable(value = "id") int id){
         return activityRepository.findById(id);
     }
 
@@ -48,6 +49,5 @@ public class ActivityController {
             activityRepository.save(activity);
         }
     }
-
-
 }
+
