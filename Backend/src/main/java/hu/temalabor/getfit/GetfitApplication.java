@@ -6,11 +6,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class GetFitApplication {
+public class GetfitApplication {
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(GetFitApplication.class, args);
+		SpringApplication.run(GetfitApplication.class, args);
 		//saveSports();
 	}
 
