@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+hu/bme/aut/get_fit/BuildConfig.java
+ hu.bme.aut.get_fit.BuildConfig
