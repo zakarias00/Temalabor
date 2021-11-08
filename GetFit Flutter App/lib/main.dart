@@ -10,14 +10,14 @@ void main() {
   runApp(const ImperativeNavigationApp());
 }
 
-void getHttp() async {
+/*void getHttp() async {
   try {
     var response = await Dio().get('http://127.0.0.1:8080');
     print(response);
   } catch (e) {
     print(e);
   }
-}
+}*/
 
 
 class ImperativeNavigationApp extends StatelessWidget {
@@ -32,7 +32,7 @@ class ImperativeNavigationApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const MainPage(),
+      home: const LoginScreen(),
       routes: {
         "/loginpage": (context) => const LoginScreen(),
         "/registerpage": (context) => const RegisterScreen(),
@@ -43,7 +43,7 @@ class ImperativeNavigationApp extends StatelessWidget {
     );
   }
 }
-
+/*
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -95,7 +95,7 @@ class MainPage extends StatelessWidget {
             ElevatedButton(
               child: const Text("GET HTTP"),
               onPressed: () {
-                getHttp();
+                //getHttp();
               },
             ),
           ],
@@ -103,4 +103,4 @@ class MainPage extends StatelessWidget {
       ),
     );
   }
-}
+}*/

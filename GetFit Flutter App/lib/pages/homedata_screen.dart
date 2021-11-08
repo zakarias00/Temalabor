@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_fit/pages/register_screen.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeData extends StatelessWidget {
@@ -30,7 +31,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
-          Text("username", style: TextStyle(fontSize: 20)),
+          Text(user.username, style: TextStyle(fontSize: 20)),
           Text("level 1"),
 
            CircularPercentIndicator(
@@ -45,22 +46,22 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Text("Your current status: "),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children: <Widget>[
                 Text('Weight:',
                   textAlign: TextAlign.left,
                 ),
-              Text('60 kg', textAlign: TextAlign.left,)
+              Text(user.weight.toString() + " kg", textAlign: TextAlign.left,)
 
               ]
           ),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children:  <Widget>[
                 Text('Height:',
                   textAlign: TextAlign.left,
                 ),
-                Text('183 cm', textAlign: TextAlign.left,)
+                Text(user.height.toString() + " cm", textAlign: TextAlign.left,)
               ]
           ),
 

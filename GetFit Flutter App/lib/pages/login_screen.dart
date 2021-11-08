@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_fit/datas/person.dart';
+import 'package:get_fit/pages/homescreen.dart';
+
+
 
 class LoginScreen extends StatelessWidget{
 
@@ -11,11 +15,11 @@ class LoginScreen extends StatelessWidget{
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  <Widget> [
-              Text('Login',textAlign: TextAlign.center,style: TextStyle(fontSize: 30)),
+              Text('Login',textAlign: TextAlign.center,style: const TextStyle(fontSize: 30)),
 
               Row(
-                  children: const <Widget>[
-                    Text('E-mail',
+                  children: <Widget>[
+                    Text('E-mail ',
                       textAlign: TextAlign.left,
                     ),
                     Flexible(
@@ -29,8 +33,8 @@ class LoginScreen extends StatelessWidget{
                   ]
               ),
               Row(
-                  children: const <Widget>[
-                    Text("Password",
+                  children:  <Widget>[
+                    Text("Password ",
                       textAlign: TextAlign.left,
                     ),
                     Flexible(
@@ -45,19 +49,22 @@ class LoginScreen extends StatelessWidget{
               ),
               TextButton(
                 onPressed: (){
+                  Navigator.pushNamed(
+                    context,
+                    "/homepage",
+                  );
                 },
                 child: const Text("Login"),
               ),
               const Text('-Or-'),
               TextButton(onPressed: (){
+                Navigator.pushNamed(
+                  context,
+                  "/registerpage",
+                );
 
               }, child: Text('Register')),
-              ElevatedButton(
-                child: const Text("Back"),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
+
             ]
         ),
       )

@@ -1,5 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_fit/datas/person.dart';
+
+TextEditingController fullnamecontroller = TextEditingController();
+TextEditingController usernamecontroller = TextEditingController();
+TextEditingController emailcontroller = TextEditingController();
+TextEditingController passwordcontroller = TextEditingController();
+
+Person user = Person("","","","");
 
 class RegisterScreen extends StatelessWidget{
   const RegisterScreen({Key? key}) : super(key: key);
@@ -14,12 +22,13 @@ class RegisterScreen extends StatelessWidget{
             Text('Register',textAlign: TextAlign.center,style: TextStyle(fontSize: 30),),
 
             Row(
-                children: const <Widget>[
+                children: <Widget>[
                   Text('Full name',
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
                     child: TextField(
+                      controller: fullnamecontroller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Full name',
@@ -30,12 +39,13 @@ class RegisterScreen extends StatelessWidget{
             ),
 
             Row(
-                children: const <Widget>[
+                children:  <Widget>[
                   Text("Username",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
                     child: TextField(
+                      controller: usernamecontroller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Username',
@@ -45,12 +55,13 @@ class RegisterScreen extends StatelessWidget{
                 ]
             ),
             Row(
-                children: const <Widget>[
+                children:  <Widget>[
                   Text("E-mail",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
                     child: TextField(
+                      controller: emailcontroller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'E-mail',
@@ -60,12 +71,13 @@ class RegisterScreen extends StatelessWidget{
                 ]
             ),
             Row(
-                children: const <Widget>[
+                children: <Widget>[
                   Text("Password",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
                     child: TextField(
+                      controller: passwordcontroller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Password',
@@ -74,10 +86,18 @@ class RegisterScreen extends StatelessWidget{
                   )
                 ]
             ),
-            ElevatedButton(
-              child: const Text("Back"),
+            TextButton(
+              child: const Text("Submit"),
               onPressed: () {
-                Navigator.pop(context);
+                //user = Person(emailcontroller.text,passwordcontroller.text,usernamecontroller.text,fullnamecontroller.text);
+                user.email = emailcontroller.text;
+                user.password = passwordcontroller.text ;
+                user.fullname = fullnamecontroller.text;
+                user.username = usernamecontroller.text;
+                Navigator.pushNamed(
+                  context,
+                  "/personaldatapage",
+                );
               },
             ),
           ],
