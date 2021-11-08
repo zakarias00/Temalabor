@@ -67,3 +67,8 @@ Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó ko
 #### Orova Dorina
 A controllereket javítottam, mivel üres json-ket adatk vissza, mivel nem volt az osztályokban minden attribútumhoz publikus getter. Mostmár működik (: 
 Egyenlőre viszont az osztályok adatai nincsenek összekötve, az activityknál pl csak az userId-t adja vissza, nem a usert.
+
+## 9.hét
+#### Sipos Noémi
+A felhasználói felületet szépítgettem, a navigációkat létrehoztam a képernyők között. Beleírtam a kódba, hogy hol milyen adatot kell majd a backendről lekérni. Egyenlőre tesztadatokat használok a megjelenítésekhez.
+Néhány helyen elkezdtem írni a validációkat.
