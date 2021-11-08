@@ -8,7 +8,7 @@ import java.util.Date;
 @Document("User")
 public class User {
     @Id
-    private int id;                 //azonosito
+    private int _id;                 //azonosito
     private String Username;        //felhasznalonev
     private String Name;            //nev
     private String Email;           //emailcim
@@ -22,7 +22,7 @@ public class User {
 
     public User(int id, String Username, String Name, String Email, String Password) {
         super();
-        this.id = id;
+        this._id = id;
         this.Username = Username;
         this.Name = Name;
         this.Email = Email;
@@ -31,10 +31,10 @@ public class User {
         Level = 0;
     }
 
-    public double GetWeight() {
+    public double getWeight() {
         return Weight;
     }
-    public double GetHeight() {
+    public double getHeight() {
         return Height;
     }
 
@@ -42,8 +42,8 @@ public class User {
         return Height/Weight;
     }
 
-    public int GetId() {
-        return  id;
+    public int get_id() {
+        return _id;
     }
 
     public String getUsername() {
@@ -74,7 +74,51 @@ public class User {
         return Birthdate;
     }
 
-    public boolean isGender() {
+    public boolean getGender() {
         return Gender;
+    }
+
+    public void setPoints(int points) {
+        Points = points;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        Birthdate = birthdate;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public void setHeight(int height) {
+        Height = height;
+    }
+
+    public void setGender(boolean gender) {
+        Gender = gender;
+    }
+
+    public void setLevel(int level) {
+        Level = level;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
+
+    public void setWeight(int weight) {
+        Weight = weight;
     }
 }

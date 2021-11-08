@@ -10,8 +10,12 @@ public class GetfitApplication {
 
 
 	public static void main(String[] args) {
+<<<<<<< Updated upstream
 		SpringApplication.run(GetfitApplication.class, args);
 		//saveSports();
+=======
+		SpringApplication.run(GetFitApplication.class, args);
+>>>>>>> Stashed changes
 	}
 
 //	static void saveSports(){

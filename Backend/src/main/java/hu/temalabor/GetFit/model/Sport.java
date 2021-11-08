@@ -7,53 +7,39 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Sport {
 
     @Id
-    private int id;
+    private int _id;
     private  String Type;
     private double Kcal;            //sport altal elegetheto kaloriak (1kg, 1 percre)
 
     public Sport(int id, String Type, double Kcal){
         super();
-        this.id=id;
+        this._id =id;
         this.Type =Type;
         this.Kcal=Kcal;
 
     }
 
-    public  String GetType(){
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public void setKcal(double kcal) {
+        Kcal = kcal;
+    }
+
+    public void setType(String type) {
+        Type = type;
+    }
+
+    public  String getType(){
         return Type;
     }
 
-    public void SetKcal(){
-        switch (Type){
-            case "Futas":
-                Kcal=0.207;
-                break;
-            case "Kocogas":
-                Kcal=0.169;
-                break;
-            case "Seta":
-                Kcal=0.118;
-                break;
-            case "Bicikli":
-                Kcal=0.109;
-                break;
-            case "Aerobik": case "Evezés": case "Kosarlabda": case "Tenisz": case "Uszas":
-                Kcal=0.091;
-                break;
-            case "Joga": case "Lovaglas":
-                Kcal=0.054;
-                break;
-            default:
-                Kcal=0;
-                break;
-        }
-    }
-
-    public double GetKcal() {
+   public double getKcal() {
         return Kcal;
     }
 
-    public int GetId(){
-        return id;
+    public int get_id(){
+        return _id;
     }
 }
