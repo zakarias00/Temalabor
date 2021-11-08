@@ -9,6 +9,7 @@ TextEditingController passwordcontroller = TextEditingController();
 
 Person user = Person("","","","");
 
+// TODO letrehozni uj felhasznalot elmenteni az adatait, hibauzenet kuldese ha nem jo formatumba adott meg valamit
 class RegisterScreen extends StatelessWidget{
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -77,6 +78,7 @@ class RegisterScreen extends StatelessWidget{
                   ),
                   Flexible(
                     child: TextField(
+                      obscureText: true,
                       controller: passwordcontroller,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),

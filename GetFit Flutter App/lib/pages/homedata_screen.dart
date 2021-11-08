@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get_fit/pages/register_screen.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+
+// TODO felhasznalo adatai lekerdezese
+
 class HomeData extends StatelessWidget {
   const HomeData({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: MyStatefulWidget(),
     );
   }
@@ -32,43 +35,46 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
           Text(user.username, style: TextStyle(fontSize: 20)),
-          Text("level 1"),
+          //TODO felhasznalo szintje
+          const Text("level 1"),
 
            CircularPercentIndicator(
             radius: 120.0,
             lineWidth: 5.0,
             percent: 1.0,
+            // TODO felhasznalo szintlepesnel hany szazaleknal tart
             center: Text("100%"),
             progressColor: Colors.blueAccent,
           ),
-
-          Text("Keep going, you are almost there!",style:  TextStyle(fontSize: 30)),
-        Text("Your current status: "),
+        //TODO szazalek alapjan uzenet
+          Text("Keep going, you are almost there!",style:  const TextStyle(fontSize: 30)),
+        const Text("Your current status: "),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Text('Weight:',
+                const Text('Weight:',
                   textAlign: TextAlign.left,
                 ),
               Text(user.weight.toString() + " kg", textAlign: TextAlign.left,)
 
               ]
           ),
-
+        //TODO SET weight, elkuldeni az uj adatokat
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:  <Widget>[
-                Text('Height:',
+                const Text('Height:',
                   textAlign: TextAlign.left,
                 ),
                 Text(user.height.toString() + " cm", textAlign: TextAlign.left,)
               ]
           ),
-
+      //TODO SET height elkuldeni az uj adatokat
 
         ElevatedButton(
          child: const Text("Log out"),
              onPressed: () {
+           // TODO visszalepni a Login kepernyohoz es kilepni
              },
 
         ),

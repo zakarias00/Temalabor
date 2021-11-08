@@ -62,6 +62,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   ),
                 );
               }, child: Text("Search"),
+              // TODO sportok alapjan kereses
+              // TODO listazas: sport,datum,ido,tavolsag,kaloria
             ),
             Expanded(
               child: ListView.builder(
@@ -75,6 +77,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           CupertinoButton(
           onPressed: () {
+            //TODO activityk lekerdezese, ha rakattintunk beirhatjuk az elvegzett km-t es a vele toltott idot, ebbol kaloria szamitasa
+            // TODO egyeb eseten megadhatjuk a kaloriat is
             showCupertinoModalPopup<void>(
               context: context,
               builder: (BuildContext context) => CupertinoActionSheet(

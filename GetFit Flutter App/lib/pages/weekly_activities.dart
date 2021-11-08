@@ -6,7 +6,7 @@ class Activities extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: MyStatefulWidget(),
     );
   }
@@ -32,6 +32,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         children: <Widget> [
           Text("Weekly activities", style: TextStyle(fontSize: 20)),
           Text("Your goal:"),
+          // TODO elosztani a teljesitett celt az egesz cellal, kiiratni
           LinearPercentIndicator(
             width: 420,
             lineHeight: 17.0,
@@ -42,6 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
           Text(" 3/4 active days completed"),
 
+          //TODO Felugro ablak, cel valtoztatasa, majd elkuldes
           ElevatedButton(
             child: const Text("Change goal"),
             onPressed: () {
@@ -55,7 +57,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   textAlign: TextAlign.left,
                 ),
                 Text('20 kilometers', textAlign: TextAlign.left,)
-
+              //TODO lefutott km-ek szama megjelenites
               ]
           ),
 
@@ -66,6 +68,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   textAlign: TextAlign.left,
                 ),
                 Text('3 hours', textAlign: TextAlign.left,)
+                // TODO aktiv orak szama megjelenites
               ]
           ),
         ],

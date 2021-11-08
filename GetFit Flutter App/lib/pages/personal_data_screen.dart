@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_fit/pages/register_screen.dart';
 
-
+// TODO letrehozott felhasznalohoz hozzaadni ezeket az adatokat, hibauzenet ha nem jo formatumu adat
 TextEditingController gendercontroller = TextEditingController();
 TextEditingController datecontroller = TextEditingController();
 TextEditingController heightcontroller = TextEditingController();
@@ -21,42 +21,35 @@ class PersonalDataScreen extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget> [
             Text('Enter your personal datas',textAlign: TextAlign.center, style: TextStyle( fontSize:  30),),
-            Row(
-                children:  <Widget>[
-                  Text('Gender:',
-                    textAlign: TextAlign.left,
-                  ),
-                  Flexible(
-                    child: CupertinoButton(
-                      onPressed: () {
-                              showCupertinoModalPopup<void>(
-                              context: context,
-                              builder: (BuildContext context) => CupertinoActionSheet(
-                                        title: const Text('Gender'),
-                                        actions: <CupertinoActionSheetAction>[
-                                        CupertinoActionSheetAction(
-                                              child: const Text('Woman'),
-                                              onPressed: () {
-                                              Navigator.pop(context);
-                                              user.gender = "Woman";
-                                              },
-                                              ),
-                                        CupertinoActionSheetAction(
-                                              child: const Text('Man'),
-                                              onPressed: () {
-                                              Navigator.pop(context);
-                                              user.gender = "Man";
-                                    },
-                                    )
-                                    ],
-                                    ),
-                          );
-                            },
-                      child: const Text('Choose Gender'),
-                    ),
-                  ),
-                ]
-                    ),
+            Flexible(
+              child: CupertinoButton(
+                onPressed: () {
+                        showCupertinoModalPopup<void>(
+                        context: context,
+                        builder: (BuildContext context) => CupertinoActionSheet(
+                                  title: const Text('Gender'),
+                                  actions: <CupertinoActionSheetAction>[
+                                  CupertinoActionSheetAction(
+                                        child: const Text('Woman'),
+                                        onPressed: () {
+                                        Navigator.pop(context);
+                                        user.gender = "Woman";
+                                        },
+                                        ),
+                                  CupertinoActionSheetAction(
+                                        child: const Text('Man'),
+                                        onPressed: () {
+                                        Navigator.pop(context);
+                                        user.gender = "Man";
+                              },
+                              )
+                              ],
+                              ),
+                    );
+                      },
+                child: const Text('Choose Gender'),
+              ),
+            ),
             Row(
                 children:  <Widget>[
                   Text('Birth date:',

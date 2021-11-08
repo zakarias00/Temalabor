@@ -36,6 +36,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           border: OutlineInputBorder(),
           labelText: 'Search',
           icon: Icon(Icons.search)
+            //TODO kereses nev alapjan
       ),),
         Expanded(
           child: ListView.builder(
@@ -47,6 +48,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           },
       ),
         ),
+            //TODO visszajott adatok megjelenitese pontok alapjan
   ]
     ),
     );

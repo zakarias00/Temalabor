@@ -4,6 +4,10 @@ import 'package:get_fit/datas/person.dart';
 import 'package:get_fit/pages/homescreen.dart';
 
 
+// TODO le kell kerdezni az osszes felhasznalo jelszo es email parosat es megnezni hogy valid-e, hibauzenet ha nem jo
+
+
+TextEditingController passwordcontroller = TextEditingController();
 
 class LoginScreen extends StatelessWidget{
 
@@ -15,10 +19,10 @@ class LoginScreen extends StatelessWidget{
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  <Widget> [
-              Text('Login',textAlign: TextAlign.center,style: const TextStyle(fontSize: 30)),
+              const Text('Login',textAlign: TextAlign.center,style: TextStyle(fontSize: 30)),
 
               Row(
-                  children: <Widget>[
+                  children: const <Widget>[
                     Text('E-mail ',
                       textAlign: TextAlign.left,
                     ),
@@ -39,9 +43,12 @@ class LoginScreen extends StatelessWidget{
                     ),
                     Flexible(
                       child: TextField(
+                        obscureText: true,
+                        controller: passwordcontroller,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Password',
+
                         ),
                       ),
                     )
@@ -49,26 +56,42 @@ class LoginScreen extends StatelessWidget{
               ),
               TextButton(
                 onPressed: (){
-                  Navigator.pushNamed(
-                    context,
-                    "/homepage",
-                  );
+                  if( validatePassword(passwordcontroller.text)){
+                    Navigator.pushNamed(
+                      context,
+                      "/homepage",
+                    );
+                  }
+                  else{
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Try again')),
+                    );
+                  }
                 },
                 child: const Text("Login"),
               ),
               const Text('-Or-'),
               TextButton(onPressed: (){
-                Navigator.pushNamed(
-                  context,
-                  "/registerpage",
-                );
 
-              }, child: Text('Register')),
+                  Navigator.pushNamed(
+                    context,
+                    "/registerpage");
+
+
+              }, child: const Text('Register')),
 
             ]
         ),
       )
     );
+  }
+
+  bool validatePassword(String value) {
+    //TODO felhasznalo jelszo paros megfelelo-e
+    if (!(value.length > 5) && value.isNotEmpty) {
+      return true;
+    }
+    return false;
   }
 
 }
