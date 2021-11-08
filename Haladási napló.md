@@ -75,3 +75,6 @@ Néhány helyen elkezdtem írni a validációkat. Létrehoztam az osztályokat, 
 
 #### Valaska Nóra
 A különböző screenek html részét csináltam meg, CSS-el elkezdtem foglalkozni, hogy a weboldal majd a korábban elkészített tervekhez hasonlítson. A szűrők és filterek még nem működnek, illetve a "leaderboard" és "recent activities" táblázatoknál csak mintaadatok vannak.
+
+#### Orova Dorina
+Különböző, specifikáltabb hívásokhoz készítettem endpointokat (pl.: névrészlet alapján keresés, egy heti activiyk listázása). Kijavítottam az új adatok felvételének működését, mivel nem működtek jól, nem lehetett a megfelelő attribútumokat megadni.  Hostolási lehetőségekről oovastam, de még nem jutottunk előbbre e kapcsán a többiekkel. Még az id-k automatikus számozására keresek megoldást.
