@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/datas/person.dart';
+import 'package:get_fit/datas/testperson.dart';
 import 'package:get_fit/pages/homescreen.dart';
 
 
@@ -21,6 +21,7 @@ class LoginScreen extends StatelessWidget{
             children:  <Widget> [
               const Text('Login',textAlign: TextAlign.center,style: TextStyle(fontSize: 30)),
 
+              const SizedBox(height: 50),
               Row(
                   children: const <Widget>[
                     Text('E-mail ',
@@ -68,7 +69,7 @@ class LoginScreen extends StatelessWidget{
                     );
                   }
                 },
-                child: const Text("Login"),
+                child: const Text("Login", style: TextStyle(fontSize:  20)),
               ),
               const Text('-Or-'),
               TextButton(onPressed: (){
@@ -78,7 +79,7 @@ class LoginScreen extends StatelessWidget{
                     "/registerpage");
 
 
-              }, child: const Text('Register')),
+              }, child: const Text('Register', style: TextStyle(fontSize:  20))),
 
             ]
         ),

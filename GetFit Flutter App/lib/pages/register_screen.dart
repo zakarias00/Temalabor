@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/datas/person.dart';
+import 'package:get_fit/datas/testperson.dart';
 
 TextEditingController fullnamecontroller = TextEditingController();
 TextEditingController usernamecontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
 
-Person user = Person("","","","");
+testPerson user = testPerson("","","","");
 
 // TODO letrehozni uj felhasznalot elmenteni az adatait, hibauzenet kuldese ha nem jo formatumba adott meg valamit
+// TODO elkuldeni az uj adatokat
 class RegisterScreen extends StatelessWidget{
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -22,9 +23,10 @@ class RegisterScreen extends StatelessWidget{
           children: <Widget> [
             Text('Register',textAlign: TextAlign.center,style: TextStyle(fontSize: 30),),
 
+            const SizedBox(height: 50),
             Row(
                 children: <Widget>[
-                  Text('Full name',
+                  Text('Full name ',
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
@@ -41,7 +43,7 @@ class RegisterScreen extends StatelessWidget{
 
             Row(
                 children:  <Widget>[
-                  Text("Username",
+                  Text("Username ",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
@@ -57,7 +59,7 @@ class RegisterScreen extends StatelessWidget{
             ),
             Row(
                 children:  <Widget>[
-                  Text("E-mail",
+                  Text("E-mail ",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(
@@ -73,7 +75,7 @@ class RegisterScreen extends StatelessWidget{
             ),
             Row(
                 children: <Widget>[
-                  Text("Password",
+                  Text("Password ",
                     textAlign: TextAlign.left,
                   ),
                   Flexible(

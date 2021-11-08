@@ -55,8 +55,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 const Text('Weight:',
                   textAlign: TextAlign.left,
                 ),
-              Text(user.weight.toString() + " kg", textAlign: TextAlign.left,)
+              Text(user.weight.toString() + " kg", textAlign: TextAlign.left,),
+                TextButton(
+                    child: const Text("SET"),
+                    onPressed: (){
 
+                    },
+                )
               ]
           ),
         //TODO SET weight, elkuldeni az uj adatokat
@@ -66,7 +71,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 const Text('Height:',
                   textAlign: TextAlign.left,
                 ),
-                Text(user.height.toString() + " cm", textAlign: TextAlign.left,)
+                Text(user.height.toString() + " cm", textAlign: TextAlign.left,),
+                TextButton(
+                  child: const Text("SET"),
+                  onPressed: (){
+
+                  },
+                )
               ]
           ),
       //TODO SET height elkuldeni az uj adatokat
