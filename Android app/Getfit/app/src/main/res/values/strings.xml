@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Getfit</string>
+    <string name="login">Login</string>
+    <string name="e_mail">E-mail:</string>
+    <string name="password">Password:</string>
+    <string name="sing_up">Sing up</string>
+    <string name="or">-OR-</string>
+    <string name="registration">Registration</string>
+    <string name="username">Username</string>
+    <string name="name">Name:</string>
+    <string name="personal_data">Please enter your personal data below!</string>
+    <string name="birth_date">Birth date:</string>
+    <string name="weight">Weight:</string>
+    <string name="height">Height:</string>
+    <string name="leader_board">Leader Board</string>
+    <string name="sport">Sport</string>
+    <string name="points">points</string>
+    <string name="your_current_status">Your current status:</string>
+    <string name="level">Level</string>
+    <string name="weekly_activities">Weekly activities</string>
+    <string name="active_days">Active days</string>
+    <string name="covered_distance">Covered distance</string>
+    <string name="your_weekly_goal">Your weekly goal</string>
+    <string name="active_days_completed">active days completed</string>
+    <string name="change_goal">Change goal</string>
+    <string name="other_statistics_about_your_week">Other statistics about your week</string>
+    <string name="the_length_of_the_activity_in_kilometers">The length of the activity in kilometers:</string>
+    <string name="please_enter_the_details_of_your_activity">Please enter the details of your activity!</string>
+    <string name="the_duration_of_the_activity">The duration of the activity:</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="weekly_goals">Weekly goals</string>
+    <string name="hours_of_sport_activities">Hours of sport activities</string>
+    <string name="distance_of_running">Distance of running</string>
+</resources>
