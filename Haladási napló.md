@@ -72,3 +72,6 @@ Egyenlőre viszont az osztályok adatai nincsenek összekötve, az activityknál
 #### Sipos Noémi
 A felhasználói felületet szépítgettem, a navigációkat létrehoztam a képernyők között. Beleírtam a kódba, hogy hol milyen adatot kell majd a backendről lekérni. Egyenlőre tesztadatokat használok a megjelenítésekhez.
 Néhány helyen elkezdtem írni a validációkat.
+
+#### Valaska Nóra
+A különböző screenek html részét csináltam meg, CSS-el elkezdtem foglalkozni, hogy a weboldal majd a korábban elkészített tervekhez hasonlítson. A szűrők és filterek még nem működnek, illetve a "leaderboard" és "recent activities" táblázatoknál csak mintaadatok vannak.
