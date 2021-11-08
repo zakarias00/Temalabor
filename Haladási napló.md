@@ -67,3 +67,18 @@ Elkezdtem a webes képernyők elkészítését, ehhez különböző hiányzó ko
 #### Orova Dorina
 A controllereket javítottam, mivel üres json-ket adatk vissza, mivel nem volt az osztályokban minden attribútumhoz publikus getter. Mostmár működik (: 
 Egyenlőre viszont az osztályok adatai nincsenek összekötve, az activityknál pl csak az userId-t adja vissza, nem a usert.
+
+## 9.hét
+#### Sipos Noémi
+A felhasználói felületet szépítgettem, a navigációkat létrehoztam a képernyők között. Beleírtam a kódba, hogy hol milyen adatot kell majd a backendről lekérni. Egyenlőre tesztadatokat használok a megjelenítésekhez.
+Néhány helyen elkezdtem írni a validációkat. Létrehoztam az osztályokat, melyekben az adatok lesznek. Ezenkívül létrehoztam a datepicker widgetet.
+
+#### Valaska Nóra
+A különböző screenek html részét csináltam meg, CSS-el elkezdtem foglalkozni, hogy a weboldal majd a korábban elkészített tervekhez hasonlítson. A szűrők és filterek még nem működnek, illetve a "leaderboard" és "recent activities" táblázatoknál csak mintaadatok vannak.
+
+#### Orova Dorina
+Különböző, specifikáltabb hívásokhoz készítettem endpointokat (pl.: névrészlet alapján keresés, egy heti activiyk listázása). Kijavítottam az új adatok felvételének működését, mivel nem működtek jól, nem lehetett a megfelelő attribútumokat megadni.  Hostolási lehetőségekről olvastam, de még nem jutottunk előbbre e kapcsán a többiekkel. Még az id-k automatikus számozására keresek megoldást.
+
+#### Zakariás Anna
+A felhasználói felületet írtam át, az eddigi Activity-k nagyrészét átírtam Fragment-re, hogy lehessen az egyes nézetek között NavigationBar-ral váltani. Létrehoztam egy Retrofit api-t, de még nem tudtam kiprobálni, hogy tényleges működik-e a backend szerverrel.
+

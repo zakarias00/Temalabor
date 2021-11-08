@@ -5,6 +5,7 @@ import hu.temalabor.GetFit.model.User;
 import hu.temalabor.GetFit.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,18 @@ public class UserController {
     @GetMapping("/{id}")
     Optional<User> GetUserById(@PathVariable(value = "id") int id){
         return userRepository.findById(id);
+    }
+
+    @GetMapping("/name={name}")
+    List<User> GetUserByName(@PathVariable(value="name") String name){
+        List<User> users= userRepository.findAll();
+        List<User> usersByName = new ArrayList<>();
+        for(User u: users){
+          if(u.getUsername().contains(name)){
+              usersByName.add(u);
+          }
+        }
+        return usersByName;
     }
 
     @DeleteMapping("/{id}")
