@@ -82,3 +82,7 @@ Különböző, specifikáltabb hívásokhoz készítettem endpointokat (pl.: né
 #### Zakariás Anna
 A felhasználói felületet írtam át, az eddigi Activity-k nagyrészét átírtam Fragment-re, hogy lehessen az egyes nézetek között NavigationBar-ral váltani. Létrehoztam egy Retrofit api-t, de még nem tudtam kiprobálni, hogy tényleges működik-e a backend szerverrel.
 
+##10.hét
+#### Sipos Noémi
+Sikerült összekötni az alkalmazást a backenddel. Megírtam az osztályokhoz a JSON konverziókhoz tartozó függvényeket. Megírtam az osztályok adapterosztályait, ahol a GET és a POST kéréseket feldolgozom. A login képernyő müködik már, csak az adatbázisban lévő felhasználók tudnak belépni, megfelelő jelszó név-párossal.
+
