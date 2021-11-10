@@ -10,14 +10,7 @@ void main() {
   runApp(const ImperativeNavigationApp());
 }
 
-/*void getHttp() async {
-  try {
-    var response = await Dio().get('http://127.0.0.1:8080');
-    print(response);
-  } catch (e) {
-    print(e);
-  }
-}*/
+
 
 
 class ImperativeNavigationApp extends StatelessWidget {
