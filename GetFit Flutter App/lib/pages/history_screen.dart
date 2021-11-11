@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../main.dart';
+import 'login_screen.dart';
 
 class History extends StatelessWidget {
   const History({Key? key}) : super(key: key);
@@ -67,10 +69,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: items.length,
+                itemCount: activities.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text(items[index]),
+                      title: Text(getSportType(activities[index].SportId)),
+                      subtitle: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(activities[index].Time.toString() + "sec "),
+                          Text(activities[index].Kcal.toString() + "kcal "),
+
+                        ],
+                      )
                   );
                 },
               ),
@@ -108,4 +118,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 
+
+String getSportType(int i){
+  late String type;
+  sports.forEach((element)  {
+    if ( element.Id == i) {
+      type = element.Type;
+    }
+
+  });
+  return type;
+}
 

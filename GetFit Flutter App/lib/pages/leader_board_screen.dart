@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'login_screen.dart';
 
 class LeaderBoard extends StatelessWidget {
   const LeaderBoard({Key? key}) : super(key: key);
@@ -25,6 +26,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final items = List<String>.generate(100, (i) => "Item $i");
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +42,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),),
         Expanded(
           child: ListView.builder(
-          itemCount: items.length,
+          itemCount: users.length,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(items[index]),
+              title: Text(users[index].Name),
+              subtitle: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(users[index].Level.toString() + "lvl"),
+                  Text(users[index].Points.toString()+ "points")
+                ],
+              )
             );
           },
       ),

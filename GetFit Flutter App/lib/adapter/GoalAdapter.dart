@@ -14,9 +14,9 @@ Future<List<Goal>> getGoals() async{
   var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/');
   var responseBody = response.data;
   Iterable l = responseBody;
-  List<Goal> sports = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+  List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
 
-  return sports;
+  return goals;
 }
 
 /*

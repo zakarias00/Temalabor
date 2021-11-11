@@ -1,26 +1,23 @@
-import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/adapter/GoalAdapter.dart';
 import 'package:get_fit/adapter/SportAdapter.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
 import 'package:get_fit/datas/Activity.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/datas/Goal.dart';
 import 'package:get_fit/datas/Sport.dart';
 import 'package:get_fit/datas/User.dart';
-import 'package:get_fit/datas/testperson.dart';
-import 'package:get_fit/pages/homescreen.dart';
 
+import '../main.dart';
 
-// TODO le kell kerdezni az osszes felhasznalo jelszo es email parosat es megnezni hogy valid-e, hibauzenet ha nem jo
-
-
+late List<User> users;
+late List<Activity> activities;
+late List<Goal> goals;
+late List<Sport> sports;
 TextEditingController passwordcontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
-
 
 class LoginScreen extends StatelessWidget {
 
@@ -75,6 +72,13 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () async {
                     bool valid = await validateLogin();
                     if (valid  == true) {
+                      user = await validatedUser();
+                      users = await getUsers();
+                      activities = await getActivities();
+                      sports = await getSports();
+                      goals = await getGoals();
+
+                      print(user.Username);
                       Navigator.pushNamed(
                         context,
                         "/homepage",
@@ -106,15 +110,31 @@ class LoginScreen extends StatelessWidget {
   Future<bool> validateLogin() async {
     List<User> users = await getUsers();
     bool find = false;
-    users.forEach((element) {
+    users.forEach((element) async {
       if (element.Email == emailcontroller.text
           && element.Password == passwordcontroller.text) {
         find = true;
+        user =  await getUserById(element.Id);
       }
     });
+
+
     if (find == true) {
       return true;
     }
     return false;
+  }
+
+
+  Future<User> validatedUser() async {
+    List<User> users = await getUsers();
+    users.forEach((element) async {
+      if (element.Email == emailcontroller.text
+          && element.Password == passwordcontroller.text) {
+        user =  await getUserById(element.Id);
+      }
+    });
+
+    return user;
   }
 }
