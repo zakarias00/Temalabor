@@ -86,3 +86,5 @@ A felhasználói felületet írtam át, az eddigi Activity-k nagyrészét átír
 #### Sipos Noémi
 Sikerült összekötni az alkalmazást a backenddel. Megírtam az osztályokhoz a JSON konverziókhoz tartozó függvényeket. Megírtam az osztályok adapterosztályait, ahol a GET és a POST kéréseket feldolgozom. A login képernyő müködik már, csak az adatbázisban lévő felhasználók tudnak belépni, megfelelő jelszó név-párossal.
 
+#### Orova Dorina
+A backendet és a hozzá tartozó mongodb adatbázist is feltettem azure-ba, így már a töbiekkel alkalmazásával együtt működik. Nagyrészt Noémi kérései szerint írtam lekérdezéseket, ami pl userId alapján adják vissza a goalokat és activityket. A programot átraktam egy másik publikus repoba, amit a README-ben linkeltem.
