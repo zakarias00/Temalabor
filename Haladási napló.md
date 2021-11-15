@@ -84,8 +84,11 @@ A felhasználói felületet írtam át, az eddigi Activity-k nagyrészét átír
 
 ## 10.hét
 #### Sipos Noémi
-Sikerült összekötni az alkalmazást a backenddel. Megírtam az osztályokhoz a JSON konverziókhoz tartozó függvényeket. Megírtam az osztályok adapterosztályait, ahol a GET és a POST kéréseket feldolgozom. A login képernyő müködik már, csak az adatbázisban lévő felhasználók tudnak belépni, megfelelő jelszó név-párossal. Miután beléptek láthatóak a homescreenen az adataik, az acitviyknél az adataik és a history is. A leaderboardban megjelenik az összes regisztrált felhasználó.
-Ha a felhasználó nem log-inel, be is tud regisztrálni egy új felhasználó.
+Sikerült összekötni az alkalmazást a backenddel. Megírtam az osztályokhoz a JSON konverziókhoz tartozó függvényeket. Megírtam az osztályok adapterosztályait, ahol a GET és a POST kéréseket feldolgozom. A login képernyő müködik már, csak az adatbázisban lévő felhasználók tudnak belépni, megfelelő jelszó név-párossal.
 
 #### Orova Dorina
 A backendet és a hozzá tartozó mongodb adatbázist is feltettem azure-ba, így már a töbiekkel alkalmazásával együtt működik. Nagyrészt Noémi kérései szerint írtam lekérdezéseket, ami pl userId alapján adják vissza a goalokat és activityket. A programot átraktam egy másik publikus repoba, amit a README-ben linkeltem.
+
+#### Valaska Nóra
+Megoldottam azt a problémát, hogy az app.component.html-ben nem érzékelte a többi létrehozott komponenst. Először módosítva se működött, aztán a hibaüzenetet a cmd-ből ki akartam másolni és hirtelen megjavult.
+Létrehoztam a backendnek megfelelően különböző service-eket a usernek, sportnak, activitynek és goalnak. A userhez megírtam typescriptben a függvényeket a backendhez igazodva. Egy sima felhasználónevek kilistázásával próbálkoztam először, hogy teszteljem, jól működik a backend és frontend kapcsolata, de egyenlőre hibaüzenetet dob. (Access to XMLHttpRequest at 'https://getfit-application.azurewebsites.net/UserController' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.)
