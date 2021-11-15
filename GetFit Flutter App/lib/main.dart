@@ -5,13 +5,19 @@ import 'package:get_fit/pages/personal_data_screen.dart';
 import 'package:get_fit/pages/register_screen.dart';
 import 'package:dio/dio.dart';
 
+import 'datas/Activity.dart';
+import 'datas/Goal.dart';
+import 'datas/Sport.dart';
 import 'datas/User.dart';
 
 
 void main() {
   runApp(const ImperativeNavigationApp());
 }
-
+late List<User> users;
+late List<Activity> activities = [];
+late List<Goal> goals = [];
+late List<Sport> sports;
 User user = User( 0, "", "", "", "", 0, 0, "",0, 0, false);
 
 class ImperativeNavigationApp extends StatelessWidget {

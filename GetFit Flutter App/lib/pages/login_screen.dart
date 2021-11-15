@@ -12,10 +12,7 @@ import 'package:get_fit/datas/User.dart';
 
 import '../main.dart';
 
-late List<User> users;
-late List<Activity> activities;
-late List<Goal> goals;
-late List<Sport> sports;
+
 TextEditingController passwordcontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
 
@@ -74,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                     if (valid  == true) {
                       user = await validatedUser();
                       users = await getUsers();
-                    activities = await getActivityByUserId(user.Id);
+                     activities = await getActivityByUserId(user.Id);
                       sports = await getSports();
                      goals = await getGoalByUserId(user.Id);
 

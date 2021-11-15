@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import '../main.dart';
 import 'login_screen.dart';
 
 class LeaderBoard extends StatelessWidget {

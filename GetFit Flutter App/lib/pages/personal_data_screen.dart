@@ -4,7 +4,12 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_fit/adapter/ActivityAdapter.dart';
+import 'package:get_fit/adapter/GoalAdapter.dart';
+import 'package:get_fit/adapter/SportAdapter.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
+import 'package:get_fit/datas/Activity.dart';
+import 'package:get_fit/datas/Goal.dart';
 import 'package:get_fit/pages/register_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 
@@ -109,15 +114,24 @@ class PersonalDataScreen extends StatelessWidget{
                 ]
             ),
             TextButton(
-              onPressed: (){
+              onPressed: () async {
                 user.Birthdate = datecontroller.text;
                 user.Height = double.parse(heightcontroller.text);
                 user.Weight = double.parse(weightcontroller.text);
                 Random random = new Random();
                 int randomNumber = random.nextInt(100);
                 user.Id = randomNumber;
-                //print(user.Birthdate);
                 newUser(user);
+
+                users = await getUsers();
+                //activities.add(Activity(0,0,0,0,"",0));
+                activities = await getActivityByUserId(user.Id);
+                sports = await getSports();
+                //goals.add(Goal(0,0,0,"",0,0,0));
+                goals = await getGoalByUserId(user.Id);
+
+                //print(user.Birthdate);
+
                 Navigator.pushNamed(
                   context,
                   "/homepage",

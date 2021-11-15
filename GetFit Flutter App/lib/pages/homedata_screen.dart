@@ -44,9 +44,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             radius: 120.0,
             lineWidth: 5.0,
             animation: true,
-            percent: (goals[0].CurrentAmount/goals[0].Amount),
+            percent: (percentIsNull()),
             // TODO felhasznalo szintlepesnel hany szazaleknal tart
-            center: Text((goals[0].CurrentAmount/goals[0].Amount).toInt().toString()+ "%"),
+            center: Text(checkisNull()+ " %"),
             progressColor: Colors.blueAccent,
           ),
         //TODO szazalek alapjan uzenet
@@ -96,4 +96,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),
     );
   }
+}
+
+String checkisNull(){
+  if( goals.length == 0){
+    return "0";
+  }
+  return (goals[0].CurrentAmount/goals[0].Amount).toInt().toString();
+}
+
+double percentIsNull(){
+  if(goals.length == 0)
+    return 0;
+  return goals[0].CurrentAmount/goals[0].Amount;
 }

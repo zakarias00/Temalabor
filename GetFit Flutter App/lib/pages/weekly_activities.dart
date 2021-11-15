@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get_fit/datas/Activity.dart';
+import 'package:get_fit/pages/homedata_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+import '../main.dart';
 import 'login_screen.dart';
 
 
@@ -46,12 +48,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           LinearPercentIndicator(
             width: 400,
             lineHeight: 17.0,
-            percent: (goals[0].CurrentAmount/goals[0].Amount),
+            percent: (percentIsNull()),
             backgroundColor: Colors.grey,
             progressColor: Colors.blue,
-            center: Text((goals[0].CurrentAmount/goals[0].Amount).toInt().toString()+ "%"),
+            center: Text(checkisNull()+ "%"),
           ),
-          Text(goals[0].CurrentAmount.toString() + '/' + goals[0].Amount.toString() + " active days completed"),
+          Text(curramIsNull() + '/' + amIsNull() + " active days completed"),
 
           //TODO Felugro ablak, cel valtoztatasa, majd elkuldess
           ElevatedButton(
@@ -111,4 +113,17 @@ double SumTime(){
     sum += element.Time!;
   });
   return sum;
+}
+
+String curramIsNull(){
+  if(goals.length == 0)
+    return "0";
+  return goals[0].CurrentAmount.toString();
+
+}
+
+String amIsNull(){
+  if(goals.length == 0)
+    return "0";
+  return goals[0].Amount.toString().toString();
 }
