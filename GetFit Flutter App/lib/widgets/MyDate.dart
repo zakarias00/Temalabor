@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class MyDate extends StatefulWidget {
   @override
   _MyDateState createState()
@@ -36,10 +38,12 @@ class _MyDateState extends State<MyDate> {
               if (value != null && value != selectedDate)
                 setState(() {
                   selectedDate = value;
+                  user.Birthdate = selectedDate.toString();
+                  print(user.Birthdate);
                 });
             },
             initialDateTime: DateTime.now(),
-            minimumYear: 2019,
+            minimumYear: 1900,
             maximumYear: 2021,
           ),
         );

@@ -1,11 +1,16 @@
 import 'dart:ffi';
+import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get_fit/adapter/UserAdapter.dart';
 import 'package:get_fit/pages/register_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 
+import '../main.dart';
+
+//TODO idk letrehozasa
 // TODO letrehozott felhasznalohoz hozzaadni ezeket az adatokat, hibauzenet ha nem jo formatumu adat
 TextEditingController gendercontroller = TextEditingController();
 TextEditingController datecontroller = TextEditingController();
@@ -40,14 +45,14 @@ class PersonalDataScreen extends StatelessWidget{
                                               child: const Text('Woman'),
                                               onPressed: () {
                                               Navigator.pop(context);
-                                              user.gender = "Woman";
+                                              user.Gender = true;
                                               },
                                               ),
                                         CupertinoActionSheetAction(
                                               child: const Text('Man'),
                                               onPressed: () {
                                               Navigator.pop(context);
-                                              user.gender = "Man";
+                                              user.Gender = false;
                                     },
                                     )
                                     ],
@@ -105,10 +110,14 @@ class PersonalDataScreen extends StatelessWidget{
             ),
             TextButton(
               onPressed: (){
-                user.gender = gendercontroller.text;
-                user.date = datecontroller.text;
-                user.height = double.parse(heightcontroller.text);
-                user.weight = double.parse(weightcontroller.text);
+                user.Birthdate = datecontroller.text;
+                user.Height = double.parse(heightcontroller.text);
+                user.Weight = double.parse(weightcontroller.text);
+                Random random = new Random();
+                int randomNumber = random.nextInt(100);
+                user.Id = randomNumber;
+                //print(user.Birthdate);
+                newUser(user);
                 Navigator.pushNamed(
                   context,
                   "/homepage",

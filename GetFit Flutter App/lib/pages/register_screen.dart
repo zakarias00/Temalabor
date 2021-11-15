@@ -1,13 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_fit/datas/User.dart';
 import 'package:get_fit/datas/testperson.dart';
+
+import '../main.dart';
 
 TextEditingController fullnamecontroller = TextEditingController();
 TextEditingController usernamecontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
 
-testPerson user = testPerson("","","","");
+
 
 // TODO letrehozni uj felhasznalot elmenteni az adatait, hibauzenet kuldese ha nem jo formatumba adott meg valamit
 // TODO elkuldeni az uj adatokat
@@ -94,10 +97,10 @@ class RegisterScreen extends StatelessWidget{
               child: const Text("Submit"),
               onPressed: () {
                 //user = Person(emailcontroller.text,passwordcontroller.text,usernamecontroller.text,fullnamecontroller.text);
-                user.email = emailcontroller.text;
-                user.password = passwordcontroller.text ;
-                user.fullname = fullnamecontroller.text;
-                user.username = usernamecontroller.text;
+                user.Email = emailcontroller.text;
+                user.Password = passwordcontroller.text ;
+                user.Name = fullnamecontroller.text;
+                user.Username = usernamecontroller.text;
                 Navigator.pushNamed(
                   context,
                   "/personaldatapage",
