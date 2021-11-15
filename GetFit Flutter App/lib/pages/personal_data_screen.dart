@@ -116,6 +116,7 @@ class PersonalDataScreen extends StatelessWidget{
                 Random random = new Random();
                 int randomNumber = random.nextInt(100);
                 user.Id = randomNumber;
+                //print(user.Birthdate);
                 newUser(user);
                 Navigator.pushNamed(
                   context,

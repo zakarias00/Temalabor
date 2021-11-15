@@ -74,9 +74,9 @@ class LoginScreen extends StatelessWidget {
                     if (valid  == true) {
                       user = await validatedUser();
                       users = await getUsers();
-                      activities = await getActivities();
+                    activities = await getActivityByUserId(user.Id);
                       sports = await getSports();
-                      goals = await getGoals();
+                     goals = await getGoalByUserId(user.Id);
 
                       print(user.Username);
                       Navigator.pushNamed(

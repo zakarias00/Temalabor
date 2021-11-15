@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_fit/datas/Activity.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
+import 'login_screen.dart';
 
 
 // TODO datum kuldes es ahhoz a hethez jon vissza az adat
@@ -43,14 +46,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           LinearPercentIndicator(
             width: 400,
             lineHeight: 17.0,
-            percent: 0.75,
+            percent: (goals[0].CurrentAmount/goals[0].Amount),
             backgroundColor: Colors.grey,
             progressColor: Colors.blue,
-            center: Text( "75%"),
+            center: Text((goals[0].CurrentAmount/goals[0].Amount).toInt().toString()+ "%"),
           ),
-          Text(" 3/4 active days completed"),
+          Text(goals[0].CurrentAmount.toString() + '/' + goals[0].Amount.toString() + " active days completed"),
 
-          //TODO Felugro ablak, cel valtoztatasa, majd elkuldes
+          //TODO Felugro ablak, cel valtoztatasa, majd elkuldess
           ElevatedButton(
             child: const Text("Change goal"),
             onPressed: () {
@@ -70,21 +73,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children: <Widget>[
                 Text('Time of sport activitties:',
                   textAlign: TextAlign.left,
                 ),
-                Text('3 hours', textAlign: TextAlign.left,)
+                Text(SumTime().toString() + 'hours', textAlign: TextAlign.left,)
                 // TODO aktiv orak szama megjelenites
               ]
           ),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children:  <Widget>[
                 Text('Burned calories:',
                   textAlign: TextAlign.left,
                 ),
-                Text('156 kcal', textAlign: TextAlign.left,)
+                Text(SumKcal().toString() + ' kcal', textAlign: TextAlign.left,)
                 // TODO osszes egetett kaloria megjelenites
               ]
           ),
@@ -92,4 +95,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),
     );
   }
+}
+
+double SumKcal(){
+  double sum = 0;
+  activities.forEach((element)  {
+    sum += element.Kcal!;
+  });
+  return sum;
+}
+
+double SumTime(){
+  double sum = 0;
+  activities.forEach((element)  {
+    sum += element.Time!;
+  });
+  return sum;
 }

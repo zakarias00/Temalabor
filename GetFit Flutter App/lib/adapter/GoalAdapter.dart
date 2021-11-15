@@ -19,6 +19,15 @@ Future<List<Goal>> getGoals() async{
   return goals;
 }
 
+Future<List<Goal>> getGoalByUserId(int id) async{
+  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/uesrId='+ id.toString());
+  var responseBody = response.data;
+  Iterable l = responseBody;
+  List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+
+  return goals;
+}
+
 /*
 
 void newGoal( Goal g) async {

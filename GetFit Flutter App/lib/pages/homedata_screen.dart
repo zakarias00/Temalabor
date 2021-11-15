@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get_fit/pages/register_screen.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../main.dart';
+import 'login_screen.dart';
 
 
-// TODO felhasznalo adatai lekerdezese
+// TODO info gomb adatokkal
+
 
 class HomeData extends StatelessWidget {
   const HomeData({Key? key}) : super(key: key);
@@ -42,9 +43,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
            CircularPercentIndicator(
             radius: 120.0,
             lineWidth: 5.0,
-            percent: 1.0,
+            animation: true,
+            percent: (goals[0].CurrentAmount/goals[0].Amount),
             // TODO felhasznalo szintlepesnel hany szazaleknal tart
-            center: Text("100%"),
+            center: Text((goals[0].CurrentAmount/goals[0].Amount).toInt().toString()+ "%"),
             progressColor: Colors.blueAccent,
           ),
         //TODO szazalek alapjan uzenet

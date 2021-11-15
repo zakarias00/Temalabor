@@ -25,3 +25,12 @@ void newActiviy( Activity a) async {
   final response = await Dio().post('https://getfit-application.azurewebsites.net/ActivityController/', data: json);
 }
 
+Future<List<Activity>> getActivityByUserId(int id) async{
+  var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/userId='+ id.toString());
+  var responseBody = response.data;
+  Iterable l = responseBody;
+  List<Activity> activities = List<Activity>.from(l.map((model)=> Activity.fromJson(model)));
+
+  return activities;
+}
+
