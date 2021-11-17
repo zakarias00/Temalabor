@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/ActivityAdapter.dart';
+import 'package:get_fit/pages/add_activity.dart';
 import '../main.dart';
 import 'login_screen.dart';
 
@@ -30,42 +32,39 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+    String selectedsport = "";
+    late List<String> sportnames = [];
+    sports.forEach((element) {
+      sportnames.add(element.Type);
+    });
+
+    initState() async{
+      activities = await getActivities();
+    }
     return Scaffold(
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:  <Widget> [
             const Text("History", style: TextStyle(fontSize: 30)),
-            CupertinoButton(
-              onPressed: () {
-                showCupertinoModalPopup<void>(
-                  context: context,
-                  builder: (BuildContext context) => CupertinoActionSheet(
-                    title: const Text('Sports'),
-                    actions: <CupertinoActionSheetAction>[
-                      CupertinoActionSheetAction(
-                        child: const Text('Swimming'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      CupertinoActionSheetAction(
-                        child: const Text('Running'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                      CupertinoActionSheetAction(
-                        child: const Text('Dancing'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      )
-                    ],
-                  ),
-                );
-              }, child: Text("Search"),
-              // TODO sportok alapjan kereses
-              // TODO listazas: sport,datum,ido,tavolsag,kaloria
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                    child: DropdownButton<String>(
+                      items: sportnames.map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (newvalue) {
+                        selectedsport = newvalue!;
+                      },
+                    )
+                ),
+                TextButton(onPressed: (){}, child: Text("Search"))
+              ],
             ),
             Expanded(
               child: ListView.builder(
@@ -76,8 +75,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       subtitle: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text(activities[index].Time.toString() + "sec "),
-                          Text(activities[index].Kcal.toString() + "kcal "),
+                          Text(activities[index].Time.toString() + " sec "),
+                          Text(activities[index].Kcal.toString() + " kcal "),
+                          Text(activities[index].Distance.toString() + " km "),
 
                         ],
                       )
@@ -87,30 +87,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           CupertinoButton(
           onPressed: () {
-            //TODO activityk lekerdezese, ha rakattintunk beirhatjuk az elvegzett km-t es a vele toltott idot, ebbol kaloria szamitasa
-            // TODO egyeb eseten megadhatjuk a kaloriat is
-            showCupertinoModalPopup<void>(
-              context: context,
-              builder: (BuildContext context) => CupertinoActionSheet(
-                title: const Text('Title'),
-                message: const Text('Message'),
-                actions: <CupertinoActionSheetAction>[
-                  CupertinoActionSheetAction(
-                    child: const Text('Action One'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  CupertinoActionSheetAction(
-                    child: const Text('Action Two'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  )
-                ],
-              ),
+
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddActivity())
             );
-          }, child: Text("Add activity"),
+              }, child: Text("Add activity"),
       ),
           ]
       ),
@@ -120,7 +102,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 
 String getSportType(int i){
-  late String type;
+  String type = "Egyeb";
   sports.forEach((element)  {
     if ( element.Id == i) {
       type = element.Type;

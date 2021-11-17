@@ -123,18 +123,9 @@ class PersonalDataScreen extends StatelessWidget{
                 user.Id = randomNumber;
                 newUser(user);
 
-                users = await getUsers();
-                //activities.add(Activity(0,0,0,0,"",0));
-                activities = await getActivityByUserId(user.Id);
-                sports = await getSports();
-                //goals.add(Goal(0,0,0,"",0,0,0));
-                goals = await getGoalByUserId(user.Id);
-
-                //print(user.Birthdate);
-
                 Navigator.pushNamed(
                   context,
-                  "/homepage",
+                  "/loginpage",
                 );
               },
               child: const Text("Submit"),

@@ -72,7 +72,7 @@ class LoginScreen extends StatelessWidget {
                       user = await validatedUser();
                       users = await getUsers();
                      activities = await getActivityByUserId(user.Id);
-                      sports = await getSports();
+                     sports = await getSports();
                      goals = await getGoalByUserId(user.Id);
 
                       print(user.Username);
@@ -131,7 +131,7 @@ class LoginScreen extends StatelessWidget {
         user =  await getUserById(element.Id);
       }
     });
-
+    print(user.Id);
     return user;
   }
 }

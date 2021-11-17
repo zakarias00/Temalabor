@@ -6,8 +6,9 @@ class Activity{
     double? Time;
     String? Date;
     double? Kcal;
+    double Distance;
 
-    Activity( this.Id, this.SportId, this.UserId,this.Time, this.Date,this.Kcal);
+    Activity( this.Id, this.SportId, this.UserId,this.Time, this.Date,this.Kcal,this.Distance);
 
     Activity.fromJson(Map<String, dynamic> json)
         :
@@ -16,7 +17,8 @@ class Activity{
             Date = json['date'],
             UserId = json['userId'],
             SportId = json['sportId'],
-            Kcal = json['kcal'];
+            Kcal = json['kcal'],
+            Distance = json['distance'];
 
     Map<String, dynamic> toJson() => <String, dynamic>{
         '_id': Id,
@@ -24,7 +26,8 @@ class Activity{
         'userId': UserId,
         'time' : Time,
         'date' : Date,
-        'kcal' : Kcal
+        'kcal' : Kcal,
+        'distance': Distance
     };
 
 }

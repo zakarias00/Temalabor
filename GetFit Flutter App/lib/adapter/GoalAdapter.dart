@@ -20,7 +20,7 @@ Future<List<Goal>> getGoals() async{
 }
 
 Future<List<Goal>> getGoalByUserId(int id) async{
-  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/uesrId='+ id.toString());
+  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/userId='+ id.toString());
   var responseBody = response.data;
   Iterable l = responseBody;
   List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
@@ -28,6 +28,10 @@ Future<List<Goal>> getGoalByUserId(int id) async{
   return goals;
 }
 
+void updateGoal ( Goal g, int goalId) async{
+  var json = g.toJson();
+  final response = await Dio().put('https://getfit-application.azurewebsites.net/GoalController/' + goalId.toString(), data: json);
+}
 /*
 
 void newGoal( Goal g) async {

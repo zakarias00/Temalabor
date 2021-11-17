@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/UserAdapter.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../main.dart';
 import 'login_screen.dart';
-
-
-// TODO info gomb adatokkal
 
 
 class HomeData extends StatelessWidget {
@@ -33,12 +31,38 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+
+    setDialog(BuildContext context, String text){
+
+      TextEditingController controller = new TextEditingController();
+
+      return showDialog(context: context, builder: (context){
+        return AlertDialog(
+          title:Text(text),
+          content: TextField(
+            controller: controller,
+          ),
+          actions: <Widget>[
+            MaterialButton(
+              elevation: 5.0,
+              child: Text('Ok'),
+              onPressed: (){
+                Navigator.of(context).pop(controller.text);
+              },
+            )
+          ],
+        );
+      });
+    }
+
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
           Text(user.Name, style: TextStyle(fontSize: 20)),
-          Text(user.Level.toString()),
+          Text(user.Level.toString() + " level"),
 
            CircularPercentIndicator(
             radius: 120.0,
@@ -62,12 +86,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 TextButton(
                     child: const Text("SET"),
                     onPressed: (){
-
+                      setDialog(context, "Add Weight: ").then((onValue){
+                        setState(() {
+                          //TODO UPDATE
+                          user.Weight = double.parse(onValue);
+                          updateUser(user, user.Id);
+                        });
+                      });
                     },
                 )
               ]
           ),
-        //TODO SET weight, elkuldeni az uj adatokat
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:  <Widget>[
@@ -78,17 +107,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 TextButton(
                   child: const Text("SET"),
                   onPressed: (){
-
+                    setDialog(context, "Add Height: ").then((onValue){
+                      setState(() {
+                        user.Height = double.parse(onValue);
+                        updateUser(user, user.Id);
+                      });
+                       });
                   },
                 )
               ]
           ),
-      //TODO SET height elkuldeni az uj adatokat
-
+      //TODO log out
         ElevatedButton(
          child: const Text("Log out"),
              onPressed: () {
-           // TODO visszalepni a Login kepernyohoz es kilepni
+
              },
 
         ),

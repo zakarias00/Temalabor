@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/GoalAdapter.dart';
 import 'package:get_fit/datas/Activity.dart';
 import 'package:get_fit/pages/homedata_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
@@ -31,6 +32,28 @@ class MyStatefulWidget extends StatefulWidget {
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
+  setDialog(BuildContext context, String text){
+
+    TextEditingController controller = new TextEditingController();
+
+    return showDialog(context: context, builder: (context){
+      return AlertDialog(
+        title:Text(text),
+        content: TextField(
+          controller: controller,
+        ),
+        actions: <Widget>[
+          MaterialButton(
+            elevation: 5.0,
+            child: Text('Ok'),
+            onPressed: (){
+              Navigator.of(context).pop(controller.text);
+            },
+          )
+        ],
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
           Text("Weekly activities", style: TextStyle(fontSize: 20)),
-          Text("Select a week ", style: TextStyle(fontSize: 20)),
+          Text("Select a week ", style: TextStyle(fontSize: 15)),
           Container(
             child: MyDate(),
           ),
@@ -59,16 +82,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ElevatedButton(
             child: const Text("Change goal"),
             onPressed: () {
+              setDialog(context, "Choose active day number: ").then((onValue){
+                setState(() {
+                  if( goals.length != 0){
+                    goals[0].Amount = int.parse(onValue);
+                    updateGoal(goals[0],goals[0].Id);
+                  }
+                });
+              });
             },
 
           ),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const <Widget>[
+              children: <Widget>[
                 Text('Distance of running:',
                   textAlign: TextAlign.left,
                 ),
-                Text('20 kilometers', textAlign: TextAlign.left,)
+                Text(SumDistance().toString() + 'km', textAlign: TextAlign.left,)
               //TODO lefutott km-ek szama megjelenites
               ]
           ),
@@ -79,7 +110,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 Text('Time of sport activitties:',
                   textAlign: TextAlign.left,
                 ),
-                Text(SumTime().toString() + 'hours', textAlign: TextAlign.left,)
+                Text(SumTime().toString() + 'seconds', textAlign: TextAlign.left,)
                 // TODO aktiv orak szama megjelenites
               ]
           ),
@@ -111,6 +142,14 @@ double SumTime(){
   double sum = 0;
   activities.forEach((element)  {
     sum += element.Time!;
+  });
+  return sum;
+}
+
+double SumDistance(){
+  double sum = 0;
+  activities.forEach((element)  {
+    sum += element.Distance;
   });
   return sum;
 }

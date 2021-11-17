@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/UserAdapter.dart';
 import '../main.dart';
 import 'login_screen.dart';
 
@@ -26,6 +27,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final items = List<String>.generate(100, (i) => "Item $i");
+  TextEditingController namecontroller = TextEditingController();
 
 
   @override
@@ -34,19 +36,27 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:  <Widget> [
-        const Text("Leader Board", style: TextStyle(fontSize: 30)),
-        const TextField(decoration: InputDecoration(
+        const Text("Leader Board", style: TextStyle(fontSize: 25)),
+         TextField(
+          controller: namecontroller,
+          decoration: InputDecoration(
           border: OutlineInputBorder(),
           labelText: 'Search',
           icon: Icon(Icons.search)
             //TODO kereses nev alapjan
       ),),
+        TextButton(onPressed: () {
+          setState(() async{
+            //users = await getUserByName(namecontroller.text.toString());
+          });
+
+        }, child: Text("Search")),
         Expanded(
           child: ListView.builder(
           itemCount: users.length,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(users[index].Name),
+              title: Text(users[index].Username),
               subtitle: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

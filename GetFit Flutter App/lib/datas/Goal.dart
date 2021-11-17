@@ -6,10 +6,9 @@ class Goal{
   String DateStart;
   int CurrentAmount;
   int Status;
-  int Distance;
 
 
-  Goal( this.Id,this.Amount, this.UserId, this.DateStart, this.CurrentAmount, this.Status, this.Distance);
+  Goal( this.Id,this.Amount, this.UserId, this.DateStart, this.CurrentAmount, this.Status);
 
   Goal.fromJson(Map<String, dynamic> json)
       :
@@ -18,7 +17,6 @@ class Goal{
         UserId = json['userId'],
         DateStart = json['dateStart'],
         CurrentAmount = json['currentAmount'],
-        Distance= json['distance'],
         Status = json['status'];
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -27,7 +25,6 @@ class Goal{
     'UserId': UserId,
     'dateStart' : DateStart,
     'currentAmount' : CurrentAmount,
-    'distance' : Distance,
     'status' : Status
   };
 }
