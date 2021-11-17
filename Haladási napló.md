@@ -93,7 +93,7 @@ A backendet és a hozzá tartozó mongodb adatbázist is feltettem azure-ba, íg
 Sikerült megoldani azt a problémát, hogy az app.component.html-ben nem érzékelte a többi létrehozott komponenst. Először módosítva se működött, aztán a hibaüzenetet a cmd-ből ki akartam másolni és hirtelen megjavult.
 Létrehoztam a backendnek megfelelően különböző service-eket a usernek, sportnak, activitynek és goalnak. A userhez megírtam typescriptben a függvényeket a backendhez igazodva. Egy sima felhasználónevek kilistázásával próbálkoztam először, hogy teszteljem, jól működik a backend és frontend kapcsolata, de egyenlőre hibaüzenetet dob. (Access to XMLHttpRequest at 'https://getfit-application.azurewebsites.net/UserController' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.)
 
-## 10.hét
+## 11.hét
 
 #### Sipos Noémi
 Összehangoltam az alkalmazást az új backend függvényekkel. Létrehoztam az update függvényeket, az usernél már meg lehet változtatni a súlyt és a magasságot. Létrehoztam legördülő listákat, amik alapján listázni lehet különböző dolgokat. Ami nem sikerült egyenlőre az, az hogy rögtön frissüljenek widgetek a szűréseknél. A goalok és a dátumok kezelése még nincs meg.
