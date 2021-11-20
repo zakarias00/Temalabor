@@ -96,4 +96,4 @@ Létrehoztam a backendnek megfelelően különböző service-eket a usernek, spo
 ## 11.hét
 
 #### Sipos Noémi
-Összehangoltam az alkalmazást az új backend függvényekkel. Létrehoztam az update függvényeket, az usernél már meg lehet változtatni a súlyt és a magasságot. Létrehoztam legördülő listákat, amik alapján listázni lehet különböző dolgokat. Ami nem sikerült egyenlőre az, az hogy rögtön frissüljenek widgetek a szűréseknél. A goalok és a dátumok kezelése még nincs meg.
+Összehangoltam az alkalmazást az új backend függvényekkel. Létrehoztam az update függvényeket, az usernél már meg lehet változtatni a súlyt és a magasságot. Létrehoztam legördülő listákat, amik alapján listázni lehet különböző dolgokat. Ami nem sikerült egyenlőre az, az hogy rögtön frissüljenek widgetek a szűréseknél. A goalok és a dátumok kezelése még nincs meg. Megcsináltam az admin felületet, hogy új sportokat lehessen felvinni. SizedBoxokkal igazitottam péicit a kinézeten.
