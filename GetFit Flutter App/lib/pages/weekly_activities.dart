@@ -61,7 +61,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
-          Text("Weekly activities", style: TextStyle(fontSize: 20)),
+          Text("Weekly activities", style: TextStyle(fontSize: 25)),
           Text("Select a week ", style: TextStyle(fontSize: 15)),
           Container(
             child: MyDate(),

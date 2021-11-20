@@ -99,23 +99,31 @@ class AddActivity extends StatelessWidget{
               ),
               TextButton(
                 onPressed: () async{
-                  Random random = new Random();
-                  int randomNumber = random.nextInt(100);
+                  if( selectedsport != ""){
+                    Random random = new Random();
+                    int randomNumber = random.nextInt(100);
 
-                  Activity newac = Activity(randomNumber,0, user.Id, 0, "2021", 0,0);
-                  sports.forEach((element) {
-                    if ( element.Type == selectedsport){
-                      newac.SportId = element.Id;
-                      newac.Kcal = element.Kcal;
-                    }
-                  });
-                  newac.Time = double.parse(timecontroller.text);
-                  newac.Distance = double.parse(distancecontroller.text);
-                  newActiviy(newac);
+                    Activity newac = Activity(randomNumber,0, user.Id, 0, "2021", 0,0);
+                    sports.forEach((element) {
+                      if ( element.Type == selectedsport){
+                        newac.SportId = element.Id;
+                        newac.Kcal = element.Kcal;
+                      }
+                    });
+                    newac.Time = double.parse(timecontroller.text);
+                    newac.Distance = double.parse(distancecontroller.text);
+                    newActiviy(newac);
 
-                  //TODO activiyk lekerdezese jo legyen
-                  //activities = await getActivityByUserId(user.Id);
-                  Navigator.of(context).pop();
+                    //TODO activiyk lekerdezese jo legyen
+                    //activities = await getActivityByUserId(user.Id);
+                    Navigator.of(context).pop();
+                  }
+                  else{
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Choose a sport')),
+                    );
+                  }
+
                 },
                 child: const Text("Ok"),
               ),

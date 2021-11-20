@@ -61,7 +61,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget> [
-          Text(user.Name, style: TextStyle(fontSize: 20)),
+          Text(user.Name, style: TextStyle(fontSize: 25)),
           Text(user.Level.toString() + " level"),
 
            CircularPercentIndicator(

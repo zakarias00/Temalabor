@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 
+
+DateTime selectedDate = DateTime.now();
 class MyDate extends StatefulWidget {
   @override
   _MyDateState createState()
@@ -13,7 +15,7 @@ class MyDate extends StatefulWidget {
 }
 
 class _MyDateState extends State<MyDate> {
-  DateTime selectedDate = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return

@@ -46,7 +46,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:  <Widget> [
-            const Text("History", style: TextStyle(fontSize: 30)),
+            SizedBox(height:50),
+            const Text("History", style: TextStyle(fontSize: 25)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

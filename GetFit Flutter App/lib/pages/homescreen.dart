@@ -55,8 +55,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar()
-      ,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -79,6 +77,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.people),
             label: 'People',
           ),
+
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueAccent,

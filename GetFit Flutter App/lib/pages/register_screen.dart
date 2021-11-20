@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_fit/datas/User.dart';
-import 'package:get_fit/datas/testperson.dart';
 
 import '../main.dart';
 

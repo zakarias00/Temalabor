@@ -36,7 +36,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:  <Widget> [
+            SizedBox(height:50),
         const Text("Leader Board", style: TextStyle(fontSize: 25)),
+         SizedBox(height:20),
          TextField(
           controller: namecontroller,
           decoration: InputDecoration(
@@ -44,6 +46,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           labelText: 'Search',
           icon: Icon(Icons.search)
             //TODO kereses nev alapjan
+
       ),),
         TextButton(onPressed: () {
           setState(() async{

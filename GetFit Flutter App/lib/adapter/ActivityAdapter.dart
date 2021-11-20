@@ -34,3 +34,12 @@ Future<List<Activity>> getActivityByUserId(int id) async{
   return activities;
 }
 
+Future<List<Activity>> getActivityBySportId(int id) async{
+  var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/sportId='+ id.toString());
+  var responseBody = response.data;
+  Iterable l = responseBody;
+  List<Activity> activities = List<Activity>.from(l.map((model)=> Activity.fromJson(model)));
+
+  return activities;
+}
+

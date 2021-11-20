@@ -20,7 +20,7 @@ late List<User> users;
 late List<Activity> activities = [];
 late List<Goal> goals = [];
 late List<Sport> sports;
-User user = User( 0, "", "", "", "", 0, 0, "",0, 0, false);
+User user = User( 0, "", "", "", "", 0, 0, null,0, 0, false);
 
 class ImperativeNavigationApp extends StatelessWidget {
   const ImperativeNavigationApp({Key? key}) : super(key: key);
@@ -29,6 +29,7 @@ class ImperativeNavigationApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Screens Navigation',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -42,6 +43,8 @@ class ImperativeNavigationApp extends StatelessWidget {
         "/homepage": (context) =>  const HomeScreen(),
         "/addactivity": (context) =>  const AddActivity(),
         "/adminscreen": (context) => const AdminActivity(),
+        "/app": (context) => const ImperativeNavigationApp(),
+
 
       },
     );

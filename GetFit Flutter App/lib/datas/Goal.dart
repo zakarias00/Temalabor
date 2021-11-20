@@ -3,7 +3,7 @@ class Goal{
   int Id;
   int Amount;
   int UserId;
-  String DateStart;
+  String? DateStart;
   int CurrentAmount;
   int Status;
 
