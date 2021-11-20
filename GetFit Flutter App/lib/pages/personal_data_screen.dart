@@ -81,9 +81,11 @@ class PersonalDataScreen extends StatelessWidget{
             ),
             Row(
                 children: <Widget>[
+                  SizedBox(width: 10),
                   Text('Height(cm): ',
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       controller: heightcontroller,
@@ -93,14 +95,20 @@ class PersonalDataScreen extends StatelessWidget{
                       ),
                         keyboardType: TextInputType.number
                     )
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
+
+           const SizedBox(height: 10),
+
             Row(
                 children: <Widget>[
+                  SizedBox(width: 10),
                   Text('Weight (kg):',
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       controller: weightcontroller,
@@ -110,7 +118,8 @@ class PersonalDataScreen extends StatelessWidget{
                       ),
                         keyboardType: TextInputType.number
                     ),
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
             TextButton(

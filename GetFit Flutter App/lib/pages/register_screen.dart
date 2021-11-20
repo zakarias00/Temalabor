@@ -29,9 +29,11 @@ class RegisterScreen extends StatelessWidget{
             const SizedBox(height: 50),
             Row(
                 children: <Widget>[
+                  SizedBox(width: 10),
                   Text('Full name ',
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       controller: fullnamecontroller,
@@ -40,15 +42,18 @@ class RegisterScreen extends StatelessWidget{
                         labelText: 'Full name',
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
-
+            const SizedBox(height:  10),
             Row(
                 children:  <Widget>[
+                  SizedBox(width: 10),
                   Text("Username ",
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       controller: usernamecontroller,
@@ -57,14 +62,18 @@ class RegisterScreen extends StatelessWidget{
                         labelText: 'Username',
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
+            const SizedBox(height: 10),
             Row(
                 children:  <Widget>[
+                  SizedBox(width: 10),
                   Text("E-mail ",
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       controller: emailcontroller,
@@ -73,14 +82,18 @@ class RegisterScreen extends StatelessWidget{
                         labelText: 'E-mail',
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
+            const SizedBox(height: 10),
             Row(
                 children: <Widget>[
+                  SizedBox(width: 10),
                   Text("Password ",
                     textAlign: TextAlign.left,
                   ),
+                  SizedBox(width: 10),
                   Flexible(
                     child: TextField(
                       obscureText: true,
@@ -90,9 +103,11 @@ class RegisterScreen extends StatelessWidget{
                         labelText: 'Password',
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(width: 10),
                 ]
             ),
+            const SizedBox(height: 50),
             TextButton(
               child: const Text("Submit"),
               onPressed: () {

@@ -102,7 +102,7 @@ class AddActivity extends StatelessWidget{
                   Random random = new Random();
                   int randomNumber = random.nextInt(100);
 
-                  Activity newac = Activity(randomNumber,0, user.Id, 0, "", 0,0);
+                  Activity newac = Activity(randomNumber,0, user.Id, 0, "2021", 0,0);
                   sports.forEach((element) {
                     if ( element.Type == selectedsport){
                       newac.SportId = element.Id;
@@ -112,9 +112,9 @@ class AddActivity extends StatelessWidget{
                   newac.Time = double.parse(timecontroller.text);
                   newac.Distance = double.parse(distancecontroller.text);
                   newActiviy(newac);
-                  print(user.Id);
+
                   //TODO activiyk lekerdezese jo legyen
-                  activities = await getActivityByUserId(user.Id);
+                  //activities = await getActivityByUserId(user.Id);
                   Navigator.of(context).pop();
                 },
                 child: const Text("Ok"),

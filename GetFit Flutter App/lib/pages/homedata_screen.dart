@@ -121,7 +121,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ElevatedButton(
          child: const Text("Log out"),
              onPressed: () {
-
+               Navigator.pushNamed(
+                 context,
+                 "/app",
+               );
              },
 
         ),

@@ -33,9 +33,11 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 50),
                 Row(
                     children: <Widget>[
+                      SizedBox(width: 10),
                       Text('E-mail ',
                         textAlign: TextAlign.left,
                       ),
+                      SizedBox(width: 10),
                       Flexible(
                         child: TextField(
                           controller: emailcontroller,
@@ -44,14 +46,18 @@ class LoginScreen extends StatelessWidget {
                             labelText: 'E-mail',
                           ),
                         ),
-                      )
+                      ),
+                      SizedBox(width: 10),
                     ]
                 ),
+                SizedBox(height:10),
                 Row(
                     children: <Widget>[
+                      SizedBox(width: 10),
                       Text("Password ",
                         textAlign: TextAlign.left,
                       ),
+                      SizedBox(width: 10),
                       Flexible(
                         child: TextField(
                           obscureText: true,
@@ -62,7 +68,8 @@ class LoginScreen extends StatelessWidget {
 
                           ),
                         ),
-                      )
+                      ),
+                      SizedBox(width: 10),
                     ]
                 ),
                 TextButton(
@@ -76,10 +83,17 @@ class LoginScreen extends StatelessWidget {
                      goals = await getGoalByUserId(user.Id);
 
                       print(user.Username);
-                      Navigator.pushNamed(
-                        context,
-                        "/homepage",
-                      );
+                      if( user.Email =="admin" && user.Password == "admin"){
+                        Navigator.pushNamed(
+                          context,
+                          "/adminscreen",
+                        );
+                      } else{
+                        Navigator.pushNamed(
+                          context,
+                          "/homepage",
+                        );
+                      }
                     }
                     else {
                       ScaffoldMessenger.of(context).showSnackBar(

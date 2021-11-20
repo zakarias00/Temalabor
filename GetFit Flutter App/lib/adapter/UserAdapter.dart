@@ -29,8 +29,6 @@ void updateUser ( User u, int userId) async{
   final response = await Dio().put('https://getfit-application.azurewebsites.net/UserController/' + userId.toString(), data: json);
 }
 
-
-
 Future<List<User>> getUserByName(String name) async{
   User u;
   var response = await Dio().get('https://getfit-application.azurewebsites.net/UserController/' + 'name=' + name);

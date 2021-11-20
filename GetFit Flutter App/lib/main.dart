@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_fit/pages/add_activity.dart';
+import 'package:get_fit/pages/admin_screen.dart';
 import 'package:get_fit/pages/homescreen.dart';
 import 'package:get_fit/pages/login_screen.dart';
 import 'package:get_fit/pages/personal_data_screen.dart';
@@ -40,6 +41,7 @@ class ImperativeNavigationApp extends StatelessWidget {
         "/personaldatapage": (context) => const PersonalDataScreen(),
         "/homepage": (context) =>  const HomeScreen(),
         "/addactivity": (context) =>  const AddActivity(),
+        "/adminscreen": (context) => const AdminActivity(),
 
       },
     );

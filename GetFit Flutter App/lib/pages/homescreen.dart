@@ -4,6 +4,7 @@ import 'package:get_fit/main.dart';
 import 'package:get_fit/pages/history_screen.dart';
 import 'package:get_fit/pages/homedata_screen.dart';
 import 'package:get_fit/pages/leader_board_screen.dart';
+import 'package:get_fit/pages/login_screen.dart';
 import 'package:get_fit/pages/weekly_activities.dart';
 
 class HomeScreen extends StatelessWidget {
