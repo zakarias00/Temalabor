@@ -93,7 +93,13 @@ A backendet és a hozzá tartozó mongodb adatbázist is feltettem azure-ba, íg
 Sikerült megoldani azt a problémát, hogy az app.component.html-ben nem érzékelte a többi létrehozott komponenst. Először módosítva se működött, aztán a hibaüzenetet a cmd-ből ki akartam másolni és hirtelen megjavult.
 Létrehoztam a backendnek megfelelően különböző service-eket a usernek, sportnak, activitynek és goalnak. A userhez megírtam typescriptben a függvényeket a backendhez igazodva. Egy sima felhasználónevek kilistázásával próbálkoztam először, hogy teszteljem, jól működik a backend és frontend kapcsolata, de egyenlőre hibaüzenetet dob. (Access to XMLHttpRequest at 'https://getfit-application.azurewebsites.net/UserController' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.)
 
+#### Zakariás Anna
+Összekapcsoltam a projektemet az adatbázissal. Megírtam az Api osztály GET és POST kéréseihez tartozó függvényeket az egyes adatosztályokhoz. Elkészítettem a bejelentkezéshez, illetve a regisztráláshoz tartozó oldalakat, valamint a ranglistához tartozó oldalt.
+
 ## 11.hét
 
 #### Sipos Noémi
 Összehangoltam az alkalmazást az új backend függvényekkel. Létrehoztam az update függvényeket, az usernél már meg lehet változtatni a súlyt és a magasságot. Létrehoztam legördülő listákat, amik alapján listázni lehet különböző dolgokat. Ami nem sikerült egyenlőre az, az hogy rögtön frissüljenek widgetek a szűréseknél. A goalok és a dátumok kezelése még nincs meg. Megcsináltam az admin felületet, hogy új sportokat lehessen felvinni. SizedBoxokkal igazitottam péicit a kinézeten.
+
+#### Zakariás Anna
+Elkészítettem az admin felhasználóhoz tartozó Activity-t, így már ha valaki admin felhasználóként lép be, akkor létre tud hozni új sportot. Elkészítettem a History és Goals képernyőket. Viszont a Home képernyőnél a súly és magasság beállításánál egy DialogFragment kéne felugorjon, de ez egyelőre nem működik. Emiatt a Goals képernyőnél se működik a Change Goal gomb.
