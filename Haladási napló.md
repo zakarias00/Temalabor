@@ -110,3 +110,8 @@ Már működik az id-k automatikus adása (volt vele több probléma is, de mego
 #### Valaska Nóra
 Megpróbáltam többféle módszerrel is azure-ra feltölteni az angularos projektet, de valamiért nem működött egyikkel se. A localhost:4200-on a leaderboardnál van egy sima felhasználó kilistázás, aminél valami miatt csak "[object Object]"-eket listáz ki. Ezt próbáltam megoldani, de egyenlőre nem sikerült és csak sejtem mi lehet a probléma. A böngészőben a státusznál 200-OK van, tehát elvileg eléri az adatokat.
 Közben a backend függvények irogatásával haladtam.
+
+## 12. hét
+
+#### Valaska Nóra
+Sikerült az Angular applikáció feltöltése Azure-ra, a https://getfitweb.azurewebsites.net/ linken elérhető.
