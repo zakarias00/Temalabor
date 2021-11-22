@@ -106,3 +106,7 @@ Elkészítettem az admin felhasználóhoz tartozó Activity-t, így már ha vala
 
 #### Orova Dorina
 Már működik az id-k automatikus adása (volt vele több probléma is, de megoldódott). ehhez létrehoztam egy counter gyűjteményt az adatbázisban ami számolja az egyes gyűjteméynekben lévő elemeket, ez alapján ad id-t. Több kisebb függvényt is írtam: pl goal kiválasztása dátum alapján (tehát pl adott heti goal lekérdezése), CurrentAmount növelése activity felvételekor... stb. Ezen felül az updateket módosítottam: nem lehet felülírni az id-kat.
+
+#### Valaska Nóra
+Megpróbáltam többféle módszerrel is azure-ra feltölteni az angularos projektet, de valamiért nem működött egyikkel se. A localhost:4200-on a leaderboardnál van egy sima felhasználó kilistázás, aminél valami miatt csak "[object Object]"-eket listáz ki. Ezt próbáltam megoldani, de egyenlőre nem sikerült és csak sejtem mi lehet a probléma. A böngészőben a státusznál 200-OK van, tehát elvileg eléri az adatokat.
+Közben a backend függvények irogatásával haladtam.
