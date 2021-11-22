@@ -103,3 +103,6 @@ Létrehoztam a backendnek megfelelően különböző service-eket a usernek, spo
 
 #### Zakariás Anna
 Elkészítettem az admin felhasználóhoz tartozó Activity-t, így már ha valaki admin felhasználóként lép be, akkor létre tud hozni új sportot. Elkészítettem a History és Goals képernyőket. Viszont a Home képernyőnél a súly és magasság beállításánál egy DialogFragment kéne felugorjon, de ez egyelőre nem működik. Emiatt a Goals képernyőnél se működik a Change Goal gomb.
+
+#### Orova Dorina
+Már működik az id-k automatikus adása (volt vele több probléma is, de megoldódott). ehhez létrehoztam egy counter gyűjteményt az adatbázisban ami számolja az egyes gyűjteméynekben lévő elemeket, ez alapján ad id-t. Több kisebb függvényt is írtam: pl goal kiválasztása dátum alapján (tehát pl adott heti goal lekérdezése), CurrentAmount növelése activity felvételekor... stb. Ezen felül az updateket módosítottam: nem lehet felülírni az id-kat.
