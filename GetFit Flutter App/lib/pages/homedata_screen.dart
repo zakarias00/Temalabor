@@ -88,7 +88,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     onPressed: (){
                       setDialog(context, "Add Weight: ").then((onValue){
                         setState(() {
-                          //TODO UPDATE
                           user.Weight = double.parse(onValue);
                           updateUser(user, user.Id);
                         });
@@ -121,11 +120,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ElevatedButton(
          child: const Text("Log out"),
              onPressed: () {
-               Navigator.pushNamed(
-                 context,
-                 "/app",
-               );
-             },
+               Navigator.of(context, rootNavigator: true).pop(context);},
 
         ),
         ],

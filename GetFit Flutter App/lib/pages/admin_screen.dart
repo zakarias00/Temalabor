@@ -20,10 +20,13 @@ class AdminActivity extends StatelessWidget{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget> [
-              Text("Add a new sport"),
+              Text("Add a new sport", style: TextStyle(fontSize: 25)),
+              SizedBox(height: 50),
               Row(
                   children: <Widget>[
+                    SizedBox(width: 10),
                     Text("Add sport name:"),
+                    SizedBox(width: 10),
                     Flexible(
                         child: TextField(
                             controller: namecontroller,
@@ -33,14 +36,18 @@ class AdminActivity extends StatelessWidget{
                             ),
                             keyboardType: TextInputType.number
                         )
-                    )
+                    ),
+                    SizedBox(width: 10),
                   ]
               ),
+              SizedBox(height: 10),
               Row(
                   children: <Widget>[
+                    SizedBox(width: 10),
                     Text('Add calories per sec: ',
                       textAlign: TextAlign.left,
                     ),
+                    SizedBox(width: 10),
                     Flexible(
                         child: TextField(
                             controller: caloriacontroller,
@@ -50,9 +57,11 @@ class AdminActivity extends StatelessWidget{
                             ),
                             keyboardType: TextInputType.number
                         )
-                    )
+                    ),
+                    SizedBox(width: 10),
                   ]
               ),
+              SizedBox(height: 20),
               TextButton(
                 onPressed: () async{
                   Random random = new Random();
@@ -64,7 +73,7 @@ class AdminActivity extends StatelessWidget{
                   print(newsport.Type.toString());
                   Navigator.of(context).pop();
                 },
-                child: const Text("Ok"),
+                child: const Text("Ok", style: TextStyle(fontSize: 20)),
               ),
               /* ElevatedButton(
               child: const Text("Back"),

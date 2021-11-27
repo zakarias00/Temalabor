@@ -115,6 +115,12 @@ class RegisterScreen extends StatelessWidget{
                 user.Password = passwordcontroller.text ;
                 user.Name = fullnamecontroller.text;
                 user.Username = usernamecontroller.text;
+
+                emailcontroller.clear();
+                passwordcontroller.clear();
+                fullnamecontroller.clear();
+                usernamecontroller.clear();
+                
                 Navigator.pushNamed(
                   context,
                   "/personaldatapage",

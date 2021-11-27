@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/adapter/GoalAdapter.dart';
 import 'package:get_fit/datas/Activity.dart';
 import 'package:get_fit/pages/homedata_screen.dart';
@@ -8,6 +9,8 @@ import 'package:percent_indicator/percent_indicator.dart';
 import '../main.dart';
 import 'login_screen.dart';
 
+
+var activityadapter = ActivityAdapter();
 
 // TODO datum kuldes es ahhoz a hethez jon vissza az adat
 class Activities extends StatelessWidget {
@@ -132,7 +135,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 double SumKcal(){
   double sum = 0;
-  activities.forEach((element)  {
+  activityadapter.activities.forEach((element)  {
     sum += element.Kcal!;
   });
   return sum;
@@ -140,7 +143,7 @@ double SumKcal(){
 
 double SumTime(){
   double sum = 0;
-  activities.forEach((element)  {
+  activityadapter.activities.forEach((element)  {
     sum += element.Time!;
   });
   return sum;
@@ -148,7 +151,7 @@ double SumTime(){
 
 double SumDistance(){
   double sum = 0;
-  activities.forEach((element)  {
+ activityadapter.activities.forEach((element)  {
     sum += element.Distance;
   });
   return sum;

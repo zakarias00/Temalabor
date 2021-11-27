@@ -18,7 +18,8 @@ TextEditingController emailcontroller = TextEditingController();
 
 class LoginScreen extends StatelessWidget {
 
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
+  var activityadapter = ActivityAdapter();
 
   @override
   Widget build(BuildContext context) {
@@ -76,9 +77,12 @@ class LoginScreen extends StatelessWidget {
                   onPressed: () async {
                     bool valid = await validateLogin();
                     if (valid  == true) {
+
+                      emailcontroller.clear();
+                      passwordcontroller.clear();
                       user = await validatedUser();
                       users = await getUsers();
-                     activities = await getActivityByUserId(user.Id);
+                     await activityadapter.getActivityByUserId(user.Id);
                      sports = await getSports();
                      goals = await getGoalByUserId(user.Id);
 

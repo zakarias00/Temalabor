@@ -132,6 +132,9 @@ class PersonalDataScreen extends StatelessWidget{
                 user.Id = randomNumber;
                 newUser(user);
 
+                heightcontroller.clear();
+                weightcontroller.clear();
+
                 Navigator.pushNamed(
                   context,
                   "/loginpage",

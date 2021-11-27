@@ -15,15 +15,32 @@ class MyDate extends StatefulWidget {
 }
 
 class _MyDateState extends State<MyDate> {
+  var txt = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return
-      TextButton(
-        child: Text("Choose a date"),
-        onPressed: (){
-          showDatePicker();
-        },
+      Row(
+        children: [
+          TextButton(
+            child: Text("Choose a date"),
+            onPressed: (){
+              showDatePicker();
+            },
+          ),
+          Container(
+            width: 90,
+            child: TextField(
+                controller: txt,
+                decoration: new InputDecoration(
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none)
+            ),
+          ),
+        ],
       );
   }
 
@@ -41,6 +58,7 @@ class _MyDateState extends State<MyDate> {
                 setState(() {
                   selectedDate = value;
                   user.Birthdate = selectedDate.toString();
+                  txt.text = selectedDate.toString();
                   print(user.Birthdate);
                 });
             },

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/pages/add_activity.dart';
+import 'package:provider/provider.dart';
 import '../main.dart';
 import 'login_screen.dart';
 
@@ -29,19 +30,27 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final items = List<String>.generate(100, (i) => "Item $i");
+  var activityadapter = ActivityAdapter();
+  var txt = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    activityadapter = context.read<ActivityAdapter>();
+    activityadapter.getActivityByUserId(user.Id);
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    String selectedsport = "";
+
     late List<String> sportnames = [];
     sports.forEach((element) {
       sportnames.add(element.Type);
     });
 
-    initState() async{
-      activities = await getActivities();
-    }
+    String selectedsport = sportnames[0];
+
     return Scaffold(
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -59,39 +68,70 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           child: Text(value),
                         );
                       }).toList(),
-                      onChanged: (newvalue) {
+                      onChanged: (String? newvalue) {
                         selectedsport = newvalue!;
+                        setState(() {
+                         selectedsport;
+                         txt.text = selectedsport;
+                        });
+
+                        //activityadapter.getActivityBySportId(getSportId(selectedsport));
                       },
+                      icon: const Icon(Icons.arrow_downward),
+                      iconSize: 24,
+                      elevation: 16,
+                      style: const TextStyle(color: Colors.deepPurple),
+                      underline: Container(
+                        height: 2,
+                        color: Colors.deepPurpleAccent,
+                      ),
                     )
                 ),
-                TextButton(onPressed: (){}, child: Text("Search"))
+                Container(
+                  width: 70,
+                  child: TextField(
+                    controller: txt,
+                    decoration: new InputDecoration(
+                        border: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none)
+                  ),
+                ),
+                TextButton(onPressed: (){
+                  activityadapter.getActivityByUserId(user.Id);
+                  txt.text = "All";
+                }, child: Text("All"))
               ],
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: activities.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                      title: Text(getSportType(activities[index].SportId)),
-                      subtitle: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(activities[index].Time.toString() + " sec "),
-                          Text(activities[index].Kcal.toString() + " kcal "),
-                          Text(activities[index].Distance.toString() + " km "),
+              child: Consumer<ActivityAdapter>(
+                builder: (context, activityadapter, child) => ListView.builder(
+                  itemCount: activityadapter.activities.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                        title: Text(getSportType(activityadapter.activities[index].SportId)),
+                        subtitle: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(activityadapter.activities[index].Time.toString() + " sec "),
+                            Text(activityadapter.activities[index].Kcal.toString() + " kcal "),
+                            Text(activityadapter.activities[index].Distance.toString() + " km "),
 
-                        ],
-                      )
-                  );
-                },
+                          ],
+                        )
+                    );
+                  },
+                ),
               ),
             ),
           CupertinoButton(
-          onPressed: () {
+          onPressed: ()  {
 
             Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const AddActivity())
+                MaterialPageRoute(builder: (context) =>  AddActivity())
             );
               }, child: Text("Add activity"),
       ),
@@ -111,5 +151,16 @@ String getSportType(int i){
 
   });
   return type;
+}
+
+int getSportId ( String type){
+  int id = 0 ;
+  sports.forEach((element)  {
+    if ( element.Type == type) {
+      id = element.Id;
+    }
+
+  });
+  return id;
 }
 
