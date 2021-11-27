@@ -21,13 +21,15 @@ class _MyDateState extends State<MyDate> {
   Widget build(BuildContext context) {
     return
       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          TextButton(
-            child: Text("Choose a date"),
+          ElevatedButton(
+            child: Text("Choose date", style: TextStyle( fontSize: 15),),
             onPressed: (){
               showDatePicker();
             },
           ),
+          SizedBox(width:10),
           Container(
             width: 90,
             child: TextField(

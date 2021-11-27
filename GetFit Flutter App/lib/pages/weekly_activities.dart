@@ -60,75 +60,86 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget> [
-          Text("Weekly activities", style: TextStyle(fontSize: 25)),
-          Text("Select a week ", style: TextStyle(fontSize: 15)),
-          Container(
-            child: MyDate(),
-          ),
-          Text("Your goal:"),
-          // TODO elosztani a teljesitett celt az egesz cellal, kiiratni
-          LinearPercentIndicator(
-            width: 400,
-            lineHeight: 17.0,
-            percent: (percentIsNull()),
-            backgroundColor: Colors.grey,
-            progressColor: Colors.blue,
-            center: Text(checkisNull()+ "%"),
-          ),
-          Text(curramIsNull() + '/' + amIsNull() + " active days completed"),
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/back.jpeg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget> [
+              Text("Weekly activities", style: TextStyle(fontSize: 25)),
+              Text("Select a week ", style: TextStyle(fontSize: 15)),
+              Container(
+                child: MyDate(),
+              ),
+              Text("Your goal:"),
+              // TODO elosztani a teljesitett celt az egesz cellal, kiiratni
+              LinearPercentIndicator(
+                width: 400,
+                lineHeight: 17.0,
+                percent: (percentIsNull()),
+                backgroundColor: Colors.grey,
+                progressColor: Colors.blue,
+                center: Text(checkisNull()+ "%"),
+              ),
+              Text(curramIsNull() + '/' + amIsNull() + " active days completed"),
 
-          //TODO Felugro ablak, cel valtoztatasa, majd elkuldess
-          ElevatedButton(
-            child: const Text("Change goal"),
-            onPressed: () {
-              setDialog(context, "Choose active day number: ").then((onValue){
-                setState(() {
-                  if( goals.length != 0){
-                    goals[0].Amount = int.parse(onValue);
-                    updateGoal(goals[0],goals[0].Id);
-                  }
-                });
-              });
-            },
+              //TODO Felugro ablak, cel valtoztatasa, majd elkuldess
+              ElevatedButton(
+                child: const Text("Change goal"),
+                onPressed: () {
+                  setDialog(context, "Choose active day number: ").then((onValue){
+                    setState(() {
+                      if( goals.length != 0){
+                        goals[0].Amount = int.parse(onValue);
+                        updateGoal(goals[0],goals[0].Id);
+                      }
+                    });
+                  });
+                },
 
-          ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text('Distance of running:',
-                  textAlign: TextAlign.left,
-                ),
-                Text(SumDistance().toString() + 'km', textAlign: TextAlign.left,)
-              //TODO lefutott km-ek szama megjelenites
-              ]
-          ),
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text('Distance of running:',
+                      textAlign: TextAlign.left,
+                    ),
+                    Text(SumDistance().toString() + 'km', textAlign: TextAlign.left,)
+                  //TODO lefutott km-ek szama megjelenites
+                  ]
+              ),
 
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text('Time of sport activitties:',
-                  textAlign: TextAlign.left,
-                ),
-                Text(SumTime().toString() + 'seconds', textAlign: TextAlign.left,)
-                // TODO aktiv orak szama megjelenites
-              ]
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text('Time of sport activitties:',
+                      textAlign: TextAlign.left,
+                    ),
+                    Text(SumTime().toString() + 'seconds', textAlign: TextAlign.left,)
+                    // TODO aktiv orak szama megjelenites
+                  ]
+              ),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children:  <Widget>[
+                    Text('Burned calories:',
+                      textAlign: TextAlign.left,
+                    ),
+                    Text(SumKcal().toString() + ' kcal', textAlign: TextAlign.left,)
+                    // TODO osszes egetett kaloria megjelenites
+                  ]
+              ),
+            ],
           ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children:  <Widget>[
-                Text('Burned calories:',
-                  textAlign: TextAlign.left,
-                ),
-                Text(SumKcal().toString() + ' kcal', textAlign: TextAlign.left,)
-                // TODO osszes egetett kaloria megjelenites
-              ]
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_fit/adapter/ActivityAdapter.dart';
@@ -20,133 +22,155 @@ class LoginScreen extends StatelessWidget {
 
   LoginScreen({Key? key}) : super(key: key);
   var activityadapter = ActivityAdapter();
+  var useradapter = UserAdapter();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text('Login', textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 30)),
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/back.jpeg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+        backgroundColor: Colors.transparent,
+            body: Center(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
 
-                const SizedBox(height: 50),
-                Row(
-                    children: <Widget>[
-                      SizedBox(width: 10),
-                      Text('E-mail ',
-                        textAlign: TextAlign.left,
-                      ),
-                      SizedBox(width: 10),
-                      Flexible(
-                        child: TextField(
-                          controller: emailcontroller,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'E-mail',
+                    const Text('Login', textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 30)),
+                    SizedBox(height:30),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset("assets/images/cover.jpeg"),),
+
+                    const SizedBox(height: 50),
+                    Row(
+                        children: <Widget>[
+                          SizedBox(width: 10),
+                          Text('E-mail ',
+                            textAlign: TextAlign.left,
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                    ]
-                ),
-                SizedBox(height:10),
-                Row(
-                    children: <Widget>[
-                      SizedBox(width: 10),
-                      Text("Password ",
-                        textAlign: TextAlign.left,
-                      ),
-                      SizedBox(width: 10),
-                      Flexible(
-                        child: TextField(
-                          obscureText: true,
-                          controller: passwordcontroller,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Password',
-
+                          SizedBox(width: 10),
+                          Flexible(
+                            child: TextField(
+                              controller: emailcontroller,
+                              cursorColor: Color.fromRGBO(
+                                  82, 82, 82, 1.0),
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'E-mail',
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                    ]
-                ),
-                TextButton(
-                  onPressed: () async {
-                    bool valid = await validateLogin();
-                    if (valid  == true) {
+                          SizedBox(width: 10),
+                        ]
+                    ),
+                    SizedBox(height:10),
+                    Row(
+                        children: <Widget>[
+                          SizedBox(width: 10),
+                          Text("Password ",
+                            textAlign: TextAlign.left,
+                          ),
+                          SizedBox(width: 10),
+                          Flexible(
+                            child: TextField(
+                              obscureText: true,
+                              cursorColor: Color.fromRGBO(
+                                82, 82, 82, 1.0),
+                              controller: passwordcontroller,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Password',
 
-                      emailcontroller.clear();
-                      passwordcontroller.clear();
-                      user = await validatedUser();
-                      users = await getUsers();
-                     await activityadapter.getActivityByUserId(user.Id);
-                     sports = await getSports();
-                     goals = await getGoalByUserId(user.Id);
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                        ]
+                    ),
+                    TextButton(
+                      onPressed: () async {
+                        await useradapter.getUsers();
+                        bool valid = await validateLogin();
+                        if (valid  == true) {
 
-                      print(user.Username);
-                      if( user.Email =="admin" && user.Password == "admin"){
-                        Navigator.pushNamed(
+                          emailcontroller.clear();
+                          passwordcontroller.clear();
+                          user = await validatedUser();
+                          await useradapter.getUsers();
+                         await activityadapter.getActivityByUserId(user.Id);
+                         sports = await getSports();
+                         goals = await getGoalByUserId(user.Id);
+
+                          print(user.Username);
+                          if( user.Email =="admin" && user.Password == "admin"){
+                            Navigator.pushNamed(
+                              context,
+                              "/adminscreen",
+                            );
+                          } else{
+                            Navigator.pushNamed(
+                              context,
+                              "/homepage",
+                            );
+                          }
+                        }
+                        else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Not a valid data')),
+                          );
+                        }
+                      },
+                      child: const Text("Login", style: TextStyle(fontSize: 20),),
+                    ),
+                    const Text('-Or-'),
+                    TextButton(onPressed: () async {
+                      Navigator.pushNamed(
                           context,
-                          "/adminscreen",
-                        );
-                      } else{
-                        Navigator.pushNamed(
-                          context,
-                          "/homepage",
-                        );
-                      }
-                    }
-                    else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Not a valid data')),
-                      );
-                    }
-                  },
-                  child: const Text("Login", style: TextStyle(fontSize: 20)),
-                ),
-                const Text('-Or-'),
-                TextButton(onPressed: () async {
-                  Navigator.pushNamed(
-                      context,
-                      "/registerpage");
-                },
-                    child: const Text(
-                        'Register', style: TextStyle(fontSize: 20))),
+                          "/registerpage");
+                    },
+                        child: const Text(
+                            'Register', style: TextStyle(fontSize: 20),),)
 
-              ]
-          ),
-        )
+                  ]
+              ),
+            )
+        ),
+      ],
     );
   }
 
   Future<bool> validateLogin() async {
-    List<User> users = await getUsers();
+
     bool find = false;
-    users.forEach((element) async {
+    useradapter.users.forEach((element) async {
       if (element.Email == emailcontroller.text
           && element.Password == passwordcontroller.text) {
         find = true;
-        user =  await getUserById(element.Id);
+        user =  await useradapter.getUserById(element.Id);
       }
     });
 
-
     if (find == true) {
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
 
   Future<User> validatedUser() async {
-    List<User> users = await getUsers();
-    users.forEach((element) async {
+    useradapter.getUsers();
+    useradapter.users.forEach((element) async {
       if (element.Email == emailcontroller.text
           && element.Password == passwordcontroller.text) {
-        user =  await getUserById(element.Id);
+        user =  await useradapter.getUserById(element.Id);
       }
     });
     print(user.Id);

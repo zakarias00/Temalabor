@@ -39,13 +39,13 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///Users/noemi/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3",
+      "rootUri": "file:///Users/noemi/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/noemi/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.1",
+      "rootUri": "file:///Users/noemi/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -188,7 +188,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-11-26T23:27:33.821299Z",
+  "generated": "2021-11-27T13:11:23.786404Z",
   "generator": "pub",
   "generatorVersion": "2.14.3"
 }

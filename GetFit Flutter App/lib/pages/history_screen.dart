@@ -51,92 +51,104 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
     String selectedsport = sportnames[0];
 
-    return Scaffold(
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:  <Widget> [
-            SizedBox(height:50),
-            const Text("History", style: TextStyle(fontSize: 25)),
-            Row(
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/back.jpeg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                    child: DropdownButton<String>(
-                      items: sportnames.map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (String? newvalue) {
-                        selectedsport = newvalue!;
-                        setState(() {
-                         selectedsport;
-                         txt.text = selectedsport;
-                        });
+              children:  <Widget> [
+                SizedBox(height:50),
+                const Text("History", style: TextStyle(fontSize: 25)),
+                SizedBox(height:30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        child: DropdownButton<String>(
+                          items: sportnames.map((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          onChanged: (String? newvalue) {
+                            selectedsport = newvalue!;
+                            setState(() {
+                             selectedsport;
+                             txt.text = selectedsport;
+                            });
 
-                        //activityadapter.getActivityBySportId(getSportId(selectedsport));
-                      },
-                      icon: const Icon(Icons.arrow_downward),
-                      iconSize: 24,
-                      elevation: 16,
-                      style: const TextStyle(color: Colors.deepPurple),
-                      underline: Container(
-                        height: 2,
-                        color: Colors.deepPurpleAccent,
+                            //activityadapter.getActivityBySportId(getSportId(selectedsport));
+                          },
+                          icon: const Icon(Icons.arrow_downward),
+                          iconSize: 24,
+                          elevation: 16,
+                          style: const TextStyle(color: Colors.blue),
+                          underline: Container(
+                            height: 2,
+                            color: Colors.blue,
+                          ),
+                        )
+                    ),
+                    Container(
+                      width: 70,
+                      child: TextField(
+                        controller: txt,
+                        decoration: new InputDecoration(
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none)
                       ),
-                    )
+                    ),
+                    TextButton(onPressed: (){
+                      activityadapter.getActivityByUserId(user.Id);
+                      txt.text = "All";
+                    }, child: Text("All" ,textAlign: TextAlign.left,))
+                  ],
                 ),
-                Container(
-                  width: 70,
-                  child: TextField(
-                    controller: txt,
-                    decoration: new InputDecoration(
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        errorBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none)
+                Expanded(
+                  child: Consumer<ActivityAdapter>(
+                    builder: (context, activityadapter, child) => ListView.builder(
+                      itemCount: activityadapter.activities.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                            title: Text(getSportType(activityadapter.activities[index].SportId)),
+                            subtitle: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(activityadapter.activities[index].Time.toString() + " sec "),
+                                Text(activityadapter.activities[index].Kcal.toString() + " kcal "),
+                                Text(activityadapter.activities[index].Distance.toString() + " km "),
+
+                              ],
+                            )
+                        );
+                      },
+                    ),
                   ),
                 ),
-                TextButton(onPressed: (){
-                  activityadapter.getActivityByUserId(user.Id);
-                  txt.text = "All";
-                }, child: Text("All"))
-              ],
-            ),
-            Expanded(
-              child: Consumer<ActivityAdapter>(
-                builder: (context, activityadapter, child) => ListView.builder(
-                  itemCount: activityadapter.activities.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                        title: Text(getSportType(activityadapter.activities[index].SportId)),
-                        subtitle: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(activityadapter.activities[index].Time.toString() + " sec "),
-                            Text(activityadapter.activities[index].Kcal.toString() + " kcal "),
-                            Text(activityadapter.activities[index].Distance.toString() + " km "),
+              CupertinoButton(
+              onPressed: ()  {
 
-                          ],
-                        )
-                    );
-                  },
-                ),
-              ),
-            ),
-          CupertinoButton(
-          onPressed: ()  {
-
-            Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  AddActivity())
-            );
-              }, child: Text("Add activity"),
-      ),
-          ]
-      ),
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  AddActivity())
+                );
+                  }, child: Text("Add activity"),
+          ),
+              ]
+          ),
+        ),
+      ],
     );
   }
 }

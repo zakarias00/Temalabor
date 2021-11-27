@@ -17,7 +17,7 @@ class ActivityAdapter extends ChangeNotifier{
     return a;
   }
 
-  void  getActivities() async{
+  Future getActivities() async{
     var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/');
     var responseBody = response.data;
     Iterable l = responseBody;
@@ -27,12 +27,12 @@ class ActivityAdapter extends ChangeNotifier{
     notifyListeners();
   }
 
-  void newActiviy( Activity a) async {
+  Future newActiviy( Activity a) async {
     var json = a.toJson();
     final response = await Dio().post('https://getfit-application.azurewebsites.net/ActivityController/', data: json);
   }
 
- getActivityByUserId(int id) async{
+ Future getActivityByUserId(int id) async{
     var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/userId='+ id.toString());
     var responseBody = response.data;
     Iterable l = responseBody;
@@ -42,7 +42,7 @@ class ActivityAdapter extends ChangeNotifier{
     notifyListeners();
   }
 
- getActivityBySportId(int id) async{
+ Future getActivityBySportId(int id) async{
     var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/sportId='+ id.toString());
     var responseBody = response.data;
     Iterable l = responseBody;

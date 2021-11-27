@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_fit/adapter/ActivityAdapter.dart';
+import 'package:get_fit/adapter/UserAdapter.dart';
 import 'package:get_fit/pages/add_activity.dart';
 import 'package:get_fit/pages/admin_screen.dart';
 import 'package:get_fit/pages/homescreen.dart';
@@ -18,7 +19,6 @@ import 'datas/User.dart';
 void main() {
   runApp(const ImperativeNavigationApp());
 }
-late List<User> users;
 
 late List<Goal> goals = [];
 late List<Sport> sports;
@@ -30,8 +30,11 @@ class ImperativeNavigationApp extends StatelessWidget {
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ActivityAdapter(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ActivityAdapter>(create: (_) => ActivityAdapter()),
+        ChangeNotifierProvider<UserAdapter>(create: (_) => UserAdapter())
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Screens Navigation',
@@ -43,7 +46,7 @@ class ImperativeNavigationApp extends StatelessWidget {
         routes: {
           "/loginpage": (context) =>  LoginScreen(),
           "/registerpage": (context) => const RegisterScreen(),
-          "/personaldatapage": (context) => const PersonalDataScreen(),
+          "/personaldatapage": (context) => PersonalDataScreen(),
           "/homepage": (context) =>  const HomeScreen(),
           "/addactivity": (context) =>  AddActivity(),
           "/adminscreen": (context) => const AdminActivity(),

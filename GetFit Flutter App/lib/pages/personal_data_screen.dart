@@ -23,134 +23,147 @@ TextEditingController heightcontroller = TextEditingController();
 TextEditingController weightcontroller = TextEditingController();
 
 class PersonalDataScreen extends StatelessWidget{
-  const PersonalDataScreen({Key? key}) : super(key: key);
+ PersonalDataScreen({Key? key}) : super(key: key);
+
+  var useradapter = UserAdapter();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget> [
-            Text('Enter your personal datas',textAlign: TextAlign.center, style: TextStyle( fontSize:  30),),
-            const SizedBox(height: 50),
-            Text("Choose your gender: "),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:  <Widget>[
-                  Flexible(
-                    child: CupertinoButton(
-                      onPressed: () {
-                              showCupertinoModalPopup<void>(
-                              context: context,
-                              builder: (BuildContext context) => CupertinoActionSheet(
-                                        title: const Text('Gender'),
-                                        actions: <CupertinoActionSheetAction>[
-                                        CupertinoActionSheetAction(
-                                              child: const Text('Woman'),
-                                              onPressed: () {
-                                              Navigator.pop(context);
-                                              user.Gender = true;
-                                              },
-                                              ),
-                                        CupertinoActionSheetAction(
-                                              child: const Text('Man'),
-                                              onPressed: () {
-                                              Navigator.pop(context);
-                                              user.Gender = false;
-                                    },
-                                    )
-                                    ],
-                                    ),
-                          );
-                            },
-                      child: const Text('Choose Gender'),
-                    ),
-                  ),
-                ]
-                    ),
-
-            Column(
-              children: <Widget>[
-                Text("Choose your birthdate:"),
-                Container(
-                  child: MyDate(),
-                )
-// todo regebbrol is lehessen adatot valasztani
-              ]
-            ),
-            Row(
-                children: <Widget>[
-                  SizedBox(width: 10),
-                  Text('Height(cm): ',
-                    textAlign: TextAlign.left,
-                  ),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: TextField(
-                      controller: heightcontroller,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Height',
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/back.jpeg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                Text('Enter your personal datas',textAlign: TextAlign.center, style: TextStyle( fontSize:  30),),
+                const SizedBox(height: 50),
+                Text("Choose your gender: "),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:  <Widget>[
+                      Flexible(
+                        child: CupertinoButton(
+                          onPressed: () {
+                                  showCupertinoModalPopup<void>(
+                                  context: context,
+                                  builder: (BuildContext context) => CupertinoActionSheet(
+                                            title: const Text('Gender'),
+                                            actions: <CupertinoActionSheetAction>[
+                                            CupertinoActionSheetAction(
+                                                  child: const Text('Woman'),
+                                                  onPressed: () {
+                                                  Navigator.pop(context);
+                                                  user.Gender = true;
+                                                  },
+                                                  ),
+                                            CupertinoActionSheetAction(
+                                                  child: const Text('Man'),
+                                                  onPressed: () {
+                                                  Navigator.pop(context);
+                                                  user.Gender = false;
+                                        },
+                                        )
+                                        ],
+                                        ),
+                              );
+                                },
+                          child: const Text('Choose Gender'),
+                        ),
                       ),
-                        keyboardType: TextInputType.number
+                    ]
+                        ),
+
+                Column(
+                  children: <Widget>[
+                    Text("Choose your birthdate:"),
+                    Container(
+                      child: MyDate(),
                     )
-                  ),
-                  SizedBox(width: 10),
-                ]
-            ),
-
-           const SizedBox(height: 10),
-
-            Row(
-                children: <Widget>[
-                  SizedBox(width: 10),
-                  Text('Weight (kg):',
-                    textAlign: TextAlign.left,
-                  ),
-                  SizedBox(width: 10),
-                  Flexible(
-                    child: TextField(
-                      controller: weightcontroller,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Weight',
+// todo regebbrol is lehessen adatot valasztani
+                  ]
+                ),
+                Row(
+                    children: <Widget>[
+                      SizedBox(width: 10),
+                      Text('Height(cm): ',
+                        textAlign: TextAlign.left,
                       ),
-                        keyboardType: TextInputType.number
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                ]
-            ),
-            TextButton(
-              onPressed: () async {
-                user.Birthdate = datecontroller.text;
-                user.Height = double.parse(heightcontroller.text);
-                user.Weight = double.parse(weightcontroller.text);
-                Random random = new Random();
-                int randomNumber = random.nextInt(100);
-                user.Id = randomNumber;
-                newUser(user);
+                      SizedBox(width: 10),
+                      Flexible(
+                        child: TextField(
+                          controller: heightcontroller,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Height',
+                          ),
+                            keyboardType: TextInputType.number
+                        )
+                      ),
+                      SizedBox(width: 10),
+                    ]
+                ),
 
-                heightcontroller.clear();
-                weightcontroller.clear();
+               const SizedBox(height: 10),
 
-                Navigator.pushNamed(
-                  context,
-                  "/loginpage",
-                );
-              },
-              child: const Text("Submit"),
-            ),
-           /* ElevatedButton(
-              child: const Text("Back"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),*/
-          ],
-        )
-      ),
+                Row(
+                    children: <Widget>[
+                      SizedBox(width: 10),
+                      Text('Weight (kg):',
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(width: 10),
+                      Flexible(
+                        child: TextField(
+                          controller: weightcontroller,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Weight',
+                          ),
+                            keyboardType: TextInputType.number
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                    ]
+                ),
+                TextButton(
+                  onPressed: () async {
+                    user.Birthdate = datecontroller.text;
+                    user.Height = double.parse(heightcontroller.text);
+                    user.Weight = double.parse(weightcontroller.text);
+                    Random random = new Random();
+                    int randomNumber = random.nextInt(100);
+                    user.Id = randomNumber;
+                    useradapter.newUser(user);
+
+                    heightcontroller.clear();
+                    weightcontroller.clear();
+
+                    Navigator.pushNamed(
+                      context,
+                      "/loginpage",
+                    );
+                  },
+                  child: const Text("Submit"),
+                ),
+               /* ElevatedButton(
+                  child: const Text("Back"),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),*/
+              ],
+            )
+          ),
+        ),
+      ],
     );
   }
 
