@@ -4,7 +4,7 @@ class Activity{
     int SportId;
     int UserId;
     double? Time;
-    String? Date;
+    int Date;
     double? Kcal;
     double Distance;
 

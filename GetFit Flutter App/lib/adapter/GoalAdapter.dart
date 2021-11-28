@@ -1,43 +1,61 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:get_fit/datas/Goal.dart';
-import 'package:get_fit/datas/Sport.dart';
 
-Future<Goal> getGoalById(int i) async{
-  Goal g;
-  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/' + i.toString());
-  var responseBody = response.data;
-  g = Goal.fromJson(responseBody);
-  return g;
-}
+class GoalAdapter extends ChangeNotifier{
 
-Future<List<Goal>> getGoals() async{
-  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/');
-  var responseBody = response.data;
-  Iterable l = responseBody;
-  List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+  late List<Goal> goals = [];
 
-  return goals;
-}
+  Future<Goal> getGoalById(int i) async{
+    Goal g;
+    var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/' + i.toString());
+    var responseBody = response.data;
+    g = Goal.fromJson(responseBody);
+    return g;
+  }
 
-Future<List<Goal>> getGoalByUserId(int id) async{
-  var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/userId='+ id.toString());
-  var responseBody = response.data;
-  Iterable l = responseBody;
-  List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+  Future getGoals() async{
+    var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/');
+    var responseBody = response.data;
+    Iterable l = responseBody;
+    List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+    this.goals = goals;
+    notifyListeners();
+  }
 
-  return goals;
-}
+  Future getGoalByUserId(int id) async{
+    var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/userId='+ id.toString());
+    var responseBody = response.data;
+    Iterable l = responseBody;
+    List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
 
-void updateGoal ( Goal g, int goalId) async{
-  var json = g.toJson();
-  final response = await Dio().put('https://getfit-application.azurewebsites.net/GoalController/' + goalId.toString(), data: json);
-}
-/*
+    this.goals = goals;
+    notifyListeners();
+  }
+
+  Future updateGoal ( Goal g, int goalId) async{
+    var json = g.toJson();
+    final response = await Dio().put('https://getfit-application.azurewebsites.net/GoalController/' + goalId.toString(), data: json);
+  }
+
+
+  Future getGoalByDate( int date, int id) async{
+
+    var response = await Dio().get('https://getfit-application.azurewebsites.net/GoalController/date='+ date.toString()+ '/' + id.toString());
+    var responseBody = response.data;
+    Iterable l = responseBody;
+    List<Goal> goals = List<Goal>.from(l.map((model)=> Goal.fromJson(model)));
+
+    this.goals = goals;
+    notifyListeners();
+  }
+
 
 void newGoal( Goal g) async {
   var json = g.toJson();
   final response = await Dio().post('https://getfit-application.azurewebsites.net/GoalController/', data: json);
 }
+}
 
- */
+
 

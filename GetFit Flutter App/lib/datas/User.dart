@@ -6,7 +6,7 @@ class User{
   String Password;
   int Points;
   int Level;
-  String? Birthdate;
+  int Birthdate;
   double Height;
   double Weight;
   bool Gender;

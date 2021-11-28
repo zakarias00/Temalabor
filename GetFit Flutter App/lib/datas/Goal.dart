@@ -3,7 +3,7 @@ class Goal{
   int Id;
   int Amount;
   int UserId;
-  String? DateStart;
+  int DateStart;
   int CurrentAmount;
   int Status;
 
@@ -14,17 +14,17 @@ class Goal{
       :
         Id = json['_id'],
         Amount = json['amount'],
-        UserId = json['userId'],
-        DateStart = json['dateStart'],
         CurrentAmount = json['currentAmount'],
+        DateStart = json['dateStart'],
+        UserId = json['userId'],
         Status = json['status'];
 
   Map<String, dynamic> toJson() => <String, dynamic>{
     '_id': Id,
-    'Amount': Amount,
-    'UserId': UserId,
-    'dateStart' : DateStart,
+    'amount': Amount,
     'currentAmount' : CurrentAmount,
+    'dateStart' : DateStart,
+    'userId': UserId,
     'status' : Status
   };
 }

@@ -84,12 +84,13 @@ class AdminActivity extends StatelessWidget{
                     },
                     child: const Text("Ok", style: TextStyle(fontSize: 20)),
                   ),
-                   /*TextButton(
-                      child: const Text("Back"),
-                       onPressed: () {
-                    Navigator.of(context, rootNavigator: true).pop(context);},
-                ),*/
-                ],
+                  TextButton(
+                child: const Text("Back"),
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true).pop(context);
+                },
+              ),
+            ],
               )
           ),
         ),

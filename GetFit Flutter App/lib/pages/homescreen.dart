@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get_fit/main.dart';
 import 'package:get_fit/pages/history_screen.dart';
@@ -13,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyStatefulWidget(),
     );
   }
@@ -30,7 +30,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Scaffold(
       body: HomeData(),
@@ -77,7 +77,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.people),
             label: 'People',
           ),
-
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueAccent,
