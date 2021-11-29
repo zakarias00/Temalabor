@@ -122,3 +122,6 @@ Most már működnek a szűrések, a provider osztályaim segítségével, mindi
 
 #### Orova Dorina
 Átalakítottam a dátumok tárolását (mostmár longokként vannak tárolva, mint timestampek). Ezen kívül átnéztem a dátumkezelő függvényeket (heti goal/activityk kilistázása dátum szerint). Mostmár az új activity felvételekor nő a heti goal current amountja, működik a pontok adása, és félig a szintlépés is. A goal státusza viszont (egyenlőre ismeretlen okokból) nem jó. 
+
+#### Zakariás Anna
+Elkészítettem a szemályes adatok beállításához tartozó DialogFragmenteket, ezekkel működnek a user és goal update funkciói. Az új sporttevékenység megadásánál még a String Date konverzió nem műküdik sajnos.
