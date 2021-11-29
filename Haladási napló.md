@@ -119,3 +119,6 @@ Sikerült az Angular applikáció feltöltése Azure-ra, a https://getfitweb.azu
 #### Sipos Noémi
 Az applikáció designjét kicsit megváltoztattam,adtam hozzá képeket és hátteret.
 Most már működnek a szűrések, a provider osztályaim segítségével, mindig frissülnek az adatok. Lehet a nevek között keresni, és lehet sportágak alapján keresni. A dátumok az activityknél megjelennek már, és az activity létrehozáskor is már jó dátumot lehet megadni. A születési időt is jól lehet már megadni. A goal képernyő is működik már, lehet dátum alapján választani, hogy melyik goalok jelenjenek meg.
+
+#### Orova Dorina
+Átalakítottam a dátumok tárolását (mostmár longokként vannak tárolva, mint timestampek). Ezen kívül átnéztem a dátumkezelő függvényeket (heti goal/activityk kilistázása dátum szerint). Mostmár az új activity felvételekor nő a heti goal current amountja, működik a pontok adása, és félig a szintlépés is. A goal státusza viszont (egyenlőre ismeretlen okokból) nem jó. 
