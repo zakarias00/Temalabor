@@ -6,12 +6,11 @@ import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/adapter/GoalAdapter.dart';
 import 'package:get_fit/adapter/SportAdapter.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
-import 'package:get_fit/datas/Activity.dart';
 import 'package:get_fit/datas/Goal.dart';
-import 'package:get_fit/datas/Sport.dart';
 import 'package:get_fit/datas/User.dart';
 
 import '../main.dart';
+import 'homedata_screen.dart';
 
 TextEditingController passwordcontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
@@ -102,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                           }
                           emailcontroller.clear();
                           passwordcontroller.clear();
-                          print(user.Username);
+                          percent = (user.Points - user.Level* 10)*10.roundToDouble() ;
                           if (user.Email == "admin" &&
                               user.Password == "admin") {
                             Navigator.pushNamed(

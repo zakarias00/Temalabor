@@ -92,7 +92,6 @@ class PersonalDataScreen extends StatelessWidget {
                   child: MyDate(),
                 ),
                 SizedBox(height: 10),
-// todo regebbrol is lehessen adatot valasztani
               ]),
               Row(children: <Widget>[
                 SizedBox(width: 10),
@@ -169,12 +168,6 @@ class PersonalDataScreen extends StatelessWidget {
                   Navigator.of(context, rootNavigator: true).pop(context);
                 },
               ),
-              /* ElevatedButton(
-                  child: const Text("Back"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),*/
             ],
           )),
         ),

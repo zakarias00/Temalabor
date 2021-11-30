@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/src/provider.dart';
 
 class SelectedDate extends ChangeNotifier{
@@ -12,6 +13,7 @@ class SelectedDate extends ChangeNotifier{
   }
 }
 
+final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
 class MyDate extends StatefulWidget {
   @override
@@ -69,7 +71,7 @@ class _MyDateState extends State<MyDate> {
                 if (value != null && value != selectedDate.selectedDate.toString())
                   setState(() {
                    selectedDate.changeDate(value);
-                    txt.text = selectedDate.selectedDate.toString();
+                    txt.text = formatter.format(selectedDate.selectedDate);
                   });
               },
               initialDateTime: DateTime.now(),

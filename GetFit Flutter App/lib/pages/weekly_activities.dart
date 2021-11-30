@@ -111,15 +111,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
 
               ElevatedButton(
-                child: const Text("Change goal"),
+                child: const Text("Set goal"),
                 onPressed: () {
                   setDialog(context, "Choose active day number: ")
                       .then((onValue) {
-                      if (goaladapter.goals.length != 0) {
+                      if (goaladapter.goals.length != 0 || goaladapter.goals[0].Amount == 0) {
                         setState(() {
-                          goaladapter.goals[0].Amount = int.parse(onValue);
-                          goaladapter.updateGoal(goaladapter.goals[0], goaladapter.goals[0].Id);
-                          goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
+                          if(int.parse(onValue) <= 7){
+                            goaladapter.goals[0].Amount = int.parse(onValue);
+                            goaladapter.updateGoal(goaladapter.goals[0], goaladapter.goals[0].Id);
+                            goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
+                          }
                         });
                       }
                   });
@@ -175,7 +177,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           );
                         }
                     )
-                    // TODO osszes egetett kaloria megjelenites
                   ]),
             ],
           ),
@@ -233,7 +234,7 @@ String checkisNull() {
   if(((goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount).toDouble() * 100) > 100){
     return "100";
   }
-  return ((goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount).toDouble() * 100).toString();
+  return ((goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount).toDouble() * 100).roundToDouble().toString();
 }
 
 double percentIsNull() {

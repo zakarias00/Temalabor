@@ -28,7 +28,7 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-var percent = 100;
+var percent;
 var useradapter = UserAdapter();
 
 /// This is the private State class that goes with MyStatefulWidget.
@@ -87,11 +87,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 lineWidth: 5.0,
                 animation: true,
                 percent: (percent/100),
-                // TODO felhasznalo szintlepesnel hany szazaleknal tart
-                center: Text(percent.toString() + " %"),
+                center: Text(percent.toInt().toString() + " %"),
                 progressColor: Colors.blueAccent,
               ),
-              //TODO szazalek alapjan uzenet
+              Text(user.Points.toString() + " points"),
               Text(motivationMessage(),
                   style: const TextStyle(fontSize: 30),textAlign: TextAlign.center),
               const Text("Your current status: "),
