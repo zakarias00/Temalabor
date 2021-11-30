@@ -125,3 +125,8 @@ Most már működnek a szűrések, a provider osztályaim segítségével, mindi
 
 #### Zakariás Anna
 Elkészítettem a szemályes adatok beállításához tartozó DialogFragmenteket, ezekkel működnek a user és goal update funkciói. Az új sporttevékenység megadásánál még a String Date konverzió nem műküdik sajnos.
+
+## 13. hét
+
+#### Sipos Noémi  
+A százalékot mutató progress bárokat működésre bírtam, a motivációs üzeneteket ez alapján írja ki az app. A felhasználó csak 1 és 7 közötti számot tud megadni goal amountnak, és csak akkor állíthatja be a goalt, ha még azelött nem volt beállítva.
