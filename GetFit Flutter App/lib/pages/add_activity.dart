@@ -1,18 +1,12 @@
-import 'dart:ffi';
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
-import 'package:get_fit/datas/Activity.dart';
-import 'package:get_fit/datas/User.dart';
-import 'package:get_fit/pages/homedata_screen.dart';
-import 'package:get_fit/widgets/MyDate.dart';
+import 'package:get_fit/adapter/activity_adapter.dart';
+import 'package:get_fit/datas/activity.dart';
+import 'package:get_fit/widgets/my_date.dart';
 import 'package:provider/src/provider.dart';
-
 import '../main.dart';
-import 'login_screen.dart';
 
 TextEditingController gendercontroller = TextEditingController();
 TextEditingController datecontroller = TextEditingController();
@@ -20,7 +14,7 @@ TextEditingController distancecontroller = TextEditingController();
 TextEditingController timecontroller = TextEditingController();
 
 class AddActivity extends StatelessWidget {
-  AddActivity({Key? key}) : super(key: key);
+  const AddActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +48,9 @@ class AddActivity extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Row(children: <Widget>[
-                SizedBox(width: 10),
-                Text("Choose sport"),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
+                const Text("Choose sport"),
+                const SizedBox(width: 10),
                 Container(
                     child: DropdownButton<String>(
                   items: sportnames.map((String value) {
@@ -78,12 +72,12 @@ class AddActivity extends StatelessWidget {
                     color: Colors.blue,
                   ),
                 )),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Container(
                   width: 120,
                   child: TextField(
                     controller: txt,
-                    decoration: new InputDecoration(
+                    decoration: const InputDecoration(
                         border: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         enabledBorder: InputBorder.none,
@@ -92,53 +86,51 @@ class AddActivity extends StatelessWidget {
                   ),
                 ),
               ]),
-              SizedBox(height: 10),
-              Row(children: <Widget>[
+              const SizedBox(height: 10),
+              Row(children: const <Widget>[
                 SizedBox(width: 10),
                 Text("Date:"),
                 SizedBox(width: 10),
-                Container(
-                  child: MyDate(),
-                )
+                MyDate()
               ]),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(children: <Widget>[
-                SizedBox(width: 10),
-                Text(
+                const SizedBox(width: 10),
+                const Text(
                   'Distance(km): ',
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Flexible(
                     child: TextField(
                         controller: distancecontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Distance',
                         ),
                         keyboardType: TextInputType.number)),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
               ]),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(children: <Widget>[
-                SizedBox(width: 10),
-                Text(
+                const SizedBox(width: 10),
+                const Text(
                   'Time (sec):',
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Flexible(
                   child: TextField(
                       controller: timecontroller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Time',
                       ),
                       keyboardType: TextInputType.number),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
               ]),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -153,7 +145,7 @@ class AddActivity extends StatelessWidget {
                       if (selectedsport != "" &&
                           timecontroller != "Time" &&
                           distancecontroller != "Distance") {
-                        Random random = new Random();
+                        Random random = Random();
                         int randomNumber = random.nextInt(100);
 
                         Activity newac =

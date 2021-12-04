@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:convert';
-import '../datas/Activity.dart';
+import '../datas/activity.dart';
 
 
 class ActivityAdapter extends ChangeNotifier{

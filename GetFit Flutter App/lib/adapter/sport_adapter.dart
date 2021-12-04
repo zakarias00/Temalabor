@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:get_fit/datas/Sport.dart';
+import 'package:get_fit/datas/sport.dart';
 
 Future<Sport> getSportById(int i) async{
   Sport s;

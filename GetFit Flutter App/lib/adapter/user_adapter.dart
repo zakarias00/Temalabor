@@ -1,9 +1,6 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get_fit/datas/User.dart';
-
-
+import 'package:get_fit/datas/user.dart';
 
 class UserAdapter extends ChangeNotifier {
   List<User> users = [];
@@ -56,6 +53,5 @@ class UserAdapter extends ChangeNotifier {
     this.users = users;
     notifyListeners();
   }
-
 
 }

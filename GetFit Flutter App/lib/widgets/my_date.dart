@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/src/provider.dart';
 
@@ -20,6 +19,8 @@ class SelectedDate extends ChangeNotifier{
 final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
 class MyDate extends StatefulWidget {
+  const MyDate({Key? key}) : super(key: key);
+
   @override
   _MyDateState createState() {
     return _MyDateState();
@@ -32,13 +33,12 @@ class _MyDateState extends State<MyDate> {
 
   @override
   Widget build(BuildContext context) {
-    var useradapter = context.read<UserAdapter>();
      selectedDate = context.read<SelectedDate>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         ElevatedButton(
-          child: Text(
+          child: const Text(
             "Choose date",
             style: TextStyle(fontSize: 15),
           ),
@@ -51,7 +51,7 @@ class _MyDateState extends State<MyDate> {
           width: 90,
           child: TextField(
               controller: txt,
-              decoration: new InputDecoration(
+              decoration: const InputDecoration(
                   border: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   enabledBorder: InputBorder.none,
@@ -72,7 +72,7 @@ class _MyDateState extends State<MyDate> {
             child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.date,
               onDateTimeChanged: (value) {
-                if (value != null && value != selectedDate.selectedDate.toString()){
+                if (value.toString() != selectedDate.selectedDate.toString()){
                   setState(() {
                     selectedDate.changeDate(value);
                     txt.text = formatter.format(selectedDate.selectedDate);

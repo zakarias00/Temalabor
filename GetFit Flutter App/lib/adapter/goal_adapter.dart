@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/datas/Goal.dart';
+import 'package:get_fit/datas/goal.dart';
 
 class GoalAdapter extends ChangeNotifier{
 

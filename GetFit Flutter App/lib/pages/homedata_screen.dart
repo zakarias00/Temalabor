@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
-import 'package:get_fit/datas/User.dart';
-import 'package:get_fit/pages/add_activity.dart';
+import 'package:get_fit/adapter/user_adapter.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
 import '../main.dart';
-import 'login_screen.dart';
+
 
 
 class HomeData extends StatelessWidget {
@@ -21,7 +18,6 @@ class HomeData extends StatelessWidget {
   }
 }
 
-/// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
@@ -32,7 +28,7 @@ class MyStatefulWidget extends StatefulWidget {
 var percent;
 var useradapter = UserAdapter();
 
-/// This is the private State class that goes with MyStatefulWidget.
+
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final DateFormat formatter = DateFormat('yyyy-MM-dd');
@@ -83,8 +79,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              SizedBox(height:10),
-              Text(user.Name, style: TextStyle(fontSize: 25)),
+              const SizedBox(height:10),
+              Text(user.Name, style: const TextStyle(fontSize: 25)),
               Text(user.Level.toString() + " level"),
 
               CircularPercentIndicator(

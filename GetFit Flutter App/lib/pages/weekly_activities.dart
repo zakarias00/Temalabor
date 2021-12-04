@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
-import 'package:get_fit/adapter/GoalAdapter.dart';
-import 'package:get_fit/widgets/MyDate.dart';
+import 'package:get_fit/adapter/activity_adapter.dart';
+import 'package:get_fit/adapter/goal_adapter.dart';
+import 'package:get_fit/widgets/my_date.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/src/provider.dart';
@@ -21,7 +21,7 @@ class Activities extends StatelessWidget {
     );
   }
 }
-/// This is the stateful widget that the main application instantiates.
+
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
@@ -29,7 +29,6 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-/// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   setDialog(BuildContext context, String text) {
     TextEditingController controller = new TextEditingController();
@@ -45,7 +44,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             actions: <Widget>[
               MaterialButton(
                 elevation: 5.0,
-                child: Text('Ok'),
+                child: const Text('Ok'),
                 onPressed: () {
                   Navigator.of(context).pop(controller.text);
                 },
@@ -57,7 +56,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   void initState() {
-
     selecteddate = context.read<SelectedDate>();
     goaladapter = context.read<GoalAdapter>();
     activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
@@ -81,12 +79,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Text("Weekly activities", style: TextStyle(fontSize: 25)),
-              Text("Select a week ", style: TextStyle(fontSize: 15)),
-              Container(
-                child: MyDate(),
-              ),
-              Text("Your goal:"),
+              const Text("Weekly activities", style: TextStyle(fontSize: 25)),
+              const Text("Select a week ", style: TextStyle(fontSize: 15)),
+              const MyDate(),
+              const Text("Your goal:"),
           Consumer<SelectedDate>(
             builder: (context,selecteddate,child){
               return LinearPercentIndicator(
@@ -113,7 +109,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 onPressed: () {
                   setDialog(context, "Choose active day number: ")
                       .then((onValue) {
-                      if (goaladapter.goals.length != 0 || goaladapter.goals[0].Amount == 0) {
+                      if (goaladapter.goals.isNotEmpty || goaladapter.goals[0].Amount == 0) {
                         setState(() {
                           if(int.parse(onValue) <= 7){
                             goaladapter.goals[0].Amount = int.parse(onValue);
@@ -128,7 +124,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Distance of running:',
                       textAlign: TextAlign.left,
                     ),
@@ -145,7 +141,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Time of sport activitties:',
                       textAlign: TextAlign.left,
                     ),
@@ -161,7 +157,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Burned calories:',
                       textAlign: TextAlign.left,
                     ),
@@ -185,10 +181,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 double SumKcal()  {
   double sum = 0;
   activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
-  print(selecteddate.selectedDate);
   activityadapter2.activities.forEach((element) {
     sum += element.Kcal!;
-    print(element.Kcal);
   });
   return sum;
 }
@@ -213,19 +207,19 @@ double SumDistance() {
 
 String curramIsNull() {
  goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
-  if (goaladapter.goals.length == 0) return "0";
+  if (goaladapter.goals.isEmpty) return "0";
   return goaladapter.goals[0].CurrentAmount.toString();
 }
 
 String amIsNull() {
  goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
-  if (goaladapter.goals.length == 0) return "0";
+  if (goaladapter.goals.isEmpty) return "0";
   return goaladapter.goals[0].Amount.toString().toString();
 }
 
 String checkisNull() {
   goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
-  if (goaladapter.goals.length == 0) {
+  if (goaladapter.goals.isEmpty) {
     return "0";
   }
   if(((goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount).toDouble() * 100) > 100){
@@ -236,7 +230,7 @@ String checkisNull() {
 
 double percentIsNull() {
   goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
-  if (goaladapter.goals.length == 0) return 0;
+  if (goaladapter.goals.isEmpty) return 0;
   if((goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount) > 1) return 1.0;
   return goaladapter.goals[0].CurrentAmount / goaladapter.goals[0].Amount;
 }

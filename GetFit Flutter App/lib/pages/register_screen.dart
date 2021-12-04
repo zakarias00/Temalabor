@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/datas/User.dart';
-
 import '../main.dart';
 
 TextEditingController fullnamecontroller = TextEditingController();
@@ -9,8 +7,6 @@ TextEditingController usernamecontroller = TextEditingController();
 TextEditingController emailcontroller = TextEditingController();
 TextEditingController passwordcontroller = TextEditingController();
 
-// TODO letrehozni uj felhasznalot elmenteni az adatait, hibauzenet kuldese ha nem jo formatumba adott meg valamit
-// TODO elkuldeni az uj adatokat
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
@@ -30,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     'Register',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 30),
@@ -38,79 +34,79 @@ class RegisterScreen extends StatelessWidget {
                   const SizedBox(height: 50),
                   Row(children: <Widget>[
                     SizedBox(width: 10),
-                    Text(
+                    const Text(
                       'Full name ',
                       textAlign: TextAlign.left,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Flexible(
                       child: TextField(
                         controller: fullnamecontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Full name',
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                   ]),
                   const SizedBox(height: 10),
                   Row(children: <Widget>[
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       "Username ",
                       textAlign: TextAlign.left,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Flexible(
                       child: TextField(
                         controller: usernamecontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Username',
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                   ]),
                   const SizedBox(height: 10),
                   Row(children: <Widget>[
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       "E-mail ",
                       textAlign: TextAlign.left,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Flexible(
                       child: TextField(
                         controller: emailcontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'E-mail',
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                   ]),
                   const SizedBox(height: 10),
                   Row(children: <Widget>[
-                    SizedBox(width: 10),
-                    Text(
+                    const SizedBox(width: 10),
+                    const Text(
                       "Password ",
                       textAlign: TextAlign.left,
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Flexible(
                       child: TextField(
                         obscureText: true,
                         controller: passwordcontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Password',
                         ),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                   ]),
                   const SizedBox(height: 50),
                   TextButton(
@@ -139,10 +135,9 @@ class RegisterScreen extends StatelessWidget {
                           const SnackBar(content: Text('Add datas')),
                         );
                       }
-                      //user = Person(emailcontroller.text,passwordcontroller.text,usernamecontroller.text,fullnamecontroller.text);
                     },
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextButton(
                     child: const Text("Back"),
                     onPressed: () {

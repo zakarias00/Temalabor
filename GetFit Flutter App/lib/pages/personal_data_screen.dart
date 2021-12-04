@@ -1,12 +1,9 @@
-import 'dart:ffi';
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
-import 'package:get_fit/widgets/MyDate.dart';
-
+import 'package:get_fit/adapter/user_adapter.dart';
+import 'package:get_fit/widgets/my_date.dart';
 import '../main.dart';
 
 TextEditingController gendercontroller = TextEditingController();
@@ -36,13 +33,13 @@ class PersonalDataScreen extends StatelessWidget {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 'Enter your personal datas',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30),
               ),
               const SizedBox(height: 50),
-              Text("Choose your gender: "),
+              const Text("Choose your gender: "),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -82,7 +79,7 @@ class PersonalDataScreen extends StatelessWidget {
                       width: 120,
                       child: TextField(
                         controller: gendercontroller,
-                        decoration: new InputDecoration(
+                        decoration: const InputDecoration(
                             border: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
@@ -91,43 +88,41 @@ class PersonalDataScreen extends StatelessWidget {
                       ),
                     ),
                   ]),
-              Column(children: <Widget>[
+              Column(children: const <Widget>[
                 Text("Choose your birthdate:"),
                 SizedBox(height: 10),
-                Container(
-                  child: MyDate(),
-                ),
+                MyDate(),
                 SizedBox(height: 10),
               ]),
               Row(children: <Widget>[
-                SizedBox(width: 10),
-                Text(
+                const SizedBox(width: 10),
+                const Text(
                   'Height(cm): ',
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Flexible(
                     child: TextField(
                         controller: heightcontroller,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: 'Height',
                         ),
                         keyboardType: TextInputType.number)),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
               ]),
               const SizedBox(height: 10),
               Row(children: <Widget>[
-                SizedBox(width: 10),
-                Text(
+                const SizedBox(width: 10),
+                const Text(
                   'Weight (kg):',
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Flexible(
                   child: TextField(
                       controller: weightcontroller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Weight',
                       ),
@@ -167,7 +162,7 @@ class PersonalDataScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 child: const Text("Back"),
                 onPressed: () {

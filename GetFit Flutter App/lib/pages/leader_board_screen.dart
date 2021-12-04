@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
+import 'package:get_fit/adapter/user_adapter.dart';
 import 'package:provider/provider.dart';
-import '../main.dart';
-import 'login_screen.dart';
 
 class LeaderBoard extends StatelessWidget {
   const LeaderBoard({Key? key}) : super(key: key);
@@ -52,9 +50,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 const Text("Leader Board", style: TextStyle(fontSize: 25)),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 SizedBox(
                   width: 350,
                   child: TextField(
@@ -62,10 +60,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       useradapter.getUserByName(text);
                     },
                     controller: namecontroller,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         labelText: 'Search',
-                        contentPadding: const EdgeInsets.all(10.0),
+                        contentPadding: EdgeInsets.all(10.0),
                         icon: Icon(Icons.search)),
                   ),
                 ),

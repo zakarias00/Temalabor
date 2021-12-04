@@ -1,14 +1,11 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
-import 'package:get_fit/adapter/GoalAdapter.dart';
-import 'package:get_fit/adapter/SportAdapter.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
-import 'package:get_fit/datas/Goal.dart';
-import 'package:get_fit/datas/User.dart';
-
+import 'package:get_fit/adapter/activity_adapter.dart';
+import 'package:get_fit/adapter/goal_adapter.dart';
+import 'package:get_fit/adapter/sport_adapter.dart';
+import 'package:get_fit/adapter/user_adapter.dart';
+import 'package:get_fit/datas/goal.dart';
+import 'package:get_fit/datas/user.dart';
 import '../main.dart';
 import 'homedata_screen.dart';
 
@@ -40,51 +37,51 @@ class LoginScreen extends StatelessWidget {
                     const Text('Login',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 30)),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset("assets/images/cover.jpeg"),
                     ),
                     const SizedBox(height: 50),
                     Row(children: <Widget>[
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         'E-mail ',
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Flexible(
                         child: TextField(
                           controller: emailcontroller,
                           cursorColor: Color.fromRGBO(82, 82, 82, 1.0),
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'E-mail',
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                     ]),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(children: <Widget>[
-                      SizedBox(width: 10),
-                      Text(
+                      const SizedBox(width: 10),
+                      const Text(
                         "Password ",
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Flexible(
                         child: TextField(
                           obscureText: true,
                           cursorColor: Color.fromRGBO(82, 82, 82, 1.0),
                           controller: passwordcontroller,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Password',
                           ),
                         ),
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                     ]),
                     TextButton(
                       onPressed: () async {
@@ -96,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                           await activityadapter.getActivityByUserId(user.Id);
                           sports = await getSports();
                          await goaladapter.getGoalByDate(DateTime.now().millisecondsSinceEpoch,user.Id);
-                         if( goaladapter.goals.length == 0){
+                         if( goaladapter.goals.isEmpty){
                             goaladapter.newGoal(Goal(0,0,user.Id,DateTime.now().millisecondsSinceEpoch,0,0));
                           }
                           emailcontroller.clear();

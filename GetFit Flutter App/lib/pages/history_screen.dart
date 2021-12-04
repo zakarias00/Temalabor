@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
+import 'package:get_fit/adapter/activity_adapter.dart';
 import 'package:get_fit/pages/add_activity.dart';
 import 'package:provider/provider.dart';
 import '../main.dart';
@@ -11,13 +11,12 @@ class History extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: MyStatefulWidget(),
     );
   }
 }
 
-/// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
 
@@ -25,7 +24,6 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-/// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   final items = List<String>.generate(100, (i) => "Item $i");
   var activityadapter = ActivityAdapter();
@@ -62,9 +60,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 const Text("History", style: TextStyle(fontSize: 25)),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -110,7 +108,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           activityadapter.getActivityByUserId(user.Id);
                           txt.text = "All";
                         },
-                        child: Text(
+                        child: const Text(
                           "All",
                           textAlign: TextAlign.left,
                         ))
@@ -150,7 +148,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => AddActivity()));
                   },
-                  child: Text("Add activity"),
+                  child: const Text("Add activity"),
                 ),
               ]),
         ),

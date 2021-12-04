@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
-import 'package:get_fit/adapter/GoalAdapter.dart';
-import 'package:get_fit/adapter/UserAdapter.dart';
+import 'package:get_fit/adapter/activity_adapter.dart';
+import 'package:get_fit/adapter/goal_adapter.dart';
+import 'package:get_fit/adapter/user_adapter.dart';
 import 'package:get_fit/pages/add_activity.dart';
 import 'package:get_fit/pages/admin_screen.dart';
 import 'package:get_fit/pages/homescreen.dart';
 import 'package:get_fit/pages/login_screen.dart';
 import 'package:get_fit/pages/personal_data_screen.dart';
 import 'package:get_fit/pages/register_screen.dart';
-import 'package:dio/dio.dart';
-import 'package:get_fit/widgets/MyDate.dart';
+import 'package:get_fit/widgets/my_date.dart';
 import 'package:provider/provider.dart';
-
-import 'datas/Activity.dart';
-import 'datas/Goal.dart';
-import 'datas/Sport.dart';
-import 'datas/User.dart';
+import 'datas/sport.dart';
+import 'datas/user.dart';
 
 void main() {
   runApp(const GetFitApp());
