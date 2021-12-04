@@ -7,11 +7,10 @@ import 'package:provider/provider.dart';
 import 'package:provider/src/provider.dart';
 import '../main.dart';
 
-var activityadapter = ActivityAdapter();
+var activityadapter2 = ActivityAdapter();
 var goaladapter = GoalAdapter();
 var selecteddate = SelectedDate();
 
-// TODO datum kuldes es ahhoz a hethez jon vissza az adat
 class Activities extends StatelessWidget {
   const Activities({Key? key}) : super(key: key);
 
@@ -22,7 +21,6 @@ class Activities extends StatelessWidget {
     );
   }
 }
-
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
   const MyStatefulWidget({Key? key}) : super(key: key);
@@ -59,12 +57,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   void initState() {
-    super.initState();
-    selecteddate =context.read<SelectedDate>();
+
+    selecteddate = context.read<SelectedDate>();
     goaladapter = context.read<GoalAdapter>();
-    activityadapter = context.read<ActivityAdapter>();
+    activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
+    activityadapter2 = context.read<ActivityAdapter>();
     goaladapter.getGoalByDate(selecteddate.selectedDate.millisecondsSinceEpoch,user.Id);
-    activityadapter.getActivityByDate(DateTime.now().millisecondsSinceEpoch, user.Id);
+    super.initState();
   }
 
   @override
@@ -88,7 +87,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 child: MyDate(),
               ),
               Text("Your goal:"),
-              // TODO elosztani a teljesitett celt az egesz cellal, kiiratni
           Consumer<SelectedDate>(
             builder: (context,selecteddate,child){
               return LinearPercentIndicator(
@@ -142,7 +140,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                          );
                         }
                     )
-                    //TODO lefutott km-ek szama megjelenites
                   ]),
 
               Row(
@@ -160,7 +157,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           );
                         }
                     )
-                    // TODO aktiv orak szama megjelenites
                   ]),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -188,18 +184,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 double SumKcal()  {
   double sum = 0;
-  activityadapter.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
-  activityadapter.activities.forEach((element) {
+  activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
+  print(selecteddate.selectedDate);
+  activityadapter2.activities.forEach((element) {
     sum += element.Kcal!;
+    print(element.Kcal);
   });
-  print(sum);
   return sum;
 }
 
 double SumTime() {
   double sum = 0;
-  activityadapter.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
-  activityadapter.activities.forEach((element) {
+  activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
+  activityadapter2.activities.forEach((element) {
     sum += element.Time!;
   });
   return sum;
@@ -207,8 +204,8 @@ double SumTime() {
 
 double SumDistance() {
   double sum = 0;
-  activityadapter.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
-  activityadapter.activities.forEach((element) {
+  activityadapter2.getActivityByDate(selecteddate.selectedDate.millisecondsSinceEpoch, user.Id);
+  activityadapter2.activities.forEach((element) {
     sum += element.Distance;
   });
   return sum;

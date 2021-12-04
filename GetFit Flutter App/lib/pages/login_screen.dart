@@ -101,7 +101,12 @@ class LoginScreen extends StatelessWidget {
                           }
                           emailcontroller.clear();
                           passwordcontroller.clear();
-                          percent = (user.Points - user.Level* 10)*10.roundToDouble() ;
+                          if(user.Points == 0 && user.Level == 0){
+                            percent = 0;
+                          } else{
+                            percent = (user.Points - user.Level* 10)*10.roundToDouble() ;
+                          }
+
                           if (user.Email == "admin" &&
                               user.Password == "admin") {
                             Navigator.pushNamed(

@@ -7,8 +7,12 @@ import 'package:provider/src/provider.dart';
 class SelectedDate extends ChangeNotifier{
   DateTime selectedDate = DateTime.now();
 
-  void changeDate( DateTime value){
-    selectedDate = value;
+  void changeDate( DateTime value) {
+    selectedDate =  value;
+    notifyListeners();
+  }
+  void setToday(){
+    selectedDate = DateTime.now();
     notifyListeners();
   }
 }
@@ -68,11 +72,13 @@ class _MyDateState extends State<MyDate> {
             child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.date,
               onDateTimeChanged: (value) {
-                if (value != null && value != selectedDate.selectedDate.toString())
+                if (value != null && value != selectedDate.selectedDate.toString()){
                   setState(() {
-                   selectedDate.changeDate(value);
+                    selectedDate.changeDate(value);
                     txt.text = formatter.format(selectedDate.selectedDate);
                   });
+                }
+
               },
               initialDateTime: DateTime.now(),
               minimumYear: 1900,

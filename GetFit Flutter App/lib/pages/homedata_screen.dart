@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get_fit/adapter/GoalAdapter.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
+import 'package:get_fit/datas/User.dart';
+import 'package:get_fit/pages/add_activity.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:provider/src/provider.dart';
 
 import '../main.dart';
 import 'login_screen.dart';
+
 
 class HomeData extends StatelessWidget {
   const HomeData({Key? key}) : super(key: key);
@@ -36,6 +37,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   final DateFormat formatter = DateFormat('yyyy-MM-dd');
 
+@override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -193,10 +198,16 @@ String Gender(){
 
 String motivationMessage(){
 
-  if ( percent <= 25){
+  if( percent == 0){
+    return "It's time to start training!";
+  }
+  else if ( percent <= 25){
     return "Good start, keep going";
   }
-  else if( percent <= 50 && percent > 25){
+  else if( percent < 50 && percent > 25){
+    return "Good job!";
+  }
+  else if( percent == 50){
     return "You are halfway there!";
   }
   else if( percent <= 75 && percent > 50){
@@ -208,5 +219,4 @@ String motivationMessage(){
   else{
     return "You reached your goal. Well Done!";
   }
-
 }

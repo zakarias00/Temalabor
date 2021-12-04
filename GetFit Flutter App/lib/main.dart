@@ -20,8 +20,6 @@ import 'datas/User.dart';
 void main() {
   runApp(const GetFitApp());
 }
-
-
 late List<Sport> sports;
 User user = User(0, "", "", "", "", 0, 0, DateTime.now().millisecondsSinceEpoch, 0, 0, false);
 

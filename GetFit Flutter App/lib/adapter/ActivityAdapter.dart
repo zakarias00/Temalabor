@@ -43,7 +43,7 @@ class ActivityAdapter extends ChangeNotifier{
   }
 
  Future getActivityBySportId(int sportid, int userid) async{
-    var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/id='+ userid.toString()+ "/sportId=" + sportid.toString());
+    var response = await Dio().get('https://getfit-application.azurewebsites.net/ActivityController/userId='+ userid.toString()+ "/sportId=" + sportid.toString());
     var responseBody = response.data;
     Iterable l = responseBody;
     List<Activity> activities = List<Activity>.from(l.map((model)=> Activity.fromJson(model)));

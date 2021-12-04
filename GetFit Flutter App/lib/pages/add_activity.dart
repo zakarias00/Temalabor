@@ -8,7 +8,6 @@ import 'package:get_fit/adapter/ActivityAdapter.dart';
 import 'package:get_fit/datas/Activity.dart';
 import 'package:get_fit/datas/User.dart';
 import 'package:get_fit/pages/homedata_screen.dart';
-import 'package:get_fit/pages/personal_data_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 import 'package:provider/src/provider.dart';
 
@@ -36,6 +35,9 @@ class AddActivity extends StatelessWidget {
     var selecteddate = SelectedDate();
     var txt = TextEditingController();
     selecteddate = context.read<SelectedDate>();
+    distancecontroller.clear();
+    timecontroller.clear();
+
 
     return Stack(
       children: [
@@ -78,7 +80,7 @@ class AddActivity extends StatelessWidget {
                 )),
                 SizedBox(width: 10),
                 Container(
-                  width: 70,
+                  width: 120,
                   child: TextField(
                     controller: txt,
                     decoration: new InputDecoration(
@@ -168,10 +170,7 @@ class AddActivity extends StatelessWidget {
                         await activityadapter.newActiviy(newac);
                         await activityadapter.getActivityByUserId(user.Id);
 
-                        user = await validatedUser();
 
-                        heightcontroller.clear();
-                        weightcontroller.clear();
                         Navigator.of(context).pop();
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -192,14 +191,3 @@ class AddActivity extends StatelessWidget {
 }
 
 
-Future<User> validatedUser() async {
-  useradapter.getUsers();
-  useradapter.users.forEach((element) async {
-    if (element.Email == emailcontroller.text &&
-        element.Password == passwordcontroller.text) {
-      user = await useradapter.getUserById(element.Id);
-    }
-  });
-  print(user.Id);
-  return user;
-}

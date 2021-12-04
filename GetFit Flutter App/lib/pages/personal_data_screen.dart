@@ -4,19 +4,11 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get_fit/adapter/ActivityAdapter.dart';
-import 'package:get_fit/adapter/GoalAdapter.dart';
-import 'package:get_fit/adapter/SportAdapter.dart';
 import 'package:get_fit/adapter/UserAdapter.dart';
-import 'package:get_fit/datas/Activity.dart';
-import 'package:get_fit/datas/Goal.dart';
-import 'package:get_fit/pages/register_screen.dart';
 import 'package:get_fit/widgets/MyDate.dart';
 
 import '../main.dart';
 
-//TODO idk letrehozasa
-// TODO letrehozott felhasznalohoz hozzaadni ezeket az adatokat, hibauzenet ha nem jo formatumu adat
 TextEditingController gendercontroller = TextEditingController();
 TextEditingController datecontroller = TextEditingController();
 TextEditingController heightcontroller = TextEditingController();
@@ -52,7 +44,7 @@ class PersonalDataScreen extends StatelessWidget {
               const SizedBox(height: 50),
               Text("Choose your gender: "),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Flexible(
                       child: CupertinoButton(
@@ -68,6 +60,7 @@ class PersonalDataScreen extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pop(context, 'Woman');
                                     user.Gender = true;
+                                    gendercontroller.text = "Woman";
                                   },
                                 ),
                                 CupertinoActionSheetAction(
@@ -75,13 +68,26 @@ class PersonalDataScreen extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pop(context, 'Man');
                                     user.Gender = false;
+                                    gendercontroller.text = "Man";
                                   },
                                 )
                               ],
                             ),
                           );
                         },
-                        child: const Text('Gender'),
+                        child: const Text('Choose Gender: '),
+                      ),
+                    ),
+                    Container(
+                      width: 120,
+                      child: TextField(
+                        controller: gendercontroller,
+                        decoration: new InputDecoration(
+                            border: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none),
                       ),
                     ),
                   ]),
