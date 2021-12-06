@@ -130,3 +130,9 @@ Elkészítettem a szemályes adatok beállításához tartozó DialogFragmenteke
 
 #### Sipos Noémi  
 A százalékot mutató progress bárokat működésre bírtam, a motivációs üzeneteket ez alapján írja ki az app. A felhasználó csak 1 és 7 közötti számot tud megadni goal amountnak, és csak akkor állíthatja be a goalt, ha még azelött nem volt beállítva.
+A TextFieldekből eltűnik az adat, ha létrehozunk pl. egy új activityt. A Gender választó már kiírja az éppen kiválasztott értéket.
+Majdnem mindennel kész lettem, amit terveztem, de két dolgot nem sikerült teljesen jól megvalósítanom:
+Ha átnavigálunk a goal képernyőre, akkor alapból nem jó adatok jelennek meg, pedig azt állítottam be, hogy a mai naphoz tartozó hét adatait mutassa, csak akkor működik jól, ha újonnan kiválasztunk egy dátumot. ( és akkor is van, amikor nem működik rögtön, bár ez lehet amiatt van, hogy nem tudja olyan gyorsan lekérdezni az adatokat.) A másik dolog pedig az, hogy, ha szintlépés van, akkor csak egy ki és bejelentkezés után lehet látni a megváltozott pontokat és szintet.
+
+#### Valaska Nóra
+A webes felület hiányosságaiból próbáltam meg minél többet megoldani. A CORS Policy problémája megoldódott, ami sokat segített a haladásban, mert így ténylegesen működött a frontend és backend közti kapcsolat és lehetett tesztelni, tényleg működnek-e a dolgok.
