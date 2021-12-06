@@ -77,6 +77,8 @@ class AdminActivity extends StatelessWidget{
                       Sport newsport = Sport(randomNumber,namecontroller.text,double.parse(caloriacontroller.text));
                       newSport(newsport);
 
+                      namecontroller.clear();
+                      caloriacontroller.clear();
                       Navigator.of(context).pop();
                     },
                     child: const Text("Ok", style: TextStyle(fontSize: 20)),
