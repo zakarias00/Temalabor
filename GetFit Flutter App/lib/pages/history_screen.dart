@@ -131,7 +131,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                 Text(activityadapter.activities[index].Time
                                         .toString() +
                                     " sec "),
-                                Text(activityadapter.activities[index].Kcal
+                                Text(activityadapter.activities[index].Kcal!.toDouble().roundToDouble()
                                         .toString() +
                                     " kcal "),
                                 Text(activityadapter.activities[index].Distance
