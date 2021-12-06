@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1d19b7ca-9f2e-4ca9-be6d-d9c2fdef3ca9/resourceGroups/getfit/providers/Microsoft.Web/sites/getfitweb",
+    "appService.deploySubpath": "getfit\\dist\\getfit"
+}

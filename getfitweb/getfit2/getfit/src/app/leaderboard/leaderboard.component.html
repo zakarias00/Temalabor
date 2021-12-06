@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 card-margin">
+            <div class="card search-form">
+                <div class="card-body p-0">
+                    
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 p-0">
+                                        <input type="text" placeholder="Search..." class="form-control" [(ngModel)]="searchusername" (input)="Search()" />
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-12">
+                <div class="card card-margin">
+                    <div class="card-body">
+                        <div class="row search-body">
+                            <div class="col-lg-12">
+                                <div class="search-result">
+                                    <div class="result-body">
+                                        <div class="table-responsive">
+                                            <table class="table widget-26">
+                                                <tr>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Rank </p>                                                                    
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Username </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Level </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Points </p>
+                                                        </div>
+                                                    </th>                                                            
+                                                </tr>
+                                                <tbody>
+                                                    <tr *ngFor="let user of users; let i = index">
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{i+1}} </p>                                                                    
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{user.username}} </p>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{user.level}} </p>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{user.points}} </p>
+                                                            </div>
+                                                        </td>                                                            
+                                                    </tr>                                                                                                  
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

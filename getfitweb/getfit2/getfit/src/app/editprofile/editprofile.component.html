@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    
+    <form ngNativeValidate [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+        <div class="loginbox-textbox">
+            <input type="number" formControlName="height" class="form-control" placeholder="Height" required>
+        </div>
+        <div class="loginbox-textbox">
+            <input type="number" formControlName="weight" class="form-control" placeholder="Weight" required>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-dark">Update</button>
+        </div>
+
+    </form>
+
+  </div>
+  

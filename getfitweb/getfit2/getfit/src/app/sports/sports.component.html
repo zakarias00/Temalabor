@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 card-margin">
+            <div class="card search-form">
+                <div class="card-body p-0">
+                    
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-12 col-md-6 col-sm-12 p-0">
+                                        <input type="text" placeholder="Search..." class="form-control" [(ngModel)]="searchsporttype" (input)="Search()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-12">
+                <div class="card card-margin">
+                    <div class="card-body">
+                        <div class="row search-body">
+                            <div class="col-lg-12">
+                                <div class="search-result">
+                                    <div class="result-body">
+                                        <div class="table-responsive">
+                                            <table class="table widget-26">
+                                                <tr>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Sport ID </p>                                                                    
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Sport Type </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Calories </p>
+                                                        </div>
+                                                    </th>                                                              
+                                                </tr>
+                                                <tbody>
+                                                    <tr *ngFor="let sport of allSports">
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{sport._id}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{sport.type}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{sport.kcal}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="form-control" (click)="addSport()">Add Sport</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

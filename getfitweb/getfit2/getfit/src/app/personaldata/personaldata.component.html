@@ -1,0 +1,54 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+        <div class="loginbox bg-white">
+            <div class="loginbox-title">PERSONAL DATA*</div>
+
+            <form ngNativeValidate [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+                <div class="loginbox-submit">
+                    <label>Username</label>
+                    <input class="form-control" type="text" formControlName="username" placeholder="Enter your username" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Name</label>
+                    <input class="form-control" type="text" formControlName="name" placeholder="Enter your name" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>E-mail</label>
+                    <input class="form-control" type="text" formControlName="email" placeholder="Enter your e-mail address" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Password</label>
+                    <input class="form-control" type="password" formControlName="password" placeholder="Enter your password" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Birthdate</label>
+                    <input class="form-control" type="number" formControlName="birthdate" placeholder="Enter your birthdate" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Height</label>
+                    <input class="form-control" type="number" formControlName="height" placeholder="Enter your height (cm)" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Weight</label>
+                    <input class="form-control" type="number" formControlName="weight" placeholder="Enter your weight (kg)" required>
+                </div>
+                <div class="loginbox-submit">
+                    <label>Gender</label>
+                    <select class="form-control" formControlName="gender">
+                        <option value="true">Female</option>
+                        <option value="false">Male</option>
+                    </select>
+                </div>    
+                <div class="loginbox-submit">
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                </div>
+            </form>
+            
+        </div>
+
+    </div>
+
+<footer>
+*Your personal data will be kept confidential.
+</footer>

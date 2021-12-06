@@ -1,0 +1,58 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container bootdey flex-grow-1 container-p-y">
+
+            <div class="media align-items-center py-3 mb-3">
+              <img src="https://freesvg.org/img/abstract-user-flat-1.png" alt="" class="d-block ui-w-100 rounded-circle">
+              <h4 class="font-weight-bold mb-0"> {{ loggedUser.username }} </h4>              
+            </div>
+
+            <div class="card mb-4">
+              <div class="card-body">
+                <table class="table user-view-table m-0">
+                  <tbody>
+                    <tr>
+                      <td>Level:</td>
+                      <td> {{loggedUser.level}} </td>
+                    </tr>
+                    <tr>
+                      <td>Points:</td>
+                      <td> {{loggedUser.points}} </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>              
+            </div>
+
+            <div class="card">
+              <hr class="border-light m-0">
+              <div class="card-body">
+
+                <table class="table user-view-table m-0">
+                  <tbody>
+                    <tr>
+                      <td>Gender:</td>
+                      <td> {{loggedUser.gender}} </td>
+                    </tr>
+                    <tr>
+                        <td>Birthdate:</td>
+                        <td> {{birth}} </td>
+                    </tr>
+                    <tr>
+                        <td>Height:</td>
+                        <td> {{loggedUser.height}} </td>
+                    </tr>
+                    <tr>
+                        <td>Weight:</td>
+                        <td> {{loggedUser.weight}} </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </div>
+            </div>
+
+            <div class=card-body>
+                <button class="form-control" (click)="editUser(loggedUser)">Edit Profile</button>
+            </div>
+
+          </div>

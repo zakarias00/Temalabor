@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 card-margin">
+            <div class="card search-form">
+                <div class="card-body p-0">
+                    
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-12 col-md-3 col-sm-12 p-0">
+                                        <select class="form-control" [(ngModel)]="selectedSport" (ngModelChange)="onSportTypeSelected()">
+                                            <option *ngFor="let sport of allSports" [value]="sport._id">
+                                                {{sport.type}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-12">
+                <div class="card card-margin">
+                    <div class="card-body">
+                        <div class="row search-body">
+                            <div class="col-lg-12">
+                                <div class="search-result">
+                                    <div class="result-body">
+                                        <div class="table-responsive">
+                                            <table class="table widget-26">
+                                                <tr>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Activity Type </p>                                                                    
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Date </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Duration </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Distance </p>
+                                                        </div>
+                                                    </th>
+                                                    <th>
+                                                        <div class="widget-26-job-title">
+                                                            <p class="m-0"> Calories </p>
+                                                        </div>
+                                                    </th>                                                              
+                                                </tr>
+                                                <tbody>
+                                                    <tr *ngFor="let activity of allActivities">
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{activity.sportId}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{activity.date}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{activity.time}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{activity.distance}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="widget-26-job-title">
+                                                                <p class="m-0"> {{activity.kcal}} </p>                                                              
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="form-control" (click)="addActivity(loggedUser)">Add Activity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

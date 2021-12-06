@@ -1,0 +1,27 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+        <div class="loginbox bg-white">
+            <div class="loginbox-title">LOGIN</div>
+
+            <form ngNativeValidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="loginbox-textbox">
+                    <input type="text" formControlName="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="loginbox-textbox">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+                </div>
+    
+                <div class="loginbox-submit">
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+                <div class="loginbox-signup">
+                    <a routerLink = "/personaldata"><button class="btn btn-success">Sign Up</button></a>                
+                </div>
+
+            </form>
+
+            
+        </div>
+
+    </div>  
